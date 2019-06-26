@@ -8,13 +8,13 @@
         本平台投注截止时间为赛前1小时<br />
 本平台周一至周五 开售时间：09:00 停售时间：23:00<br />
 本平台周六至周日 开售时间：09:00 停售时间：次日00:00<br />
-<span style="color:#ea5504;">*如遇重大国际赛事，投注截止时间会有所调整</span><br />
+<span style="color:#dc3c32;">*如遇重大国际赛事，投注截止时间会有所调整</span><br />
 <b style="margin-top:0.2em;display:block;">一、玩法说明</b>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;竞彩足球游戏（简称竞彩）是由国家体育总局彩票管理中心发行组织和销售，竞猜的比赛由国家体育总局彩票管理中心选定并向社会公布，竞彩足球比赛对阵主队在前，客队在后。<br />
 <table>
     <tr>
-        <td style="color:#ea5504;">玩法</td>
-        <td style="color:#ea5504;">规则</td>
+        <td style="color:#dc3c32;">玩法</td>
+        <td style="color:#dc3c32;">规则</td>
     </tr>
     <tr>
         <td>胜平负</td>
@@ -38,11 +38,11 @@
     </tr>
 </table>
 注：<br />
-<b style="color:#ea5504;font-weight:400;">让球胜平负:</b>
+<b style="color:#dc3c32;font-weight:400;">让球胜平负:</b>
 “-”表示主队让客队，主队的净胜球大于让球数才算主胜；“+”表示客队让主队，客队的净胜球大于让球数才算客胜。<br />
-<b style="color:#ea5504;font-weight:400;">竞彩足球混合投注:</b>
+<b style="color:#dc3c32;font-weight:400;">竞彩足球混合投注:</b>
 是指多场比赛之间不同玩法进行组合投注。同一场比赛的各种玩法不能组合成一注投注。<br />
-<b style="color:#ea5504;font-weight:400;">竞彩2选1玩法:</b>
+<b style="color:#dc3c32;font-weight:400;">竞彩2选1玩法:</b>
 该玩法是结合竞彩足球胜平负游戏和让球胜平负游戏两个玩法，利用混合过关特性将一场比赛转化成两个投注项的投注方式。<br />
 赛程只针对让球胜平负玩法中让球值为（-1）和（+1）的比赛。<br />
 主胜=胜平负的“主胜”<br />主不胜=让球胜平负（-1）的玩法下的“客胜”<br />主败=胜平负的“客胜”<br />主不败=让球胜平负（+1）的玩法下的“主胜”<br />
@@ -79,7 +79,7 @@ export default {
     mounted(){
 			nativeApp({'methodName':'showTitle','title':'玩法帮助'})
         window.getCxmTitle = function(){
-            return '彩小秘彩票·玩法帮助'
+            return '圣和彩店彩票·玩法帮助'
         }
         this.$store.state.matchObj = {};
     }

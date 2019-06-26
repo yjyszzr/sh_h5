@@ -74,8 +74,8 @@ const state = {
     },
     runchartData: {},  //走势图数据
     channelObj: {
-        color: '#ea5504',
-        channelNmae: '彩小秘'
+        color: '#dc3c32',
+        channelNmae: '圣和彩店'
     }
 }
 let storageArr = []

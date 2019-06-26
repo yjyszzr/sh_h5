@@ -15,7 +15,7 @@
                     <li>{{item.addTime.split('  ')[1]}}</li>
                     <li>{{item.mobile}}</li>
                     <li>{{item.incomeType}}</li>
-                    <li style="color: #e95504;">{{item.income }}</li>
+                    <li style="color: #dc3c32;">{{item.income }}</li>
                 </ul>
             </div>
             <div class="nullstatus" v-if="incomedetail.length==0">

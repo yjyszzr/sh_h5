@@ -131,7 +131,7 @@
             min-height: px2rem(1400px);
 
             .cur {
-                background-color: #ea5504 !important;
+                background-color: #dc3c32 !important;
                 border: 0 none!important;
                 padding: px2rem(16px) 0!important;
                 width: px2rem(282px) !important;

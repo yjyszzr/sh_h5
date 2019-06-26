@@ -1,19 +1,19 @@
 <template>
     <div class="foot fixBottom" @touchmove.prevent v-if="isShowTabbar()">
-            <router-link to='/' :style="{'color': $route.path.split('/')[1] == ''?'#ea5504':'#505050'}">
-                <i class="iconfont icon-dibucaidan_svg_huaban"></i>
+            <router-link to='/' :style="{'color': $route.path.split('/')[1] == ''?'#dc3c32':'#505050'}">
+                <i class="iconfont icon-index"></i>
                 <span>大厅</span>
             </router-link>
-            <router-link to='/lotteryResult' :style="{'color': $route.path.split('/')[1] == 'lotteryResult'?'#ea5504':'#505050'}">
-                <i class="iconfont icon-dibucaidan_svg_huabanfuben"></i>
+            <router-link to='/lotteryResult' :style="{'color': $route.path.split('/')[1] == 'lotteryResult'?'#dc3c32':'#505050'}">
+                <i class="iconfont icon-bisai"></i>
                 <span>比赛</span>
             </router-link>
-            <router-link :to='{path:"/find",query:{"from":"h5_find"}}' :style="{'color': $route.path.split('/')[1] == 'find'?'#ea5504':'#505050'}">
-                <i class="iconfont icon-icon-test"></i>
+            <router-link :to='{path:"/find",query:{"from":"h5_find"}}' :style="{'color': $route.path.split('/')[1] == 'find'?'#dc3c32':'#505050'}">
+                <i class="iconfont icon-faxian"></i>
                 <span>发现</span>
             </router-link>
-            <router-link to='/user' :style="{'color': $route.path.split('/')[1] == 'user'?'#ea5504':'#505050'}">
-                <i class="iconfont icon-dibucaidan_svg_huabanfuben1"></i>
+            <router-link to='/user' :style="{'color': $route.path.split('/')[1] == 'user'?'#dc3c32':'#505050'}">
+                <i class="iconfont icon-wodedefuben"></i>
                 <span>我的</span>
             </router-link>
     </div>
@@ -63,9 +63,9 @@ export default {
                 font-size: px2rem(20px); 
             }
         }
-        a:nth-child(3){
+        a:nth-child(3),a:nth-child(2){
         	i{
-                font-size: px2rem(49px);
+                font-size: px2rem(48px);
             }
             span{
                 margin-bottom: px2rem(-4px);

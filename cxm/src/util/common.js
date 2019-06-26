@@ -33,8 +33,8 @@ export let nativeApp = (obj)=>{
 //app mjb渠道区分
 export let channel = (str,s)=>{
     let channelObj = {
-        channelNmae: '彩小秘',
-        color: '#ea5504'
+        channelNmae: '圣和彩店',
+        color: '#dc3c32'
     }
     if(str=='c26013'){
         channelObj.channelNmae='乐得体育'
@@ -47,7 +47,7 @@ export let channel = (str,s)=>{
 	}else if(str.indexOf('c27')!=-1){
 		channelObj.channelNmae='人人体育'
 	}else if(str.indexOf('c10')!=-1){
-		channelObj.channelNmae='彩小秘'
+		channelObj.channelNmae='圣和彩店'
 	}else if(str.indexOf('c20')!=-1){
 		channelObj.channelNmae='必中彩'
 	}else if(str.indexOf('c22')!=-1){
@@ -66,7 +66,7 @@ export let means = (arg) => {
         },
         //app title
         isTitle: window.getCxmTitle = function () {
-            return '彩小秘·' + arg
+            return '圣和彩店·' + arg
         }
     }
     return appMeans

@@ -1,6 +1,6 @@
 <template>
 	<div class="find">
-			<v-slider :bannerList='bannerList' style="margin: 0.2rem auto;" v-show="findStatus=='1'"></v-slider>
+			<v-slider :bannerList='bannerList' style="margin: 0.2rem auto;" v-show="findStatus=='1'&&bannerList.length>0"></v-slider>
 			<!--资讯-->
 			<div class="information">
 				<ul>

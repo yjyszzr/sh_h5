@@ -21,7 +21,7 @@
                     </div>
                     <div class="wheel-app">
                         <p>红包已放入您的账户</p>
-                        <p>请登录{{detect==='ios'?'天天体育':fr=='c039'||fr=='c239'?'必中彩':'彩小秘'}}APP使用</p>
+                        <p>请登录{{detect==='ios'?'天天体育':fr=='c039'||fr=='c239'?'必中彩':'圣和彩店'}}APP使用</p>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,7 @@
             <li>{{item.time}}</li>
             <li>{{item.registerNum }}</li>
             <li>{{item.lotteryAmount}}</li>
-            <li style="color: #e95504;">{{item.income }}</li>
+            <li style="color: #dc3c32;">{{item.income }}</li>
             <li class="arrow_right float_right"></li>
         </ul>
         <div class="nullstatus" v-if="income.length==0">

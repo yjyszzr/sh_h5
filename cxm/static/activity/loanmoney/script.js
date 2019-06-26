@@ -55,7 +55,7 @@ if (detect === 'ios') {
 function activity_smClick() {
 	$.modal({
 		title: '活动说明',
-		text: '<p class="left">1、 用户通过页面注册，即可免费领取世界杯体彩一注，并获得丰厚大礼。<br />2、每位用户仅有一次机会，同一设备、手机号视为同一用户。<br />3、本活动世界杯体彩彩票均为线下实体店出票。<br /> 4、活动最终解释权归彩小秘所有。</p>',
+		text: '<p class="left">1、 用户通过页面注册，即可免费领取世界杯体彩一注，并获得丰厚大礼。<br />2、每位用户仅有一次机会，同一设备、手机号视为同一用户。<br />3、本活动世界杯体彩彩票均为线下实体店出票。<br /> 4、活动最终解释权归圣和彩店所有。</p>',
 		buttons: [{
 			text: '知道了',
 			onClick: function () {
@@ -124,7 +124,7 @@ function getCode() {
 		validCode = false;
 		var t = setInterval(function () {
 			time--;
-			$('.codebtn').html("<span style='color: #ea5504;'>" + time + "s</span>后重新获取");
+			$('.codebtn').html("<span style='color: #dc3c32;'>" + time + "s</span>后重新获取");
 			if (time == 0) {
 				clearInterval(t);
 				$('.codebtn').html("<span onClick='getSmsCode()'>重新获取</span>");

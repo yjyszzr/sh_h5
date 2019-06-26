@@ -17,7 +17,7 @@
         mounted(){
 			nativeApp({'methodName':'showTitle','title':'胆说明'})
             window.getCxmTitle = function(){
-                return '彩小秘彩票·胆说明'
+                return '圣和彩店彩票·胆说明'
             }
         }
     }

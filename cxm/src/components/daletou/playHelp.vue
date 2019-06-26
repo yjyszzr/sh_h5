@@ -195,7 +195,7 @@
                     height: px2rem(25px);
                     width: px2rem(25px);
                     border-radius: 100%;
-                    background-color: #EA5504;
+                    background-color: #dc3c32;
                 }
                 .blueBall{
                     display: inline-block;

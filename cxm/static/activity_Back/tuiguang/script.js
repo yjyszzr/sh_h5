@@ -54,7 +54,7 @@ function downLoadGoto() {
 function activity_smClick() {
 	$.modal({
 		title: '扫码规则说明',
-		text: '<p class="left">1、用户凭购物单据，均可获得一次扫码机会。扫码后即享110元彩金，彩金仅可用于购彩，不可提现，中奖奖金可以提现。每个用户限享1次（相同手机号码、设备视为同一用户，不重复派发)。<br />2、注册成功后请点击“我的－我的卡券”查收，彩金逾期未使用自动过期，请及时使用。<br />3、本活动不可与其他同类型新用户注册活动同享。<br /> 4、本活动最终解释权归彩小秘所有。</p>',
+		text: '<p class="left">1、用户凭购物单据，均可获得一次扫码机会。扫码后即享110元彩金，彩金仅可用于购彩，不可提现，中奖奖金可以提现。每个用户限享1次（相同手机号码、设备视为同一用户，不重复派发)。<br />2、注册成功后请点击“我的－我的卡券”查收，彩金逾期未使用自动过期，请及时使用。<br />3、本活动不可与其他同类型新用户注册活动同享。<br /> 4、本活动最终解释权归圣和彩店所有。</p>',
 		buttons: [{
 			text: '知道了',
 			onClick: function () {
@@ -130,7 +130,7 @@ function getCode() {
 		validCode = false;
 		var t = setInterval(function () {
 			time--;
-			$('.codebtn').html("<span style='color: #ea5504;'>" + time + "s</span>后重新获取");
+			$('.codebtn').html("<span style='color: #dc3c32;'>" + time + "s</span>后重新获取");
 			if (time == 0) {
 				clearInterval(t);
 				$('.codebtn').html("<span onClick='getSmsCode()'>重新获取</span>");

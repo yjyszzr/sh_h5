@@ -27,7 +27,7 @@
     font-size: px2rem(30px);
     color: #505050;
     a{
-      color: #ea5504;
+      color: #dc3c32;
     }
   }
   span{

@@ -82,7 +82,7 @@
                 font-size:px2rem(40px) ;
             }
             p:nth-child(2){
-                color: #EA5504;
+                color: #dc3c32;
                 font-size:px2rem(34px) ;
             }
             p:nth-child(3){

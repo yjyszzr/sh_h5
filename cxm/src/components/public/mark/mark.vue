@@ -103,7 +103,7 @@
                         text-align: center;
                         line-height: px2rem(72px);
                         font-size: px2rem(26px);
-                        color: #e85504;
+                        color: #dc3c32;
                     }
                     p:last-of-type{
                         border: none;

@@ -3,7 +3,7 @@
     .head {
         overflow: hidden;
         height: px2rem(100px);
-        background: #f4f4f4;
+        background: #dc3c32;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -20,7 +20,7 @@
             display: flex;
             align-items: center;
             font-size: px2rem(32px);
-            color: #505050;
+            color: #fff;
             .header-down {
                 display: inline-block;
                 margin-left: px2rem(10px);
@@ -68,8 +68,8 @@
         }
         li.active{
             span{
-                color: #ea5504;
-                border-bottom: 3px solid #ea5504;
+                color: #dc3c32;
+                border-bottom: 3px solid #dc3c32;
                 box-sizing: border-box;
             }
         }
@@ -362,7 +362,7 @@
                 .hz-fbright{
                     flex: 3.2;
                     height: 100%;
-                    background: #ea5504;
+                    background: #dc3c32;
                     color: white;
                     font-size: px2rem(30px);
                     border: none;
@@ -467,8 +467,8 @@
                         margin: 0;
                     }
                     .mint-radio-input:checked + .mint-radio-core{
-                        border-color: #ea5504;
-                        background-color: #ea5504;
+                        border-color: #dc3c32;
+                        background-color: #dc3c32;
                     }
                 }
             }
@@ -490,7 +490,7 @@
         }
         p:first-of-type{
             border-right: 1px solid #f0f0f0;
-            color: #ea5504;
+            color: #dc3c32;
         }
     }
 }

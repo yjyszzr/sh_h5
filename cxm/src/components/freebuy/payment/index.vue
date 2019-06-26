@@ -9,7 +9,7 @@
                     <li>
                         <a>
                             <div>
-                                <span class="arrow_kefu float_right" style="color: #ea5504;">￥{{payment.orderMoney}}</span>
+                                <span class="arrow_kefu float_right" style="color: #dc3c32;">￥{{payment.orderMoney}}</span>
                                 <span class="message">订单金额</span>
                             </div>
                         </a>
@@ -28,7 +28,7 @@
                         </a>
                         <a>
                             <div>
-                                <span class="arrow_kefu float_right" style="color: #ea5504;">￥{{payment.thirdPartyPaid}}</span>
+                                <span class="arrow_kefu float_right" style="color: #dc3c32;">￥{{payment.thirdPartyPaid}}</span>
                                 <span class="message">还需支付</span>
                             </div>
                         </a>

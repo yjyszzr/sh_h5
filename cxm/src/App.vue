@@ -362,7 +362,7 @@
         line-height: px2rem(98px);
         text-align: center;
         font-size: px2rem(30px);
-        background: #e95504;
+        background: #dc3c32;
         display: block;
         border: none;
         border-radius: px2rem(10px);
@@ -448,7 +448,7 @@
             font-size: px2rem(26px);
         }
         .mint-msgbox-confirm {
-            color: #ea5504;
+            color: #dc3c32;
         }
         .mint-msgbox-cancel {
             color: #505050;
@@ -540,7 +540,7 @@
                         float: left;
                         font-size: px2rem(40px);
                         margin-right: px2rem(15px);
-                        color: #ea5504;
+                        color: #dc3c32;
                     }
                     .text {
                         width: 90%;
@@ -611,7 +611,7 @@
             em {
                 width: px2rem(18px);
                 height: px2rem(18px);
-                background: #e95504;
+                background: #dc3c32;
                 border-radius: 50%;
                 margin-top: px2rem(35px);
             }
@@ -665,7 +665,7 @@
     .prompt {
         width: px2rem(540px);
         height: px2rem(80px);
-        color: #f7931e;
+        color: #dc3c32;
         font-size: px2rem(26px);
         background: #eaeaea;
         text-align: center;
@@ -686,7 +686,7 @@
     }
 
     .forget .x_sel {
-        color: #f7931e;
+        color: #dc3c32;
         font-size: px2rem(26px);
         float: right;
     }

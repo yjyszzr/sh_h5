@@ -1,7 +1,7 @@
  @import '../../../assets/css/function.scss';
  .cathectic{
    .xySelected{
-     color: #e95504;
+     color: #dc3c32;
    }
    .section:first-of-type{
      margin-top: px2rem(18px);
@@ -169,7 +169,7 @@
          line-height: px2rem(58px);
          text-align: center;
          padding: 0 px2rem(30px);
-         background: #ea5504;
+         background: #dc3c32;
          color: white;
          overflow: hidden;
         text-overflow:ellipsis;
@@ -214,7 +214,7 @@
          line-height: px2rem(30px);
          text-align: center;
          padding:  px2rem(15px);
-         background: #ea5504;
+         background: #dc3c32;
          color: white;
           font-size: px2rem(24px);
           span{
@@ -232,7 +232,7 @@
           background: white;
         }
         .cont_cur{
-          background: #e95504!important;
+          background: #dc3c32!important;
           border-right: 1px solid #fff;
           box-sizing: border-box;
           span{
@@ -362,7 +362,7 @@
            display: flex;
            align-items: center;
            span{
-            color: #e95504;
+            color: #dc3c32;
          }
          .ycjj{
           text-overflow:ellipsis;
@@ -379,15 +379,15 @@
          float: left;
          width: 30%;
          text-align: center;
-         background: #e95504;
+         background: #dc3c32;
          color: #fff;
          font-size: px2rem(28px);
        }
      }
    }
    #isDan{
-     border: 1px solid #e95504;
-     color: #e95504;
+     border: 1px solid #dc3c32;
+     color: #dc3c32;
    }
    .section{
      position: relative;

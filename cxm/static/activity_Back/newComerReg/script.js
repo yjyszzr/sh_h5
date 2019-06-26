@@ -62,7 +62,7 @@ if (detect === 'ios') {
 function activity_smClick() {
 	$.modal({
 		title: '活动说明',
-		text: '<p class="left">1、新用户注册即可获得100元优惠券，购彩时进行抵扣。<br />2、同一设备、手机号视为同一用户，不可重复参加。<br />3、注册成功后请点击我的-我的优惠券查看，优惠券逾期未使用自动过期。<br />4、本活动不与其他新用户活动同享。<br />5、本活动最终解释权归彩小秘所有。</p>',
+		text: '<p class="left">1、新用户注册即可获得100元优惠券，购彩时进行抵扣。<br />2、同一设备、手机号视为同一用户，不可重复参加。<br />3、注册成功后请点击我的-我的优惠券查看，优惠券逾期未使用自动过期。<br />4、本活动不与其他新用户活动同享。<br />5、本活动最终解释权归圣和彩店所有。</p>',
 		buttons: [{
 			text: '知道了',
 			onClick: function () {
@@ -142,7 +142,7 @@ function getCode() {
 		validCode = false;
 		var t = setInterval(function () {
 			time--;
-			$('.codebtn').html("<span style='color: #ea5504;'>" + time + "s</span>后重新获取");
+			$('.codebtn').html("<span style='color: #dc3c32;'>" + time + "s</span>后重新获取");
 			if (time == 0) {
 				clearInterval(t);
 				$('.codebtn').html("<span onClick='getSmsCode()'>重新获取</span>");

@@ -13,10 +13,10 @@
                         <img :src="orderObj.lotteryClassifyImg" alt="">
                         <!-- <img :src="orderObj.lotteryClassifyImg"> -->
                         <div>
-                            <p>{{orderObj.lotteryClassifyName}}<span :style="{'color':orderObj.orderStatus=='5'?'#e95504':'#505050'}">{{orderObj.processResult}}</span></p>
+                            <p>{{orderObj.lotteryClassifyName}}<span :style="{'color':orderObj.orderStatus=='5'?'#dc3c32':'#505050'}">{{orderObj.processResult}}</span></p>
                             <p>
                                 <span>￥{{orderObj.ticketAmount}}</span>
-                                <span style="color:#ea5504;">{{orderObj.forecastMoney}}</span>
+                                <span style="color:#dc3c32;">{{orderObj.forecastMoney}}</span>
                             </p>
 
                         </div>
@@ -24,11 +24,11 @@
                     <div class="box2">
                         <p>
                             <span style="color: #999;">方案状态</span>
-                            <span :style="{'color':orderObj.orderStatus=='2'?'#f7931e':'#505050'}">{{orderObj.orderStatusDesc}}</span>
+                            <span :style="{'color':orderObj.orderStatus=='2'?'#dc3c32':'#505050'}">{{orderObj.orderStatusDesc}}</span>
                         </p>
                         <p>
                             <span v-if="orderObj.orderStatus=='5'">中奖金额</span>
-                            <span :style="{'color':orderObj.orderStatus=='5'?'#ea5504':'#505050'}" v-if="orderObj.orderStatus=='5'">￥{{orderObj.processStatusDesc}}</span>
+                            <span :style="{'color':orderObj.orderStatus=='5'?'#dc3c32':'#505050'}" v-if="orderObj.orderStatus=='5'">￥{{orderObj.processStatusDesc}}</span>
 
                         </p>
                     </div>
@@ -54,7 +54,7 @@
                             </div>
                             <div class="item">
                                 <p v-for='(data,index) in item.cathecticResults' :key='index'>
-                                    <span v-for='(data1,index1) in data.cathectics' :key='index1' :style='{"color":data1.isGuess=="1"?"#ea5504":"#505050"}'>{{data1.cathectic}}</span>
+                                    <span v-for='(data1,index1) in data.cathectics' :key='index1' :style='{"color":data1.isGuess=="1"?"#dc3c32":"#505050"}'>{{data1.cathectic}}</span>
                                 </p>
                             </div>
                             <div class="item">
@@ -73,7 +73,7 @@
                             <div class="item1"><span>{{item.match}}</span></div>
                             <div class="item1">
                                 <p v-for='(data,index) in item.cathecticResults' :key='index'>
-                                    <span v-for='(data1,index1) in data.cathectics' :key='index1' :style='{"color":data1.isGuess=="1"?"#ea5504":"#505050"}'>{{data1.cathectic}}</span>
+                                    <span v-for='(data1,index1) in data.cathectics' :key='index1' :style='{"color":data1.isGuess=="1"?"#dc3c32":"#505050"}'>{{data1.cathectic}}</span>
                                 </p>
                             </div>
                             <div class="item1">

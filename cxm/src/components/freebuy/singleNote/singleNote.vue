@@ -4,7 +4,7 @@
         <div class="head">
             <span class="back-img" @click="goBack()"><img src="../../../assets/img/ret.png" alt=""></span>
             <div class="head-text" @click="openOrclose()">
-                <span>彩小秘·<span>{{sntTitle(playType)}}</span></span>
+                <span>圣和彩店·<span>{{sntTitle(playType)}}</span></span>
                 <span class="header-down"><img id="downImg" src="../../../assets/img/freebuy_img/Collapse@3x.png"
                                                alt=""></span>
             </div>
@@ -70,7 +70,7 @@
                             </p>
                             <p :class="item.myspf&&item.myspf.indexOf(1)!=-1?'selected':''">
                                 <b class="mMark" @click="selectedClick($event)"></b>
-                                <span>VS <i :style="{'color':item.matchPlays[0].fixedOdds.substr(0,1)=='+'?'#e85504':'#44ae35'}">{{item.matchPlays[0].fixedOdds}}</i></span>
+                                <span>VS <i :style="{'color':item.matchPlays[0].fixedOdds.substr(0,1)=='+'?'#dc3c32':'#44ae35'}">{{item.matchPlays[0].fixedOdds}}</i></span>
                                 <span>
                                     {{item.matchPlays[0].flatCell.cellName}}{{item.matchPlays[0].flatCell.cellOdds}}
                                 </span>
@@ -178,13 +178,13 @@
                             			<p>0</p>
                             			<p style="flex: 9;">未开售</p>
                             		</div>
-                                <div class="team_top" v-if="item.matchPlays[1]&&item.matchPlays[1].isShow=='1'" :style="{'border':item.matchPlays[1]&&item.matchPlays[1].single=='1'?'1px solid #ea5504':'','margin':item.matchPlays[1]&&item.matchPlays[1].single=='1'?'-1px 0 0 -1px':''}">
+                                <div class="team_top" v-if="item.matchPlays[1]&&item.matchPlays[1].isShow=='1'" :style="{'border':item.matchPlays[1]&&item.matchPlays[1].single=='1'?'1px solid #dc3c32':'','margin':item.matchPlays[1]&&item.matchPlays[1].single=='1'?'-1px 0 0 -1px':''}">
                                     <p>0</p>
                                     <p :class="item.matchPlays[1].homeCell.isSelected?'selected':''" @click="unSelectedClickspf($event,item)">{{item.matchPlays[1].homeCell.cellName}} {{item.matchPlays[1].homeCell.cellOdds}}</p>
                                     <p :class="item.matchPlays[1].flatCell.isSelected?'selected':''" @click="unSelectedClickspf($event,item)">{{item.matchPlays[1].flatCell.cellName}} {{item.matchPlays[1].flatCell.cellOdds}}</p>
                                     <p :class="item.matchPlays[1].visitingCell.isSelected?'selected':''" @click="unSelectedClickspf($event,item)">{{item.matchPlays[1].visitingCell.cellName}} {{item.matchPlays[1].visitingCell.cellOdds}}</p>
                                 </div>
-                                <div class="team_bottom" :style="{'border':item.matchPlays[0]&&item.matchPlays[0].single=='1'?'1px solid #ea5504':'','margin':item.matchPlays[0]&&item.matchPlays[0].single=='1'?'0 0 -1px -1px':''}">
+                                <div class="team_bottom" :style="{'border':item.matchPlays[0]&&item.matchPlays[0].single=='1'?'1px solid #dc3c32':'','margin':item.matchPlays[0]&&item.matchPlays[0].single=='1'?'0 0 -1px -1px':''}">
                                     <p :style="{'background':item.matchPlays[0].fixedOdds.substr(0,1)=='+'?'#f5ac41':'#85c368'}">{{item.matchPlays[0].fixedOdds}}</p>
                                     <p :class="item.matchPlays[0].homeCell.isSelected?'selected':''" @click="unSelectedClickrq($event,item)">{{item.matchPlays[0].homeCell.cellName}} {{item.matchPlays[0].homeCell.cellOdds}}</p>
                                     <p :class="item.matchPlays[0].flatCell.isSelected?'selected':''" @click="unSelectedClickrq($event,item)">{{item.matchPlays[0].flatCell.cellName}} {{item.matchPlays[0].flatCell.cellOdds}}</p>
@@ -197,7 +197,7 @@
                             </div>
                             <div class="team_right" v-if="item.selectedNum>0" @click="bfBtn(item)">
                                 <span>已选</span>
-                                <span><b style="color: #ea5504;font-wight: 400;">{{item.selectedNum}}</b>项</span>
+                                <span><b style="color: #dc3c32;font-wight: 400;">{{item.selectedNum}}</b>项</span>
                             </div>
                         </div>
                     </div>

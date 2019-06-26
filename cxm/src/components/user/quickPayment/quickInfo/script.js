@@ -143,7 +143,7 @@ export default {
                                 this.smsCode.changeNumber = 60
                                 this.smsCode.disabled = false
                             } else {
-                                this.smsCode.changeText = '<b style="color: #ea5504;font-weight:400;">'+this.smsCode.changeNumber + 's</b>后重新获取'
+                                this.smsCode.changeText = '<b style="color: #dc3c32;font-weight:400;">'+this.smsCode.changeNumber + 's</b>后重新获取'
                             }
                         }, 1000)
                         Toast(res.msg)

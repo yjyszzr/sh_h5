@@ -5,7 +5,7 @@
     <div class="wrap matchDetail" @touchmove.prevent>
         <section>
             <div class="nullStatus" v-show="!matchDetailObj.matchInfo">
-                <mt-spinner type="snake" color="#ea5504"></mt-spinner>
+                <mt-spinner type="snake" color="#dc3c32"></mt-spinner>
             </div>
             <div class="matchDetail_box" v-if="matchDetailObj.matchInfo">
                 <div class="matchDetail_top">
@@ -45,7 +45,7 @@
                 <li>
                     <p>相对交锋</p>
                     <p>共{{matchDetailObj.hvMatchTeamInfo.total}}次交锋 主队 
-                        <span style="color: #ea5504;">{{matchDetailObj.hvMatchTeamInfo.win}}胜</span>
+                        <span style="color: #dc3c32;">{{matchDetailObj.hvMatchTeamInfo.win}}胜</span>
                         <span style="color: #0099d9;">{{matchDetailObj.hvMatchTeamInfo.draw}}平</span>
                         <span style="color: #44ae35;">{{matchDetailObj.hvMatchTeamInfo.lose}}负</span>
                     </p>

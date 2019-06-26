@@ -45,22 +45,22 @@ export default {
                             return false;
                         }
                         if(res.data.invitationNum>=10){
-                            this.$refs.numsItem[0].style.background = '#ea5504'
+                            this.$refs.numsItem[0].style.background = '#dc3c32'
                         }
                         if(res.data.invitationNum>=20){
-                            this.$refs.numsItem[1].style.background = '#ea5504'
+                            this.$refs.numsItem[1].style.background = '#dc3c32'
                         }
                         if(res.data.invitationNum>=30){
-                            this.$refs.numsItem[2].style.background = '#ea5504'
+                            this.$refs.numsItem[2].style.background = '#dc3c32'
                         }
                         if(res.data.invitationNum>=40){
-                            this.$refs.numsItem[3].style.background = '#ea5504'
+                            this.$refs.numsItem[3].style.background = '#dc3c32'
                         }
                         if(res.data.invitationNum>=50){
-                            this.$refs.numsItem[4].style.background = '#ea5504'
+                            this.$refs.numsItem[4].style.background = '#dc3c32'
                         }
                         if(res.data.invitationNum>=100){
-                            this.$refs.numsItem[5].style.background = '#ea5504'
+                            this.$refs.numsItem[5].style.background = '#dc3c32'
                         }
                         if(res.data.invitationNum<=10){
                             this.numList[0] = (res.data.invitationNum/10)*100

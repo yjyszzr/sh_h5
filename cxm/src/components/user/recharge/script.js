@@ -26,6 +26,7 @@ export default {
             activefrom: '0',
             inputDisabled:false,//input 禁止输入
             activityDescribe:this.$route.query.description?this.$route.query.description:'',
+            input_info: {},  //金额输入框信息
             // testUrl: 'http://www.baidu.com/',
             // testUrlDisplay: 'none',
         }
@@ -121,6 +122,7 @@ export default {
             })
         },
         wxClick(c, index, s) {
+            this.input_info = s;
             this.payCode = s.payCode
             $('.wxSelected').removeClass('wxSelected')
             this.$refs.wxSelected[index].className = 'wxSelected iconfont icon-icon-29'
@@ -238,6 +240,7 @@ export default {
                 if (res.code == 0) {
                     this.allPaymentList = res.data
                     this.payCode = res.data[0].payCode
+                    this.input_info = res.data[0]
                 }
             })
         api.allPaymentWithRecharge({})

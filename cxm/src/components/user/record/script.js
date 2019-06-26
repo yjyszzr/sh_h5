@@ -38,7 +38,7 @@ export default {
       },
       color(c){
         if(c=='5'||c=='6'){
-          return '#ea5504'
+          return '#dc3c32'
         }else if(c=='2'||c=='4'){
           return '#c7c7c7'
         }else{

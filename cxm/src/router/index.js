@@ -503,7 +503,7 @@ const router = new Router({
         },
         component: resolve => require(['@/components/activity/wheel'], resolve)
      },
-      //app彩小秘彩票
+      //app圣和彩店彩票
       //帮助中心：appinfo/help
       //购彩协议：appinfo/protocol
       //服务协议：appinfo/service
@@ -881,9 +881,9 @@ router.beforeEach(async(to, from, next) => {
     //                 case '6' : return "混合投注";
     //             }
     //         }
-    //         document.title = '彩小秘·'+noteTitle(to.query.id);
+    //         document.title = '圣和彩店·'+noteTitle(to.query.id);
     //     }else{
-    //         document.title = '彩小秘·'+to.meta.title;
+    //         document.title = '圣和彩店·'+to.meta.title;
     //     }
     // }
     NProgress.start(); // 开启Progress

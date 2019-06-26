@@ -4,7 +4,7 @@
         <div class="head" v-show="isWeb()">
             <span class="back-img" @click="goBack()"><img src="../../assets/img/ret.png" alt=""></span>
             <div class="head-text">
-                <span>彩小秘·投注确认</span>
+                <span>圣和彩店·投注确认</span>
             </div>
             <div class="memu"></div>
         </div>
@@ -43,7 +43,7 @@
                         <span class="go-detalis" @click="goSelect(item,index)"><img src="../../assets/img/arange.png" alt=""></span>
                     </li>
                 </ul>
-                <div class="ment"><i class="iconfont icon-icon-29 xySelected" ref='xySelected' @click="xySelectedClick()"> </i> <p> 我已阅读并同意<router-link to="/freebuy/protocol">《彩小秘投注服务协议》</router-link></p></div>
+                <div class="ment"><i class="iconfont icon-icon-29 xySelected" ref='xySelected' @click="xySelectedClick()"> </i> <p> 我已阅读并同意<router-link to="/freebuy/protocol">《圣和彩店投注服务协议》</router-link></p></div>
             </div>
         </div>
         <div class="footer">
@@ -103,7 +103,7 @@
         }
         .body {
             .xySelected{
-                color: #e95504!important;
+                color: #dc3c32!important;
             }
             .redBall {
                 color: #eb1c24 !important;
@@ -284,7 +284,7 @@
                     font-size: px2rem(28px);
                     flex: 2;
                     span {
-                        color: #ea5504;
+                        color: #dc3c32;
                     }
                     p{
                         width: 95%;
@@ -298,8 +298,8 @@
                     /*width: px2rem(250px);*/
                     text-align: center;
                     line-height: px2rem(100px);
-                    background-color: #ea5504;
-                    border: 1px solid #ea5504;
+                    background-color: #dc3c32;
+                    border: 1px solid #dc3c32;
                     color: #ffffff;
                     font-size: px2rem(28px);
                 }
@@ -647,7 +647,7 @@
                 }
             },
             color(c){
-                let channelcolor = "#ea5504"
+                let channelcolor = "#dc3c32"
                 if(c){
                     if(isWebview()){
                         channelcolor = this.channelObj.color

@@ -11,7 +11,7 @@
         <div style="margin-top:0.5rem;" class="section current clearfix">
             <p>当前账号：{{userInfo.mobile}} <br/>当前余额：{{userInfo.totalMoney}}元</p>
         </div>
-        <section class="section amount">
+        <section class="section amount" v-show="input_info.isReadonly">
             <p>充值金额</p>
             <!--<div class="rote" v-if="recharge_val>=10&&czobj.isHaveRechargeAct=='1'"><span v-if="czobj.rechargeUserDTO.oldUserBz=='1'">最高</span>送{{cznum}}元</div>-->
             <div class="rote" v-if='inputDisabled'>{{activityDescribe}}</div>
@@ -31,7 +31,7 @@
                                 <span class="arrow_kefu float_right">
                                 <i ref="wxSelected" class="iconfont icon-icon-29" :class="item.payCode==payCode?'wxSelected':''"></i>
                             </span>
-                                <span class="message"><b>{{item.payName}}</b><b>充值前请确认竞彩足球是否销售</b></span>
+                                <span class="message"><b>{{item.payName}}</b><b>{{item.payDesc}}</b></span>
                             </div>
                         </a>
                 </li>

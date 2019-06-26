@@ -4,7 +4,7 @@
     font-family: '微软雅黑';
     .box1{
         padding: px2rem(60px) 0;
-        background: #e95504;
+        background: #dc3c32;
         text-align: center;
         color: #fff;
         position: relative;
@@ -45,7 +45,7 @@
             align-items: center;
             justify-content: center;
             flex: 1;
-            color: #e95504;
+            color: #dc3c32;
             font-size: px2rem(25px);
             border-right: 1px solid #f1f1f1;
             img{
@@ -73,7 +73,7 @@
             i{
                 width: px2rem(5px);
                 height: px2rem(21px);
-                background: #e95504;
+                background: #dc3c32;
                 display: inline-block;
                 margin-right: px2rem(15px);
             }
@@ -86,7 +86,7 @@
                 line-height: px2rem(37px);
                 span{
                     float: right;
-                    color: #e95504;
+                    color: #dc3c32;
                     margin-right: px2rem(50px);
                 }
             }
@@ -123,7 +123,7 @@
                 i{
                     width: px2rem(35px);
                     height: px2rem(35px);
-                    background: #e95504;
+                    background: #dc3c32;
                     border-radius: 50%;
                     font-style: normal;
                     color: #fff;
@@ -138,7 +138,7 @@
             }
             li:nth-child(3){
                 flex: 2;
-                color: #e95504;
+                color: #dc3c32;
                 font-weight: 600;
             }
             li:nth-child(4){
@@ -150,7 +150,7 @@
                 border-bottom: 1px solid #f1f1f1;
             }
             .box_list_2 li:nth-child(4){
-                color: #e95504;
+                color: #dc3c32;
             }
         }
         .box_ul2:last-of-type{

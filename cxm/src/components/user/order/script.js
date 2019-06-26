@@ -40,7 +40,7 @@ export default {
         }
       },
       color(){
-        let channelcolor = "#ea5504"
+        let channelcolor = "#dc3c32"
         if(isWebview()){
           channelcolor = this.channelObj.color
         }

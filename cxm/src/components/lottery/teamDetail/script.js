@@ -88,7 +88,7 @@ export default {
         colorMatchRs(c){
             switch (c) {
                 case '胜':
-                    return '#ea5504'
+                    return '#dc3c32'
                 case '平':
                     return '#0099d9'
                 case '负':

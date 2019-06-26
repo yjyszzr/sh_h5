@@ -11,9 +11,8 @@ import {getUrlStr} from '../util/common'
 // axios 配置
 axios.defaults.timeout = 15000;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
-// axios.defaults.baseURL = 'https://api.caixiaomi.net/api';
-// axios.defaults.baseURL = 'http://yf.caixiaomi.net/api';
- axios.defaults.baseURL = 'http://39.106.18.39:8765/api';
+//axios.defaults.baseURL = 'http://94.191.113.169:8765/api'; //正式
+axios.defaults.baseURL = 'http://39.106.18.39:8765/api'; //测试
 //拦截 token
 axios.interceptors.request.use(
     config => {
@@ -131,6 +130,7 @@ const device = {
     appv: '2.1.1',
     appid: '',
     mac: '',
+    appCodeName: '11',
     w: window.screen.availWidth,
     h: window.screen.availHeight,
     os: '',
@@ -516,7 +516,11 @@ export default {
     // //获取银行信息
     nUnifiedOrderUbey(params) {
         return fetchPost('/payment/payment/Ubey/nUnifiedOrderUbey', params)
-    }
+    },
+    //提现界面提示
+    queryAppDocByType(params) {
+        return fetchPost('/member/appDoc/queryAppDocByType', params)
+    },
 }
 
 

@@ -5,7 +5,7 @@
     <div class="hdCg">
         <div  class="success">
             <img  src="../tuiguang/img8.png">
-            <p>恭喜您已成为彩小秘推广员</p>
+            <p>恭喜您已成为圣和彩店推广员</p>
         </div>
         <section class="button buton" @click="go_btn()">
             <a class="determine">立即下载</a>

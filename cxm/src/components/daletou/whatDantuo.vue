@@ -36,7 +36,7 @@
                 }
                 .body-in-title{
                     font-size: px2rem(28px);
-                    color: #EA5504;
+                    color: #dc3c32;
                 }
                 .title-two{
                     margin-top: px2rem(30px);

@@ -14,7 +14,7 @@
                             <li @click="goTxxq(item.processType,item.payId)">
                                <p class="gczt" :style="{'background':bg_Color(item.processType)}">{{item.processTypeChar}}</p>
                                 <div>
-                                    <p>{{item.processTypeName}}<i :style="{'color':item.processType=='1'?'#ea5504':'#505050'}">{{item.changeAmount}}<em v-if="item.processType==4" class="iconfont icon-icon-14"></em></i></p>
+                                    <p>{{item.processTypeName}}<i :style="{'color':item.processType=='1'?'#dc3c32':'#505050'}">{{item.changeAmount}}<em v-if="item.processType==4" class="iconfont icon-icon-14"></em></i></p>
                                     <b v-html='item.note'></b>
                                     <span>{{item.shotTime}}<i v-if="item.processType==4">{{item.status}}</i></span>
                                 </div>

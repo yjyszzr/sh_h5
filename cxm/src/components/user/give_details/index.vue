@@ -13,7 +13,7 @@
 			<b v-if="giveObj.userWithdrawLogs&&giveObj.userWithdrawLogs.length>0"></b>
 			<div class="sent" v-for="(item,i) in giveObj.userWithdrawLogs" :key='i'>
 				<div class="txSuccess">
-					<p><em><i class="iconfont icon-icon-29" :style="{'color':item.logTime!==''?'#ea5504':'#9f9f9f'}"></i></em><span>{{item.logName}}</span></p><p>{{dateFter(item.logTime)}}</p></div>
+					<p><em><i class="iconfont icon-icon-29" :style="{'color':item.logTime!==''?'#dc3c32':'#9f9f9f'}"></i></em><span>{{item.logName}}</span></p><p>{{dateFter(item.logTime)}}</p></div>
 		</div>
 	</div>
 	<section class=" wechat">

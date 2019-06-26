@@ -143,7 +143,7 @@
                         .tickt-status{
                             width: 20%;
                             min-width: px2rem(110px);
-                            color: #ea5504;
+                            color: #dc3c32;
                             text-align: right;
                         }
                     }

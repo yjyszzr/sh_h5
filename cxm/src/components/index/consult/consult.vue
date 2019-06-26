@@ -15,7 +15,7 @@
             </div>
         </div>
         <!-- <div class="placeHolder" v-if="!$store.state.zxDetailObj.title"> -->
-            <!-- <mt-spinner type="snake" color="#ea5504"></mt-spinner> -->
+            <!-- <mt-spinner type="snake" color="#dc3c32"></mt-spinner> -->
         <!-- </div> -->
         <div class="xgNews" v-show="$store.state.zxDetailObj.articles&&$store.state.zxDetailObj.articles.length>0">
             <h3>相关文章</h3>

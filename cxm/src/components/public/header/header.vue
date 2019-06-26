@@ -3,7 +3,7 @@
         <!--头部-->
         <div class="headerTop" v-show="showTitle">
             <a @click="return_back()" class="go_return"></a>
-            <p class="headerText"><span v-if="!$route.path.split('/')[2]">彩小秘·</span>{{title}}</p>
+            <p class="headerText"><span v-if="!$route.path.split('/')[2]">圣和彩店·</span>{{title}}</p>
             <div class="filter" v-show="menuDisplay==true">
                 <span v-if="$route.path.split('/')[2]=='consult'" style="opacity:0;">分享</span>
                 <span v-if="$route.path.split('/')[2]=='consult'&&getUrl()" :class="$store.state.zxDetailObj.isCollect=='1'?'icon-icon-32':'icon-icon-34'" class="iconfont" @click="collection($event)"></span>
@@ -389,7 +389,7 @@
         .headerTop {
             overflow: hidden;
             height: px2rem(100px);
-            background: #f4f4f4;
+            background: #dc3c32;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -427,7 +427,7 @@
                     display: flex;
                     align-items: center;
                     font-size: px2rem(28px);
-                    color: #787878;
+                    color: #fff;
                 }
                 .actine_sms {
                     font-size: px2rem(18px);
@@ -493,7 +493,7 @@
                 align-items: center;
                 //width: px2rem(500px);
                 font-size: px2rem(32px);
-                color: #505050;
+                color: #fff;
                 justify-content: center;
             }
         }
@@ -523,9 +523,9 @@
             .cur1 p,
             .cur2 p,
             .cur3 p {
-                color: #e95504;
+                color: #dc3c32;
                 width: 50%;
-                border-bottom: 2px solid #e95504;
+                border-bottom: 2px solid #dc3c32;
                 display: block;
             }
             li:last-child {
@@ -560,7 +560,7 @@
             width: 100%;
             border-bottom: 1px solid #f0f0f0;
             span {
-                color: #e95504;
+                color: #dc3c32;
             }
         }
         .help_ul {
@@ -606,7 +606,7 @@
                 font-size: px2rem(28px);
                 position: relative;
                 i {
-                    color: #ea5504;
+                    color: #dc3c32;
                     font-size: px2rem(20px);
                     right: 0;
                     position: absolute;
@@ -638,9 +638,9 @@
             }
         }
         .findactive {
-            color: #ea5504!important;
+            color: #dc3c32!important;
             p {
-                border-bottom: px2rem(4px) solid #ea5504;
+                border-bottom: px2rem(4px) solid #dc3c32;
             }
             span {
                 background-color: rgba(200,85,4,.6);

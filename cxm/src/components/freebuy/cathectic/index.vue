@@ -30,7 +30,7 @@
                         </div>
                         <ul class="spf_list" v-if="$route.query.playType=='1'||$route.query.playType=='2'">
                             <li :class="item.myspf.indexOf(3)!=-1?'cont_cur':''"><p @click="selectedClick($event)"></p><span><em v-if="item.homeTeamRank!==''">[{{item.homeTeamRank}}]</em>{{item.homeTeamAbbr}}</span><span>主胜{{item.matchPlays[0].homeCell.cellOdds}}</span></li>
-                            <li :class="item.myspf.indexOf(1)!=-1?'cont_cur':''"><p @click="selectedClick($event)"></p><span>vs <i :style="{'color':item.matchPlays[0].fixedOdds.substr(0,1)=='+'?'#e85504':'#44ae35'}">{{item.matchPlays[0].fixedOdds}}</i></span><span>平{{item.matchPlays[0].flatCell.cellOdds}}</span></li>
+                            <li :class="item.myspf.indexOf(1)!=-1?'cont_cur':''"><p @click="selectedClick($event)"></p><span>vs <i :style="{'color':item.matchPlays[0].fixedOdds.substr(0,1)=='+'?'#dc3c32':'#44ae35'}">{{item.matchPlays[0].fixedOdds}}</i></span><span>平{{item.matchPlays[0].flatCell.cellOdds}}</span></li>
                             <li :class="item.myspf.indexOf(0)!=-1?'cont_cur':''"><p @click="selectedClick($event)"></p><span><em v-if="item.visitingTeamRank!==''">[{{item.visitingTeamRank}}]</em>{{item.visitingTeamAbbr}}</span><span>客胜{{item.matchPlays[0].visitingCell.cellOdds}}</span></li>
                         </ul>
                         <ul v-if="$route.query.playType=='4'" class="zjq">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </section>
-            <div class="ment"><i class="iconfont icon-icon-29 xySelected" ref='xySelected' @click="xySelectedClick()"></i><p>我已阅读并同意<router-link to="/freebuy/protocol">《彩小秘投注服务协议》</router-link></p></div>
+            <div class="ment"><i class="iconfont icon-icon-29 xySelected" ref='xySelected' @click="xySelectedClick()"></i><p>我已阅读并同意<router-link to="/freebuy/protocol">《圣和彩店投注服务协议》</router-link></p></div>
         </div>
         <!--底部-->
         <section class="fixed fixBottom">

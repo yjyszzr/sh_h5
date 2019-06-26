@@ -8,7 +8,8 @@ export default {
         withdrawObj: {
           
         },
-        withdrawVal: ''
+        withdrawVal: '',
+        withdrawTxt: ''
       }
     },
     beforeCreate() {
@@ -33,6 +34,13 @@ export default {
             if(res.code==0) {
               this.withdrawObj = res.data
               //console.log(res)
+            }
+        })
+        api.queryAppDocByType({docClassify: '1'})
+        .then(res => {
+            if(res.code==0) {
+              this.withdrawTxt = res.data.content.replace(/\n/g,'<br />')
+              console.log(this.withdrawTxt)
             }
         })
       },

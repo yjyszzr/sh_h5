@@ -22,7 +22,7 @@
                 </div>
                 <div class="item">{{item.passType}}</div>
                 <div class="item">{{item.multiple}}倍</div>
-                <div class="item" style="color: #ea5504;">{{statusZt(item.status)}}</div>
+                <div class="item" style="color: #dc3c32;">{{statusZt(item.status)}}</div>
             </li>
         </ul>
     </div>

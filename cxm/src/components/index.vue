@@ -21,7 +21,7 @@
         right: px2rem(20px);
         bottom: px2rem(190px);
         z-index: 200;
-        background: #ea5504;
+        background: #dc3c32;
         padding: px2rem(10px) px2rem(15px);
         font-size: px2rem(24px);
         color: #fff;
@@ -86,7 +86,7 @@
         overflow: hidden;
         position: relative;
         i {
-            color: #ea5504;
+            color: #dc3c32;
             vertical-align: middle;
             font-size: px2rem(30px);
             display: inline-block;
@@ -156,20 +156,20 @@
 <!--首页-->
 <template>
     <div class="wrap">
-        <div class="downDrop" @click="goDownLoad()">
+        <!-- <div class="downDrop" @click="goDownLoad()">
             <div class="downLeft">
                 <img src="../assets/img/downIocn.png" alt="">
-                <span>下载彩小秘APP 购彩更轻松</span>
+                <span>下载圣和彩店APP 购彩更轻松</span>
             </div>
             <div class="downRight">
                 <span>立即打开</span>
             </div>
-        </div>
+        </div> -->
         <!-- 桌面引导 -->
-        <div v-if='detect=="ios"' class="fixedRight" @click="shortClick()">
+        <!-- <div v-if='detect=="ios"' class="fixedRight" @click="shortClick()">
             <p>放到</p>
             <p>桌面</p>
-        </div>
+        </div> -->
         <v-slider :bannerList='bannerList'></v-slider>
         <!--首页-->
         <div class="index_center">
@@ -190,7 +190,7 @@
                     <li v-for='(item,i) in dlPlay' :key='i' @click="goFreebuy(item.redirectUrl,item)">
                         <img :src="item.lotteryImg" class="entry_icon">
                         <p>{{item.lotteryName}}</p>
-                        <div class="subTitle" :style="{'color':item.status=='0'?'#ea5504':'#9f9f9f'}">
+                        <div class="subTitle" :style="{'color':item.status=='0'?'#dc3c32':'#9f9f9f'}">
                             {{item.subTitle}}
                         </div>
                     </li>
@@ -260,10 +260,10 @@
             }
         },
         methods: {
-            shortClick() {
-                //location.href = 'http://www.baidu.com'
-                this.$store.commit('MARKSHORTCUT', true)
-            },
+            // shortClick() {
+            //     //location.href = 'http://www.baidu.com'
+            //     this.$store.commit('MARKSHORTCUT', true)
+            // },
             goFreebuy(url, s) {
                 if (s.status == '1') {
                     Toast(s.statusReason)
@@ -282,6 +282,30 @@
                     this.$router.push({
                         path: "/lottery/daletou/selectnumber"
                     });
+                }
+            },
+            //获取大厅数据
+            async getHallData(){
+                let res = await api.getHallData({});
+                if (res.code == 0) {
+                        this.bannerList = res.data.dlHallDTO.navBanners;
+                        this.activity = res.data.dlHallDTO.activity;
+                        this.y_Carousel = res.data.dlHallDTO.winningMsgs;
+                        this.dlPlay = res.data.dlHallDTO.lotteryClassifys;
+                        if (this.y_Carousel.length == 0) {
+                            this.show = true;
+                            this.hide = false;
+                        } else {
+                            this.show = false;
+                            this.hide = true;
+                            setInterval(_ => {
+                                if (this.activeIndex < this.y_Carousel.length - 1) {
+                                    this.activeIndex += 1;
+                                } else {
+                                    this.activeIndex = 0;
+                                }
+                            }, 3000);
+                        }
                 }
             },
             fetchData() {
@@ -314,6 +338,10 @@
                         }, 800);
                     });
             },
+            async init(){
+                await this.getHallData();
+                this.fetchData();
+            },
             cxLoadClick() {
                 this.trFlag = true;
                 this.cxLoadFlag = false;
@@ -322,7 +350,7 @@
             carouselMoney(c) {
                 return (
                     c.winningMsg +
-                    '<b style="color:#ea5504;font-weight:400;">' +
+                    '<b style="color:#dc3c32;font-weight:400;">' +
                     c.winningMoney +
                     "</b>元"
                 );
@@ -343,11 +371,11 @@
                     }
                 }
             },
-            goDownLoad() {
-                this.$router.push({
-                    path: "/activity/down/cxm?ct=2&fr=cxm_h5home"
-                });
-            }
+            // goDownLoad() {
+            //     this.$router.push({
+            //         path: "/activity/down/cxm?ct=2&fr=cxm_h5home"
+            //     });
+            // }
         },
         mounted() {
                 this.detect = detect()
@@ -356,31 +384,7 @@
                 document
                     .querySelector("#content")
                     .addEventListener("scroll", this.handleScroll);
-                let data = {};
-                api.getHallData(data).then(res => {
-                    //console.log(res)
-                    if (res.code == 0) {
-                        this.bannerList = res.data.dlHallDTO.navBanners;
-                        this.activity = res.data.dlHallDTO.activity;
-                        this.y_Carousel = res.data.dlHallDTO.winningMsgs;
-                        this.dlPlay = res.data.dlHallDTO.lotteryClassifys;
-                        if (this.y_Carousel.length == 0) {
-                            this.show = true;
-                            this.hide = false;
-                        } else {
-                            this.show = false;
-                            this.hide = true;
-                            setInterval(_ => {
-                                if (this.activeIndex < this.y_Carousel.length - 1) {
-                                    this.activeIndex += 1;
-                                } else {
-                                    this.activeIndex = 0;
-                                }
-                            }, 3000);
-                        }
-                    }
-                });
-                this.fetchData();
+                this.init();
         },
         activated() {
             document.getElementById("content").scrollTop = this.$root.consultScrolltop;

@@ -24,7 +24,7 @@
         i{
           font-style: normal;
           font-size: px2rem(48px);
-          color: #ea5504;
+          color: #dc3c32;
         }
       }
       li{
@@ -75,10 +75,10 @@
       }
     }
     .currer span{
-      color: #ea5504;
+      color: #dc3c32;
       display: block;
       width: px2rem(80px);
-      border-bottom: 2px solid #ea5504;
+      border-bottom: 2px solid #dc3c32;
       margin: 0 auto;
     }
     li:last-child{
@@ -104,7 +104,7 @@
           margin-left: px2rem(15px);
         }
         span:nth-child(3){
-          color: #ea5504;
+          color: #dc3c32;
         }
         span:nth-child(4){
           color: #0099d9;
@@ -258,7 +258,7 @@
                             font-size: px2rem(24px);
                         }
                         li:nth-child(8){
-                            color: #ea5504;
+                            color: #dc3c32;
                         }
                         li:nth-child(5),li:nth-child(6),li:nth-child(7){
                             flex: 2;
@@ -278,7 +278,7 @@
   .bottom{
     height: px2rem(72px);
     color: #fff;
-    background: #ea5504;
+    background: #dc3c32;
     font-size: px2rem(28px);
     line-height: px2rem(72px);
     text-align: center;

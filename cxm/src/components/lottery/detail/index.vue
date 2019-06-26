@@ -23,16 +23,16 @@
 					<li><span>初始</span><span>即时</span></li>
 					<li><i>{{data.initWin}}</i>
 						<i v-if="data.winChange=='0'">{{data.realWin}}</i>
-						<i v-if="data.winChange=='1'" style="color: #ea5504;">{{data.realWin}}↑</i>
+						<i v-if="data.winChange=='1'" style="color: #dc3c32;">{{data.realWin}}↑</i>
 						<i v-if="data.winChange=='2'" style="color: rgb(68, 174, 53);">{{data.realWin}}↓</i>
 					</li>
 					<li><i>{{data.initDraw}}</i>
 						<i v-if="data.drawChange=='0'">{{data.realDraw}}</i>
-						<i v-if="data.drawChange=='1'" style="color: #ea5504;">{{data.realDraw}}↑</i>
+						<i v-if="data.drawChange=='1'" style="color: #dc3c32;">{{data.realDraw}}↑</i>
 						<i v-if="data.drawChange=='2'" style="color: rgb(68, 174, 53);">{{data.realDraw}}↓</i>
 					</li>
 					<li><i>{{data.initLose}}</i>
-						<i v-if="data.loseChange=='0'">{{data.realLose}}</i><i v-if="data.loseChange=='1'" style="color: #ea5504;">{{data.realLose}}↑</i><i v-if="data.loseChange=='2'" style="color: rgb(68, 174, 53);">{{data.realLose}}↓</i>
+						<i v-if="data.loseChange=='0'">{{data.realLose}}</i><i v-if="data.loseChange=='1'" style="color: #dc3c32;">{{data.realLose}}↑</i><i v-if="data.loseChange=='2'" style="color: rgb(68, 174, 53);">{{data.realLose}}↓</i>
 					</li>
 				</ul>
 			</div>
@@ -51,12 +51,12 @@
 					<li><span>初始</span><span>即时</span></li>
 					<li><i>{{data.initOdds1}}</i>
 						<i v-if="data.odds1Change=='0'">{{data.realOdds1}}</i>
-						<i v-if="data.odds1Change=='1'" style="color: #ea5504;">{{data.realOdds1}}↑</i>
+						<i v-if="data.odds1Change=='1'" style="color: #dc3c32;">{{data.realOdds1}}↑</i>
 						<i v-if="data.odds1Change=='2'" style="color: rgb(68, 174, 53);">{{data.realOdds1}}↓</i>
 					</li>
 					<li><i>{{data.initRule}}</i><i>{{data.realRule}}</i></li>
 					<li><i>{{data.initOdds2}}</i>
-						<i v-if="data.odds2Change=='0'">{{data.realOdds2}}</i><i v-if="data.odds2Change=='1'" style="color: #ea5504;">{{data.realOdds2}}↑</i><i v-if="data.odds2Change=='2'" style="color: rgb(68, 174, 53);">{{data.realOdds2}}↓</i>
+						<i v-if="data.odds2Change=='0'">{{data.realOdds2}}</i><i v-if="data.odds2Change=='1'" style="color: #dc3c32;">{{data.realOdds2}}↑</i><i v-if="data.odds2Change=='2'" style="color: rgb(68, 174, 53);">{{data.realOdds2}}↓</i>
 					</li>
 				</ul>
 			</div>
@@ -75,19 +75,19 @@
 					<li><span>初始</span><span>即时</span></li>
 					<li><i>{{data.initWin}}</i>
 						<i v-if="data.winChange=='0'">{{data.realWin}}</i>
-						<i v-if="data.winChange=='1'" style="color: #ea5504;">{{data.realWin}}↑</i>
+						<i v-if="data.winChange=='1'" style="color: #dc3c32;">{{data.realWin}}↑</i>
 						<i v-if="data.winChange=='2'" style="color: rgb(68, 174, 53);">{{data.realWin}}↓</i>
 					</li>
 					<li>
 						<i>{{data.initDraw}}</i>
 						<i v-if="data.drawChange=='0'">{{data.realDraw}}</i>
-						<i v-if="data.drawChange=='1'" style="color: #ea5504;">{{data.realDraw}}↑</i>
+						<i v-if="data.drawChange=='1'" style="color: #dc3c32;">{{data.realDraw}}↑</i>
 						<i v-if="data.drawChange=='2'" style="color: rgb(68, 174, 53);">{{data.realDraw}}↓</i>
 					</li>
 					<li>
 						<i>{{data.initLose}}</i>
 						<i v-if="data.loseChange=='0'">{{data.realLose}}</i>
-						<i v-if="data.loseChange=='1'" style="color: #ea5504;">{{data.realLose}}↑</i>
+						<i v-if="data.loseChange=='1'" style="color: #dc3c32;">{{data.realLose}}↑</i>
 						<i v-if="data.loseChange=='2'" style="color: rgb(68, 174, 53);">{{data.realLose}}↓</i>
 					</li>
 				</ul>

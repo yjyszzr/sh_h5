@@ -22,7 +22,7 @@ const mutations = {
                             state.smsCode.changeNumber = 60
                             state.smsCode.disabled = false
                         } else {
-                            state.smsCode.changeText = '<b style="color: #ea5504;font-weight:400;">'+state.smsCode.changeNumber + 's</b>后重新获取'
+                            state.smsCode.changeText = '<b style="color: #dc3c32;font-weight:400;">'+state.smsCode.changeNumber + 's</b>后重新获取'
                         }
                     }, 1000)
                     Toast(res.msg)

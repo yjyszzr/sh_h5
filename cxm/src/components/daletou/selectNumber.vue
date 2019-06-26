@@ -4,7 +4,7 @@
         <div class="head">
             <span class="back-img" @click="goBack()"><img src="../../assets/img/ret.png" alt=""></span>
             <div class="head-text" @click="openOrclose()">
-                <span>彩小秘·<span v-if="selectedIndex=='0'">标准选号</span><span v-if="selectedIndex=='1'">胆拖选号</span></span>
+                <span>圣和彩店·<span v-if="selectedIndex=='0'">标准选号</span><span v-if="selectedIndex=='1'">胆拖选号</span></span>
                 <span class="header-down"><img id="downImg" src="../../assets/img/freebuy_img/Collapse@3x.png"
                                                alt=""></span>
             </div>
@@ -193,22 +193,22 @@
             border: 1px solid #0081cc !important;
         }
         .cur {
-            color: #ea5504 !important;
-            border: 1px solid #ea5504 !important;
+            color: #dc3c32 !important;
+            border: 1px solid #dc3c32 !important;
         }
         .redBall {
-            color: #ea5504 !important;
+            color: #dc3c32 !important;
         }
         .blueBall {
             color: #0081cc !important;
         }
         .okcur {
-            background-color: #ea5504 !important;
+            background-color: #dc3c32 !important;
         }
         .head {
             overflow: hidden;
             height: px2rem(100px);
-            background: #f4f4f4;
+            background: #dc3c32;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -225,7 +225,7 @@
                 display: flex;
                 align-items: center;
                 font-size: px2rem(32px);
-                color: #505050;
+                color: #fff;
                 .header-down {
                     display: inline-block;
                     margin-left: px2rem(10px);
@@ -483,7 +483,7 @@
                     font-size: px2rem(26px);
                     color: #787878;
                     span {
-                        color: #ea5504;
+                        color: #dc3c32;
                     }
                 }
             }
@@ -568,7 +568,7 @@
                     font-size: px2rem(26px);
                 }
                 .red {
-                    color: #EA5504;
+                    color: #dc3c32;
                 }
                 .blue {
                     color: #0081cc;

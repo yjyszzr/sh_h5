@@ -4,7 +4,7 @@
         <div class="head">
             <span class="back-img" @click="goBack()"><img src="../../../assets/img/ret.png" alt=""></span>
             <div class="head-text">
-                <span>彩小秘·走势图</span>
+                <span>圣和彩店·走势图</span>
             </div>
             <div>
                 <span class="memu-btn" @click="runsetflag=!runsetflag"><img src="../images/TrendSetting@3x.png" alt=""></span>
@@ -197,7 +197,7 @@
                             
                         </div>
                     </div>
-                    <button @click="goTouzhu()" class="hz-fbright" :disabled='disabled' :style="{'background':disabled?'#ccc':'#ea5504'}">
+                    <button @click="goTouzhu()" class="hz-fbright" :disabled='disabled' :style="{'background':disabled?'#ccc':'#dc3c32'}">
                         确定
                     </button>
                 </div>
@@ -207,7 +207,7 @@
             <div class="runchart-mark" v-if="runsetflag" @touchmove.prevent>
                 <div class="runchart-set">
                     <div class="run-setTitle">
-                        彩小秘·走势图设置 
+                        圣和彩店·走势图设置 
                     </div>
                     <div class="run-setContent">
                         <mt-radio
