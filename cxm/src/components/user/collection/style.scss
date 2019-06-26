@@ -1,0 +1,98 @@
+@import '../../../assets/css/function.scss';
+.collection {
+  ul {
+    background: white;
+    padding: 0 px2rem(20px);
+    .liBox {
+      overflow: hidden;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    li {
+      // margin-left: -10%;
+      width: 110%;
+      box-sizing: border-box;
+      padding: px2rem(20px) 0;
+      display: flex;
+      align-items: center;
+      .scDelete {
+        width: 10%;
+        color: #ea5504;
+        height: 100%;
+        i {
+          font-size: px2rem(42px);
+        }
+      }
+      .choice {
+        width: 90%;
+        h4 {
+          color: #505050;
+          font-size: px2rem(30px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .summary {
+            margin: px2rem(10px) 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+        }
+        .picSummary {
+          margin: px2rem(10px) 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          img {
+            width: px2rem(230px);
+            height: px2rem(164px);
+            display: block;
+          }
+        }
+        span {
+          color: #9f9f9f;
+          margin-right: px2rem(18px);
+          font-size: px2rem(22px);
+        }
+        span:last-of-type {
+          margin: 0;
+        }
+        .zxBox {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .zxLeft {
+            width: px2rem(430px);
+            height: px2rem(164px);
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            h5 {
+              color: #505050;
+              font-size: px2rem(30px);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+            }
+          }
+          .zxRight {
+            position: relative;
+            .img1 {
+              width: px2rem(230px);
+              height: px2rem(164px);
+              display: block;
+            }
+            .img2 {
+              width: px2rem(230px);
+              height: px2rem(164px);
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

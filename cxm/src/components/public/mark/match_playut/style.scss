@@ -1,0 +1,171 @@
+@import "../../../../assets/css/function.scss";
+.mark_playutBox{
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 200;
+    .mark_playut{
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+    }
+    .mark_footer{
+        position: absolute;
+        bottom: 0;
+        z-index: 250;
+        width: 100%;
+        background: #fff;
+        p{
+          line-height: px2rem(104px);
+          text-align: center;
+          font-size: px2rem(26px);
+          color: #9f9f9f;
+        }
+        ul{
+          padding:0 px2rem(60px);
+          overflow: hidden;
+          li{
+            line-height: px2rem(60px);
+            text-align: center;
+            border: 1px solid #f1f1f1;
+            color: #505050;
+            font-size: px2rem(26px);
+            float: left;
+            width: px2rem(190px);
+            margin-right: px2rem(20px);
+            margin-bottom: px2rem(20px);
+            box-sizing: border-box;
+          }
+          li:nth-child(3n){
+              margin-right: 0;
+          }
+          .current{
+            border:1px solid #e95504;
+            color: #e95504;
+          }
+        }
+        button{
+          margin-top: px2rem(48px);
+          height: px2rem(72px);
+          width: 100%;
+          border: none;
+          background: none;
+          display: flex;
+          border-top: 1px solid #f1f1f1;
+          a{
+            color: #505050;
+            line-height: px2rem(72px);
+            flex: 1;
+            font-size: px2rem(24px);
+            display: block;
+            border-right: 1px solid #f1f1f1;
+          }
+          .pop_cur{
+            color: #e95504;
+          }
+          a:last-child{
+            border-right: none;
+          }
+        }
+      }
+      .yhMark {
+        position: absolute;
+        bottom: 0;
+        z-index: 250;
+        width: 100%;
+        background: #fff;
+        .yh_title{
+          height: px2rem(100px);
+          border-bottom: 1px solid #f0f0f0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: px2rem(28px);
+          color: #666;
+        }
+        .yhList{
+          height: px2rem(600px);
+          overflow: scroll;
+          -webkit-overflow-scrolling: touch !important;
+          li{
+            border-bottom: 1px solid #f0f0f0;
+            height: px2rem(132px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 px2rem(32px);
+            p:first-of-type{
+              flex: 1.5;
+              overflow: hidden;
+              span{
+                color: #ea5504;
+              }
+              span:first-of-type{
+                font-size: px2rem(32px);
+              }
+              span:last-of-type{
+                font-size: px2rem(48px);
+              }
+            }
+            p:nth-child(2){
+              flex: 2;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              span{
+                color: #505050;
+              }
+              span:first-of-type{
+                font-size: px2rem(26px);
+              }
+              span:last-of-type{
+                font-size: px2rem(22px);
+              }
+            }
+            p:last-of-type{
+              height: 100%;
+              flex: 0.5;
+              background: url('../../../../assets/img/cue.png') no-repeat right center;
+              background-size: px2rem(28px) px2rem(28px);
+            }
+            .bounsId{
+              background: url('../../../../assets/img/cur.png') no-repeat right center!important;
+              background-size: px2rem(28px) px2rem(28px)!important;
+            }
+          }
+          li:last-of-type{
+            border-bottom: none;
+          }
+          .yhNull{
+            height: px2rem(200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: px2rem(28px);
+            color: #999;
+          }
+        }
+        .yhBtn{
+          border-top: 1px solid #f0f0f0;
+          height: px2rem(88px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ea5504;
+          font-size: px2rem(26px);
+        }
+      }
+      .translate-enter-active, .translate-leave-active {
+        transition: all 0.3s;
+      }
+      .translate-enter, .translate-leave-active {
+        transform: translate3d(0, 100%, 0);
+      }
+      .tapActive{
+        background: rgba(0,0,0,0.6);
+      }
+}

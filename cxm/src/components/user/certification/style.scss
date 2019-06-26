@@ -1,0 +1,46 @@
+ @import '../../../assets/css/function.scss';
+ .certification{
+  padding-top: px2rem(20px);
+   p{
+     font-size: px2rem(26px);
+     color: #a0a0a0;
+     text-align: center;
+     margin: 0 0 px2rem(35px);
+   }
+  .msg_list li>a>div em .img{
+    float: left;
+    width: px2rem(30px);
+    padding-top: px2rem(35px);
+    margin-right: px2rem(15px);
+    display: none;
+  }
+  .head{
+    /*height: 0.8rem;*/
+    font-size: px2rem(26px);
+    color: #A0A0A0;
+    background: #f4f4f4;
+    position: absolute;
+    top: 7%;
+    text-align: center;
+    width: 100%;
+  }
+  .msg_list li>a{
+    height: px2rem(110px);
+    div{
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .msg_list li>a>div .text2 {
+    width: 65%;
+    float: left;
+    border: none;
+    height: px2rem(80px);
+    font-size: px2rem(30px);
+    color: #505050;
+  }
+   .iconfont{
+     color: #9f9f9f;
+   }
+ }

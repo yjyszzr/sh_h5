@@ -1,0 +1,21 @@
+@import '../../../assets/css/function.scss';
+.login{
+  .buttonZc{
+    display: block;
+    width: 90%;
+    margin: px2rem(30px) auto;
+    a{
+      border-radius: px2rem(10px);
+      display: block;
+      height: 1.187rem;
+      border: 1px solid #e95504;
+      color: #e95504;
+      text-align: center;
+      line-height: 1.187rem;
+      font-size: px2rem(28px);
+    }
+  }
+  .iconfont{
+    color: #9f9f9f;
+}
+}

@@ -1,0 +1,113 @@
+ @import '../../../../../assets/css/function.scss';
+.score{
+  background: #fff;
+  position: absolute;
+  height: auto!important;
+  bottom: 0;
+  width: 100%;
+  z-index: 250;
+  .table{
+    box-sizing: border-box;
+    margin: 0 auto;
+    border: 1px solid #c7c7c7;
+    border-right: none;
+    margin-bottom:px2rem(20px);
+    caption{
+      height: px2rem(86px);
+      line-height: px2rem(86px);
+      text-align: center;
+      p{
+        display: inline-block;
+        width: px2rem(180px);
+        text-align: center;
+        font-size: px2rem(26px);
+      }
+      p:nth-of-type(2){
+        color: #9f9f9f;
+      }
+    }
+    tr{
+      width: px2rem(640px);
+      display: flex;
+      flex-wrap: wrap;
+      th{
+        border:0;
+        width: 20%;
+        height: px2rem(88px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-bottom: 1px solid #c7c7c7;
+        border-right: 1px solid #c7c7c7;
+        font-size: px2rem(26px);
+        color: #505050;
+        box-sizing: border-box;
+        position: relative;
+        b{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+        span{
+          color: #9f9f9f;
+          font-size: px2rem(22px);
+        }
+        span:first-of-type{
+          color: #505050;
+          font-size: px2rem(26px);
+        }
+      }
+      .bfSelected{
+        background: #ea5504;
+        span{
+          color: white!important;
+        }
+      }
+    }
+    .title0,.title1,.title2{
+      width: px2rem(46px);
+      font-size: px2rem(24px);
+      background: #f6ad41;
+      color: #fff;
+      text-align: center;
+      vertical-align: middle;
+      border: none;
+    }
+    .title1{
+      background: #65aadd;
+    }
+    .title2{
+      background: #85c36b;
+    }
+  }
+  .table:first-of-type,.table:last-of-type{
+    tr{
+      th:last-of-type{
+        width: 60%;
+      }
+    }
+  }
+  td{
+    text-align: center;
+  }
+  .confim_btn{
+    display: flex;
+    border-top: 1px solid #f0f0f0;
+    p{
+      flex: 1;
+      height: 0.96rem;
+      border-right: 1px solid #f0f0f0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 0.96rem;
+      font-size: 0.34667rem;
+      color: #e85504;
+    }
+    p:last-of-type{
+      border: none;
+      color: #505050;
+    }
+  }
+}

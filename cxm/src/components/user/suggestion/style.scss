@@ -1,0 +1,39 @@
+@import '../../../assets/css/function.scss';
+.small{
+  padding: px2rem(33px);
+  background: #fff;
+  h5{
+    font-size: px2rem(26px);
+    color: #787878;
+    font-weight: normal;
+  }
+  p{
+      font-size: px2rem(26px);
+      color: #787878;
+      line-height: px2rem(40px);
+      text-indent: px2rem(40px);
+  }
+}
+.area{
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  position: relative;
+  padding-bottom: px2rem(30px);
+  textarea{
+    height: px2rem(285px);
+    color: #A0A0A0;
+    font-size: px2rem(26px);
+    padding: px2rem(15px);
+    width: 85%;
+  }
+  i{
+    position: absolute;
+    bottom:px2rem(55px);
+    right: px2rem(55px);
+    color: #c8c8c8;
+    font-style: normal;
+    font-size: px2rem(24px);
+
+  }
+}

@@ -1,0 +1,137 @@
+//@import './function.scss';
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  background-color: #f5f5f5;
+  height: 100%;
+}
+
+.v-modal{
+  position: absolute!important;
+}
+::-webkit-scrollbar {
+width: 0em;
+}
+::-webkit-scrollbar:horizontal {
+height: 0em;
+}
+
+.color {
+  background-color: #ffffff;
+}
+
+a:hover {
+  text-decoration: none!important;
+}
+
+body {
+  font-family: "微软雅黑";
+  background-color: #f0f0f0;
+}
+
+input::-webkit-input-placeholder {
+  color: #C8C8C8;
+}
+
+input:-moz-placeholder {
+  color: #C8C8C8;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+input:focus,
+button:focus {
+  outline: 0;
+}
+
+img {
+  border: none;
+  display: block;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #666;
+  font-style: normal;
+  text-decoration: none;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+}
+
+img,
+form,
+input,
+select {
+  vertical-align: middle;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+@supports (bottom: env(safe-area-inset-bottom)) {
+   .fixBottom{
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+.liActive{
+  color: #ea5504!important;
+}
+
+.mybox-leave-active, .mybox-enter-active {
+  transition: all .3s ease;
+}
+.mybox-leave-active, .mybox-enter {
+  height: 0px !important;
+}
+.mybox-leave, .mybox-enter-active {
+  height: 100%;
+}
+.ceng-enter-active,
+.ceng-leave-active {
+  transition: opacity 0.3s;
+}
+.ceng-enter,
+.ceng-leave-active {
+  opacity: 0;
+}

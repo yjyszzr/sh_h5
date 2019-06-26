@@ -1,0 +1,99 @@
+@import '../../../assets/css/function.scss';
+.cardbox{
+    .give{
+        padding: px2rem(18px) 0;
+        margin-top: 0;
+        background: white;
+        margin-bottom: px2rem(16px);
+    }
+    .card{
+        background: #cc4050;
+        border-radius: 0.1rem;
+        color: #fff;
+        padding: px2rem(24px);
+        padding-bottom: 0;
+        width: 80%;
+        margin: 0 auto px2rem(18px);
+    }
+    .card:last-of-type{
+        margin-bottom: 0;
+    }
+    .china_bank p{
+        font-size: px2rem(28px);
+        float: left;
+        line-height: px2rem(30px);
+        margin-left: px2rem(15px);
+        span{
+            font-size: px2rem(20px);
+        }
+    }
+    .china_bank span{
+        float: right;
+        font-size:px2rem(28px);
+    }
+    .china_bank_card{
+        font-size: px2rem(36px);
+        text-align: center;
+        margin-top: px2rem(16px);
+        opacity: 0.8;
+    }
+    .china_bank_default{
+        font-size: px2rem(24px);
+        margin-top: px2rem(18px);
+        display: flex;
+        align-items: center;
+        .mint-cell{
+            background: none;
+            display: flex;
+            align-items: center;
+            height: px2rem(70px)!important;
+            .mint-checklist-label{
+                padding: 0;
+            }
+            .mint-checkbox-label{
+                display: none;
+            }
+            .mint-checkbox-core{
+                width: px2rem(28px);
+                height: px2rem(28px);
+                border-radius: 0;
+            }
+            .mint-checkbox-core::after{
+                top: 0;
+                left: px2rem(8px);
+                border-color: #cc4050; 
+            }
+            .mint-checkbox-input:checked + .mint-checkbox-core{
+                background: white;
+                border-color: #cc4050;
+            }
+        }
+        .mint-checklist-title{
+            margin: 0;
+        }
+        span{
+            margin-left: px2rem(6px);
+        }
+    }
+    .msg_list li>a {
+        margin-left: 0;
+        padding-left: px2rem(30px);
+        div{
+            span:first-of-type{
+                float: left;
+                font-size: px2rem(48px);
+                line-height: px2rem(104px);
+                margin-right: px2rem(10px); 
+            }
+            .message{
+                font-size: px2rem(30px);
+            }
+            .arrow_right{
+                height: px2rem(110px);
+            }
+        }
+    }
+    .section{
+        margin-top: 0!important;
+      }
+}

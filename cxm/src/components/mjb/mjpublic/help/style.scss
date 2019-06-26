@@ -1,0 +1,34 @@
+@import '../../../../assets/css/function.scss';
+.help{
+
+  .help_center{
+    .help_cen{
+      padding: px2rem(36px) px2rem(32px);
+      background: #fff;
+
+      h5{
+        color: #f6921e;
+        font-size: px2rem(30px);
+      }
+      h6{
+        margin-top: px2rem(10px);
+        color: #505050;
+        font-weight:600;
+        font-size: px2rem(26px);
+      }
+      P{
+        color: #505050;
+        font-size: px2rem(26px);
+        line-height: px2rem(40px);
+        margin-bottom: px2rem(36px);
+        span{
+          display: block;
+        }
+      }
+      p:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}

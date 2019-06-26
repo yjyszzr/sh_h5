@@ -1,0 +1,106 @@
+@import '../../../assets/css/function.scss';
+.bonus{
+    .send{
+        width: 100%;
+        height: px2rem(88px);
+        background: #fff;
+        overflow: hidden;
+        display: flex;
+        box-shadow: 0px 2px 3px rgba(0,0,0,0.2); 
+        li{
+            flex: 1;
+            height: px2rem(48px);
+            margin-top: px2rem(20px);
+            border-right: 1px solid #f1f1f1;
+            color: #505050;
+            font-size: px2rem(30px);
+            text-align: center;
+            p{
+                height: px2rem(64px);
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        .cur p{
+             color: #E95504;
+            width: 50%;
+    
+             border-bottom: 2px solid #E95504;
+            display: block;
+         }
+        li:last-child{
+            border-right: none;
+        }
+    }
+    .yh_Item{
+        position: relative;
+        width: px2rem(720px);
+        margin: px2rem(15px) auto 0;
+        i{
+            border-top: 1px dashed #e5e5e5;
+            height: px2rem(1px);
+            width: 98%;
+            display: block;
+            margin: 0 auto;
+        }
+        .yh_ItemTop{
+            background: #fff;
+            background: url(../../../assets/img/halfcoupondown.png) no-repeat;
+            background-size: 100% 100%;
+            padding: px2rem(19px) px2rem(20px) px2rem(19px) px2rem(38px);
+            display: flex;
+            align-items: center;
+            p:first-of-type{
+                width: px2rem(265px);
+                color: #e95504;
+                span:first-of-type{
+                    font-size: px2rem(36px);
+                }
+                span:last-of-type{
+                    font-size: px2rem(60px);
+                }
+            }
+            p:last-of-type{
+                //display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                font-weight: 600;
+                color: #666;
+                font-size: px2rem(30px);
+            }
+        }
+        .yh_ItemBottom{
+            position: relative;
+            background: url(../../../assets/img/halfcouponup.png) no-repeat;
+            background-size: 100%;
+            margin-top: px2rem(-1px);
+            padding: px2rem(27px) 0 px2rem(35px) px2rem(38px);
+            a{
+                position: absolute;
+                right: 5%;
+                color: #e95504;
+                top: 40%;
+            }
+            .poiu{
+                position: absolute;
+                right: 5%;
+                color: #999;
+                top: 40%;
+            }
+            p{
+                font-size: px2rem(20px);
+                span:first-of-type{
+                    color: #c8c8c8;
+                }
+                span:last-of-type{
+                    color: #a0a0a0;
+                }
+            }
+        }
+        img{
+            position: absolute;
+            right: 0;
+            width: px2rem(98px);
+        }
+    }
+}

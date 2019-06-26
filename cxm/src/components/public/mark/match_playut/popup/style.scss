@@ -1,0 +1,92 @@
+@import '../../../../../assets/css/function.scss';
+.popup{
+    position: absolute;
+    bottom: 0;
+    z-index: 250;
+    width: 100%;
+    background: #fff;
+    .box{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: px2rem(124px);
+      width: 100%;
+      img{
+        width: 4%;
+        margin-left: px2rem(30px);
+      }
+      div{
+        display: flex;
+        align-items: center;
+        margin-right: px2rem(30px);
+        p{
+          width: px2rem(152px);
+          height: px2rem(60px);
+          text-align: center;
+          border: 1px solid #f1f1f1;
+          margin-left: px2rem(15px);
+          line-height: px2rem(60px);
+          box-sizing: border-box;
+          font-size: px2rem(28px);
+        }
+      }
+    }
+    .list{
+      border-top: 1px solid #f1f1f1;
+      display: flex;
+      line-height: px2rem(72px);
+      width: 100%;
+       li{
+         border-right: 1px solid #f1f1f1;
+         flex: 1;
+         text-align: center;
+         font-size: px2rem(26px);
+       }
+      li:last-child{
+        border-right: none;
+      }
+    }
+    .box1{
+      border-top: 1px solid #f1f1f1;
+      width: 100%;
+      ul{
+        width:80%;
+        float: left;
+        li{
+          line-height: px2rem(74px);
+          border-right: 1px solid #f1f1f1;
+          border-bottom: 1px solid #f1f1f1;
+          width: 33.3%;
+          float: left;
+          text-align: center;
+          height: px2rem(74px);
+          box-sizing: border-box;
+          font-size: px2rem(28px);
+        }
+        li:nth-child(3n){
+          border-right: none;
+        }
+        li:nth-child(10),li:nth-child(11),li:nth-child(12){
+          border-bottom: none;
+        }
+      }
+      .select{
+        text-align: center;
+        width: 20%;
+        float: left;
+        p{
+          height: px2rem(148px);
+          line-height: px2rem(148px);
+          font-size: px2rem(28px);
+        }
+        .cur{
+          background: #e95504;
+          color: #fff;
+        }
+        p:first-of-type{
+          border-left: 1px solid #f0f0f0;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }

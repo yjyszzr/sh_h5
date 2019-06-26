@@ -1,0 +1,146 @@
+@import '../../../assets/css/function.scss';
+.send {
+  height: px2rem(88px);
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  li {
+    flex: 1;
+    height: px2rem(48px);
+    margin-top: px2rem(20px);
+    border-right: 1px solid #f1f1f1;
+    color: #505050;
+    font-size: px2rem(30px);
+    text-align: center;
+    p {
+      height: px2rem(64px);
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .cur p {
+    color: #E95504;
+    width: 20%;
+    border-bottom: 2px solid #E95504;
+    display: block;
+  }
+  li:last-child {
+    border-right: none;
+  }
+}
+
+.box_cen {
+  margin: px2rem(20px);
+  background: #fff;
+  padding: px2rem(24px) px2rem(36px);
+  position: relative;
+  .box1 {
+    h5 {
+      color: #A0A0A0;
+      font-size: px2rem(28px);
+      display: inline-block;
+      margin-right: px2rem(46px);
+    }
+    span {
+      font-size: px2rem(22px);
+      color: #C8C8C8;
+      float: right;
+    }
+  }
+  .box2 {
+    height: px2rem(69px);
+    line-height: px2rem(69px);
+    p {
+      color: #E95504;
+      font-size: px2rem(28px);
+      display: inline-block;
+      margin-right: px2rem(109px);
+    }
+    span {
+      color: #787878;
+      font-size: px2rem(24px);
+    }
+  }
+  .box3 {
+    p {
+      font-size: px2rem(22px);
+      color: #C8C8C8;
+      line-height: px2rem(35px);
+      span {
+        color: #A0A0A0;
+      }
+    }
+  }
+  .box4 {
+    height: px2rem(69px);
+    line-height: px2rem(69px);
+    p {
+      color: #505050;
+      font-size: px2rem(28px);
+      display: inline-block;
+      margin-right: px2rem(109px);
+    }
+    span {
+      color: #E95504;
+      font-size: px2rem(24px);
+    }
+  }
+  .box5 {
+    height: px2rem(69px);
+    line-height: px2rem(69px);
+    p {
+      color: #ea5504;
+      font-size: px2rem(28px);
+      display: inline-block;
+      margin-right: px2rem(109px);
+    }
+  }
+  .box_title{
+    p{
+      color: #787878;
+      font-size: px2rem(26px);
+      margin-top: px2rem(10px);
+    }
+  }
+  .rout {
+    position: absolute;
+    right: px2rem(35px);
+    bottom: px2rem(28px);
+    color: #9f9f9f;
+    font-size: px2rem(26px);
+  }
+}
+  .mess{
+    .icon-icon-14{
+      font-size: px2rem(26px);
+      font-weight: 400;
+  }
+  .mess_message{
+    background: #fff;
+    margin: px2rem(15px);
+    padding: 0 px2rem(31px);
+    p{
+      height: px2rem(40px);
+      line-height: px2rem(40px);
+      color: #505050;
+      font-size: px2rem(30px);
+      span{
+        float: right;
+        color: #787878;
+        font-size: px2rem(24px);
+      }
+    }
+    img{
+      width: 100%;
+      margin-top: px2rem(20px);
+      margin-bottom: px2rem(20px);
+    }
+    .rech{
+      color: #787878;
+      font-size: px2rem(26px);
+      a{
+        float: right;
+      }
+    }
+  }
+}

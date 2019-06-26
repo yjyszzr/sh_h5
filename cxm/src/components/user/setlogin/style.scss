@@ -1,0 +1,31 @@
+@import '../../../assets/css/function.scss';
+.setup{
+  .text1{
+    width:80%;
+    height: 1.17333rem;
+  }
+  .msg_list {
+    .message{
+      width: 20%;
+    }
+    li{
+      a{
+        height: 1.17333rem;
+        div{
+          height: 1.17333rem;
+          .message{
+            height: 100% !important;
+          }
+          i{
+            color: #505050;
+            height: 100%;
+            line-height: 1.17333rem;
+          }
+          em{
+            height: 1.17333rem;
+          }
+        }
+      }
+    }
+  }
+}

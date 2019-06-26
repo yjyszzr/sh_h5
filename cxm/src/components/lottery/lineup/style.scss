@@ -1,0 +1,190 @@
+@import '../../../assets/css/function.scss';
+.lineup{
+    padding-top: px2rem(20px);
+    .field{
+        position: relative;
+        img{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .fieldTable{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            padding: 0 px2rem(22px);
+            box-sizing: border-box;
+            .field_title{
+                height: px2rem(88px);
+                line-height: px2rem(88px);
+                font-size: px2rem(24px);
+                color: #fff;
+            }
+            table{
+                position: relative;
+                height: px2rem(560px);
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                padding-top: px2rem(15px);
+                box-sizing: border-box;
+                th{
+                    position: absolute;
+                    left: px2rem(30px);
+                    font-size: px2rem(22px);
+                    color: #fff;
+                }
+                tr{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    position: relative;
+                    td{
+                        width: px2rem(120px);
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        .teamer{
+                            height: px2rem(54px);
+                            width: px2rem(54px);
+                            background: url('./img/Hometeam_1@3x.png') no-repeat left top;
+                            background-size: 100% 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: px2rem(22px);
+                            color: #fff;
+                        }
+                        .team_name{
+                            font-size: px2rem(22px);
+                            color: #fff;
+                            margin-top: px2rem(5px);
+                            width: px2rem(120px);
+                            overflow:hidden;
+                            white-space:nowrap;
+                            text-overflow:ellipsis;
+                            text-align: center;
+                        }
+                    }
+                }
+                tr:first-of-type{
+                    td{
+                        .teamer{
+                            background: url('./img/goalkeeper@3x.png') no-repeat left top;
+                            background-size: 100% 100%;
+                        }
+                    }
+                }
+            }
+            table:first-of-type{
+                th{
+                    top: px2rem(28px);
+                }
+            }
+            table:last-of-type{
+                margin-top: px2rem(50px);
+                th{
+                    bottom: px2rem(15px);
+                }
+                tr{
+                    td{
+                        .teamer{
+                            background: url('./img/Visitingteam_1@3x.png') no-repeat left top;
+                            background-size: 100% 100%;
+                        }
+                    }
+                }
+                tr:last-of-type{
+                    td{
+                        .teamer{
+                            background: url('./img/goalkeeper@3x.png') no-repeat left top;
+                            background-size: 100% 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .subst_lineup{
+        margin-top: px2rem(20px);
+        background: white;
+        .title{
+            height: px2rem(88px);
+            border-bottom: 1px solid #f0f0f0;
+            line-height: px2rem(88px);
+            text-align: center;
+            font-size: px2rem(26px);
+            color: #505050;
+        }
+        .team-info{
+            overflow: hidden;
+            .left,.right{
+                width: 50%;
+                float: left;
+                .team-item{
+                    border-bottom: 1px dashed  #f0f0f0;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    height: px2rem(72px);
+                    overflow: hidden;
+                    .team-number{
+                        width: px2rem(50px);
+                        height: px2rem(50px);
+                        line-height: px2rem(50px);
+                        text-align: center;
+                        font-size: px2rem(22px);
+                        color: white;
+                        margin-right: px2rem(22px);
+                    }
+                    .teamer-name{
+                        font-size: px2rem(26px);
+                        color: #505050;
+                    }
+                }
+            }
+            .left{
+                border-right: 1px dashed  #f0f0f0;
+                box-sizing: border-box;
+                .team-item{
+                    margin-left: px2rem(20px);
+                    padding-left: px2rem(12px);
+                    .team-number{
+                        background: url('./img/Hometeam_2@3x.png') no-repeat left top;
+                        background-size: 100% 100%; 
+                    }
+                }
+            }
+            .right{
+                .team-item{
+                    margin-right: px2rem(20px);
+                    padding-left: px2rem(32px);
+                    .team-number{
+                        background: url('./img/Visitingteam_2@3x.png') no-repeat left top;
+                        background-size: 100% 100%; 
+                    }
+                }
+            }
+            .h-teamname,.k-teamname{
+                height: px2rem(72px);
+                border-bottom: 1px dashed #f0f0f0;
+                text-align: center;
+                line-height: px2rem(72px);
+                font-size: px2rem(26px);
+                color: #9f9f9f;
+            }
+        }
+        .nullSt{
+            padding: px2rem(58px) 0;
+            text-align: center;
+            font-size: px2rem(26px);
+            color: #9f9f9f;
+        }
+    }
+}

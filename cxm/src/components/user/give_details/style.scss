@@ -1,0 +1,91 @@
+@import '../../../assets/css/function.scss';
+.give{
+    background: #fff;
+    .box{
+        padding-top: px2rem(60px);
+        text-align: center;
+        .p1{
+            font-size: px2rem(48px);
+            color: #E95504;
+            i{
+                font-size: px2rem(30px);
+                font-style: normal;
+            }
+        }
+        .chuli{
+            margin-top: px2rem(10px);
+            color: #787878;
+            font-size: px2rem(28px);
+        }
+    }
+    .give_cen{
+        margin: px2rem(125px) 0 px2rem(125px) px2rem(100px);
+        position: relative;
+        b{
+            border: 1px solid #9f9f9f;
+            height: px2rem(159px);
+            position: absolute;
+            left: px2rem(22px);
+            top: px2rem(50px);
+        }
+        .sent{
+            margin-top: px2rem(25px);
+            .txSuccess{
+                p:first-of-type{
+                    display: flex;
+                    align-items: center;
+                    em{
+                        display: block;
+                        width: px2rem(50px);
+                        height: px2rem(48px);
+                        position: relative;
+                        z-index: 10;
+                        background: white;
+                        margin-right: px2rem(25px);
+                        i{
+                            font-size: px2rem(49px);
+                        }
+                    }
+                    span{
+                        display: block;
+                        height: 100%;
+                        color: #505050;
+                        font-size: px2rem(30px);    
+                    }
+                }
+                p:last-of-type{
+                    color:#A0A0A0;
+                    font-size: px2rem(20px);
+                    display: block;
+                    height: px2rem(30px);
+                    box-sizing: border-box;
+                    margin-left: px2rem(78px);
+                }
+                .giveProgress{
+                    color: #ea5504;
+                }
+            }
+        }
+        // .sent:first-of-type{
+        //     span{
+        //         margin-right: px2rem(-60px);
+        //     }
+        // }
+    }
+    .msg_list{
+        li{
+            a{
+                border-top: 1px solid #f1f1f1;
+                div{
+                    span{
+                        color: #505050;
+                    }
+                    p{
+                        float: right;
+                        color: #A0A0A0;
+                    }
+                }
+            }
+        }
+    }
+}

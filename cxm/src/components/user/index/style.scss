@@ -1,0 +1,138 @@
+@import '../../../assets/css/function.scss';
+.user{
+    padding-bottom: px2rem(20px);
+    .wrap{
+        height: 100%;
+    }
+    .center{
+        background: #fff;
+    }
+    .portrait{
+        padding: px2rem(30px) px2rem(47px);
+    }
+    .people{
+        float: left;
+        margin-right:px2rem(30px);
+        width: px2rem(112px);
+        height: px2rem(112px);
+        border-radius: 100%;
+        overflow: hidden;
+        img{
+            width: px2rem(112px);
+            display: block;
+        }
+    }
+    .por-right{
+        float: left;
+        span{
+            color: #505050;
+            font-size: px2rem(32px);
+            display: -webkit-box;
+            margin-top: px2rem(10px);
+        }
+        p{
+            //height: px2rem(37px);
+            line-height: px2rem(37px);
+            background: #fbddcd url(../../../assets/img/poser.png) 0.1rem no-repeat;
+            color: #E95504;
+            font-size: px2rem(26px);
+            margin-top: px2rem(15px);
+            background-size: 95%;
+            padding: 0 px2rem(40px);
+            border-radius: px2rem(5px);
+        }
+    }
+    .certified{
+        background: url(../../../assets/img/certified.png) no-repeat;
+        background-size: 100%;
+        margin-top: px2rem(15px);
+        width: px2rem(132px);
+        height: px2rem(35px);
+        display: block;
+    }
+    .money{
+        clear: both;
+        display: flex;
+        span{
+            font-size: px2rem(42px);
+            color: #E95504;
+        }
+        .left{
+            text-align: center;
+            flex: 1;
+            display: grid;
+            p{
+                font-size: px2rem(24px);
+                color: #A0A0A0;
+                height: px2rem(50px);
+            }
+            i{
+                font-size: px2rem(26px);
+                font-style: normal;
+            }
+        }
+    }
+    .nav{
+        display: flex;
+        height: px2rem(88px);
+        line-height: px2rem(88px);
+        border-top: 1px solid #f1f1f1;
+        margin-top: px2rem(30px);
+        a{
+            flex: 1;
+            border-right: 1px solid #f1f1f1;
+            display: block;
+            font-size: px2rem(28px);
+            color: #F7931E;
+            height: px2rem(88px);
+            text-align: center;
+        }
+        a:last-child{
+            border-right: none;
+        }
+    }
+    .msg_list li a{
+        height: px2rem(87px);
+        div{
+            height: px2rem(88px);
+            .iconfont{
+                height: 100%!important;
+                line-height: px2rem(88px);
+            } 
+            .arrow_kefu{
+                line-height: px2rem(88px);
+            }
+            .message{
+                height: 100%!important;
+            }
+        }
+    }
+    .tug{
+        li{
+            a{
+                border-bottom: 1px solid #f0f0f0; 
+                div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    p{
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        .message{
+                            width: auto;
+                        }
+                    }
+                    img{
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        li:last-of-type{
+            a{
+                border: none!important;
+            }
+        }
+    }
+}

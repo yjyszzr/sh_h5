@@ -1,0 +1,119 @@
+@import '../../../assets/css/function.scss';
+.header{
+  //height: px2rem(180px);
+}
+.head{
+  font-size: px2rem(26px);
+  color: #F7931E;
+  background: #f4f4f4;
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding-top: px2rem(20px);
+}
+.section{
+  margin-top: px2rem(18px);
+}
+.current{
+  font-size: px2rem(30px);
+  color: #505050;
+  padding: px2rem(24px) 0 px2rem(24px) px2rem(38px);
+}
+.amount{
+  /*width: 100%;*/
+  padding: px2rem(34px);
+  position: relative;
+  p{
+    color: #505050;
+    font-size: px2rem(30px);
+  }
+  .money{
+    padding: px2rem(20px);
+    border: 1px solid #c7c7c7;
+    border-radius: 0.1rem;
+    font-size: px2rem(26px);
+    margin-top: px2rem(25px);
+    display: block;
+    width: 94%;
+    color: #e95504;
+  }
+  ul{
+    display: flex;
+    margin-top:px2rem(27px);
+    width: px2rem(685px);
+    justify-content: space-between;
+    li{
+      border: 1px solid #c7c7c7;
+      font-size:px2rem(26px);
+      box-sizing: border-box;
+      color: #505050;
+      padding: px2rem(20px);
+      text-align: center;
+      border-radius: 0.1rem;
+      width: px2rem(150px);
+    }
+    li:last-child{
+      margin-right: 0;
+    }
+  }
+  .rote{
+    position: absolute;
+    right: px2rem(30px);
+    top: px2rem(30px);
+    background: url('../../activity/red_packet/image/bg_img.png') no-repeat center;
+    background-size: 100%;
+    padding: 0 px2rem(30px);
+    height: px2rem(60px);
+    line-height: px2rem(54px);
+    color: white;
+    font-size: px2rem(26px);
+  }
+}
+.wechat{
+  padding:0 px2rem(20px);
+  p{
+    color: #505050;
+    padding-left: px2rem(20px);
+    height: px2rem(110px);
+    display: block;
+    font-size: px2rem(30px);
+    line-height: px2rem(110px);
+    box-sizing: border-box;
+  }
+}
+.msg_list li>a {
+  display: block;
+  position: relative;
+  margin-left:px2rem(0px);
+  height: px2rem(110px);
+  margin-right: px2rem(-20px);
+  border-top: 1px solid #f0f0f0;
+  img{
+    padding-top: px2rem(30px);
+  }
+  .message{
+    width: 75%;
+    height: px2rem(110px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    b{
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    b:last-of-type{
+      font-size: px2rem(24px);
+      color: #ea5504;
+    }
+  }
+}
+.arrow_kefu{
+  .icon-icon-29{
+    color: #505050;
+    margin-right: px2rem(38px);
+  }
+  .wxSelected{
+    color: #44ae35;
+  }
+}

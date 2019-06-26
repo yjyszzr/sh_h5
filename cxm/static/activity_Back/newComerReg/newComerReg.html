@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>彩小秘</title>
+	<meta id="viewport" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1; user-scalable=no;" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<div class="page-group">
+		<div class="page page-current" id='router' style="background: #f58234">
+			<div class="box">
+				<div class="activity_sm" onClick="activity_smClick()">
+					活动说明
+				</div>
+				<img src="img/regDetail.jpg" class="regDetail" />
+				<div class="valBox">
+					<input class="telVal" type="tel" value="" placeholder="请输入手机号" />
+					<div class="code">
+						<input class="codeVal" type="tel" value="" placeholder="请输入验证码" />
+						<button class="codebtn">获取验证码</button>
+					</div>
+					<button class="btn" onclick="register()">领取100元新人大礼包</button>
+					<button class="lqbtn" onclick="lqbtn()">立即领取</button>
+				</div>
+				<div class="xb">
+					<h3>大奖喜报</h3>
+				</div>
+				<div class="copyRight">Copyright © 2017-2018 彩小秘</div>
+			</div>
+		</div>
+		<div class="page" id='router2'>
+			<img src="./img/jbe.png" class="winner" />
+			<p class="gx">恭喜您获得100元彩金</p>
+			<button class="downLoadGoto" onClick="downLoadGoto()">前往使用</button>
+			<button class="downLoadBtn" onClick="downLoadBtn()">立即下载</button>
+		</div>
+	</div>
+</body>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script>
+	$.init()
+</script>
+<script src="../../publicJS/api.js"></script>
+<script src="script.js"></script>
+
+</html>

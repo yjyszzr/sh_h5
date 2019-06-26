@@ -1,0 +1,30 @@
+@import '../../../assets/css/function.scss';
+.cont{
+    padding: px2rem(15px) px2rem(30px);
+    margin-top: px2rem(10px);
+    a{
+        .picker_p1{
+            font-size: px2rem(28px);
+            color: #505050;
+            margin-right: px2rem(-10px);
+            span{
+                float: right;
+            }
+        }
+        .picker_p2{
+            font-size: px2rem(24px);
+            color: #787878;
+            padding: px2rem(6px) 0;
+        }
+        .picker_p3{
+            color: #A0A0A0;
+            font-size: px2rem(22px);
+            span{
+                float: right;
+            }
+        }
+    }
+}
+.page-loadmore-wrapper{
+    overflow: scroll;
+}

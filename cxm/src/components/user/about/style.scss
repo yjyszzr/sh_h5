@@ -1,0 +1,47 @@
+@import '../../../assets/css/function.scss';
+.about{
+    .logo{
+        height: px2rem(385px);
+        text-align: center;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            height: px2rem(92px);
+            display: inline-block;
+            vertical-align: middle;
+        }
+        i{
+            font-style: normal;
+            color: #e95504;
+            margin-left: px2rem(10px);
+            font-size: px2rem(32px);
+            display: flex;
+            height: px2rem(92px);
+            align-items: flex-end;
+            justify-content: flex-start;
+        }
+    }
+    .wechat{
+        border-top: 1px solid #e5e5e5;
+        margin-right: px2rem(40px);
+        margin-left: px2rem(40px);
+        a{
+            margin-right: px2rem(0px);
+            margin-left: px2rem(0px);
+        }
+    }
+    .guanwang{
+        margin-top: px2rem(354px);
+        margin-left: 27%;
+        p{
+            font-size: px2rem(26px);
+            color: #787878;
+            margin-top: px2rem(10px);
+            span{
+                color: #f7931e;
+            }
+        }
+    }
+}

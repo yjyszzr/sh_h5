@@ -1,0 +1,99 @@
+@import '../../../assets/css/function.scss';
+.activityOne {
+    padding-bottom: px2rem(102px);
+    min-height: 100%;
+    height: auto;
+    background: #5b9a26;
+    .header-img{
+        width: 100%;
+    }
+    .reg-bouns{
+        width: px2rem(685px);
+        height: px2rem(322px);
+        margin: px2rem(39px) auto 0;
+        background: #fefcfa;
+        border-radius: px2rem(10px);
+        .reg-title{
+            width: px2rem(484px);
+            height: px2rem(84px);
+            background: url('./img/xrhb.jpg') no-repeat px2rem(8px) top;
+            background-size: 100% 100%;
+            margin: 0 auto;
+            text-align: center;
+            line-height: px2rem(67px);
+            font-size: px2rem(30px);
+            color: #fff7e5;
+        }
+        .reg-tel,.reg-code{
+            width: px2rem(628px);
+            height: px2rem(71px);
+            margin: px2rem(23px) auto;
+            border: 1px solid #CB8744;
+            border-radius: px2rem(10px);
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            i{
+                color: #9f9f9f;
+                width: px2rem(25px);
+                margin: 0 px2rem(29px);
+            }
+            input{
+                border: none;
+                background: none;
+                font-size: px2rem(30px);
+                color: #505050;
+            }
+        }
+        .reg-code{
+            margin: 0 auto;
+            justify-content: space-between;
+            .code-box{
+                display: flex;
+                align-items: center;
+                .text1{
+                    width: px2rem(200px);
+                }
+            }
+            button{
+                font-size: px2rem(28px);
+                color: #505050;
+                background: none;
+                border: none;
+                border-left: 1px solid #d6d4d4;
+                padding: 0 px2rem(29px);
+            }
+        }
+    }
+    .lqBtn{
+        width: px2rem(443px);
+        height: px2rem(88px);
+        margin: px2rem(44px) auto 0;
+        img{
+            width: 100%;
+        }
+    }
+    .reg-rule{
+        border-radius: px2rem(10px);
+        width: px2rem(685px);
+        margin: px2rem(100px) auto 0;
+        background: #fefcfa;
+        .rule-title{
+            width: px2rem(484px);
+            height: px2rem(84px);
+            background: url('./img/xrhb.jpg') no-repeat px2rem(8px) top;
+            background-size: 100% 100%;
+            margin: 0 auto;
+            text-align: center;
+            line-height: px2rem(67px);
+            font-size: px2rem(30px);
+            color: #fff7e5;
+        }
+        .rule-content{
+            padding: px2rem(30px) px2rem(30px) px2rem(70px);
+            font-size: px2rem(24px);
+            color: #505050;
+            line-height: px2rem(42px);
+        }
+    }
+}

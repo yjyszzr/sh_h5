@@ -1,0 +1,20 @@
+@import '../../../../assets/css/function.scss';
+.yd-bouns{
+    position: absolute;
+    min-height: 100%;
+    height: auto;
+    width: 100%;
+    .bg{
+        width: 100%;
+    }
+    .yd-btn{
+        position: absolute;
+        bottom: px2rem(350px);
+        width: 100%;
+        img{
+            width: px2rem(460px);
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

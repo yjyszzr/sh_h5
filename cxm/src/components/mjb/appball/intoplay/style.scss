@@ -1,0 +1,31 @@
+@import '../../../../assets/css/function.scss';
+.inToplay{
+    background: white;
+    padding: px2rem(20px) px2rem(30px);
+    font-size: px2rem(26px);
+    line-height: px2rem(38px);
+    color: #505050;
+    margin-bottom: px2rem(-20px);
+    table{
+        width: 100%;
+        border: 1px solid #f0f0f0;
+        margin: px2rem(16px) 0;
+        tr{
+            td{
+                border: 1px solid #f0f0f0;
+                color: #505050;
+                height: px2rem(48px);
+                padding: px2rem(10px);
+                font-size: px2rem(24px);
+            }
+            td:first-of-type{
+                width: px2rem(180px);
+            }
+        }
+        tr:first-of-type{
+            td{
+                font-weight: 600;
+            }
+        }
+    }
+}

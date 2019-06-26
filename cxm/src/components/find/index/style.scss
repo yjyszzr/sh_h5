@@ -1,0 +1,14 @@
+@import '../../../assets/css/function.scss';
+@import '../../../../static/swiper/swiper-3.4.2.min.css';
+.find{
+    .information {
+        margin-top: px2rem(20px);
+        background: #fff;
+        padding: 0 px2rem(20px);
+        ul {
+          li {
+            width: 100%;
+          }
+        }
+      }
+}

@@ -1,0 +1,222 @@
+@import '../../../assets/css/function.scss';
+.order{
+  height: auto;
+  .j_onshed{
+    position: absolute;
+    overflow: scroll;
+    width: 100%;
+    top: 0;
+    bottom:px2rem(20px);
+  }
+.order_center{
+  .subnav{
+    background: #fff;
+    padding: 0 px2rem(30px);
+  }
+  .box1{
+    display: flex;
+    align-items: center;
+    height: px2rem(130px);
+    img{
+      height: px2rem(86px);
+      margin-right: px2rem(16px);
+    }
+    div{
+      width: 86%;
+      p{
+        color: #505050;
+        font-size: px2rem(30px);
+        width: 100%;
+        span{
+          float: right;
+          color: #505050;
+          font-size: px2rem(30px);
+        }
+      }
+      p:last-of-type{
+        span{
+          color: #787878;
+          font-size: px2rem(22px);
+        }
+        span:first-of-type{
+          float: left;
+        }
+      }
+    }
+  }
+  .box2{
+    border-top: 1px solid #f1f1f1;
+    height: px2rem(115px);
+    //padding:px2rem(20px) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p{
+      line-height: px2rem(40px);
+      font-size: px2rem(28px);
+      color: #505050;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+      span{
+        font-size: px2rem(28px);
+        float: right;
+      }
+    }
+  }
+}
+.table{
+  padding:0 px2rem(20px) 0 px2rem(30px);
+  h5{
+    font-size: px2rem(28px);
+    color: #A0A0A0;
+    height: px2rem(72px);
+    line-height: px2rem(72px);
+    border-bottom: 1px solid #f1f1f1;
+  }
+  .list{
+    padding: px2rem(20px) 0;
+
+    .title,.w_title{
+      color: #A0A0A0;
+      font-size: px2rem(24px);
+      display: flex;
+      p{
+        height: px2rem(50px);
+        line-height: px2rem(50px);
+        flex: 1;
+        text-align: center;
+      }
+      p:nth-child(3),p:nth-child(2),p:nth-child(4){
+        flex: 3;
+      }
+    }
+    .w_title{
+      p{
+        flex: 1!important;
+      }
+    }
+    li{
+      display: flex;
+      border-bottom: 1px dashed #f1f1f1;
+      padding: px2rem(10px) 0;
+      position: relative;
+      .kong{
+        display: none;
+      }
+      .dan{
+        position: absolute;
+        left: -3%;
+        top: 0;
+        width: px2rem(30px);
+        height: px2rem(30px);
+        background: #ea5504;
+        color: #fff;
+        font-size: px2rem(14px);
+        border-radius: 50%;
+        line-height: px2rem(30px);
+        text-align: center;
+      }
+      .item,.item1{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        span{
+          display: block;
+          text-align: center;
+          img{
+            width:px2rem(20px);
+            background-size: 100%;
+          }
+        }
+      }
+      .item:nth-child(2),.item:nth-child(4),.item:nth-child(5),.item:nth-child(3){
+        flex-direction: column;
+      }
+      .item:nth-child(3){
+        p{
+          font-size: px2rem(22px);
+        }
+      }
+      .item:nth-child(3),.item:nth-child(2),.item:nth-child(4){
+        flex: 3;
+      }
+    }
+    li:last-child{
+      border-bottom: none;
+    }
+  }
+  .menu{
+    border-top: 1px solid #f1f1f1;
+    padding: px2rem(20px) 0;
+    p{
+      font-size: px2rem(24px);
+      line-height: px2rem(35px);
+      color: #A0A0A0;
+      span{
+        color: #505050;
+      }
+    }
+  }
+  .yue{
+    padding: px2rem(20px) 0;
+    border-top: 1px solid #f1f1f1;
+    color: #A0A0A0;
+    overflow: hidden;
+    .sele{
+      float: left;
+    }
+    p{
+      float: left;
+      font-style: normal;
+    }
+    span{
+      margin-left: px2rem(10px);
+      color:#505050;
+    }
+
+  }
+}
+.plan {
+  padding: 0 px2rem(20px) 0 px2rem(30px);
+  margin-bottom: px2rem(100px);
+  .solecd {
+    font-size: px2rem(28px);
+    color: #A0A0A0;
+    height: px2rem(72px);
+    line-height: px2rem(72px);
+    border-bottom: 1px solid #f1f1f1;
+    display: block;
+    span {
+      float: right;
+      color: #505050;
+    }
+  }
+  div {
+    padding: px2rem(20px) 0;
+    p {
+      font-size: px2rem(24px);
+      line-height: px2rem(40px);
+      color: #A0A0A0;
+      span {
+        color: #505050;
+      }
+    }
+  }
+}
+.jxtz{
+  width: 100%;
+  height: px2rem(98px);
+  background: #ea5504;
+  border: none;
+  color: white;
+  font-size: px2rem(30px);
+}
+.Fixed{
+  position: absolute;
+  bottom: 0;
+}
+}

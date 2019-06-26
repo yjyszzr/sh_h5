@@ -1,0 +1,35 @@
+@import '../../../../assets/css/function.scss';
+.income{
+  .box_list_1,.box_list_2{
+    padding: 0 px2rem(20px);
+    display: flex;
+    position: relative;
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+    li {
+      flex: 2;
+      height: px2rem(70px);
+      line-height: px2rem(70px);
+      display: flex;
+      justify-content: center;
+    }
+    li.arrow_right {
+      background-position: 50% center;
+      background-size: auto 40%;
+    }
+    li:nth-child(5){
+      flex: 1;
+    }
+    .box_list_2 li{
+      height: px2rem(90px);
+      line-height: px2rem(90px);
+      border-bottom: 1px solid #f1f1f1;
+    }
+    .box_list_2 li:nth-child(4){
+      color: #e95504;
+    }
+  }
+  .box_list_2:last-of-type{
+    border-bottom: none;
+  }
+}

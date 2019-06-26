@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>微信安全支付</title>
+	<meta id="viewport" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1; user-scalable=no;" />
+	<meta name="format-detection" content="telephone=no" />
+	<style>
+		.page {
+			background: #fff !important;
+		}
+
+		.loading_wrap img {
+			width: 20%;
+			display: block;
+			margin: 120px auto 0;
+		}
+
+		.loading_wrap p {
+			font-size: 18px;
+			text-align: center;
+		}
+
+		.modal-button {
+			color: #505050 !important;
+		}
+
+		.modal-button:last-of-type {
+			color: #EA5504 !important;
+		}
+	</style>
+	<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+</head>
+
+<body>
+	<div class="page-group">
+		<div class="page page-current">
+
+		</div>
+	</div>
+</body>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script>
+	$.init()
+</script>
+<script type="text/javascript">
+	//获取url key
+	var getUrlStr = function (name, url) {
+		/**
+		 * 获取地址栏参数
+		 */
+		let reg = new RegExp("(^|\\?|&)" + name + "=([^&]*)(\\s|&|$)", "i");
+		if (reg.test(url)) {
+			return unescape(RegExp.$2.replace(/\+/g, " "))
+		}
+		return undefined
+	}
+	toUrl = 'https://m.caixiaomi.net'
+
+	function payStaus() {
+		var obj = {}
+		obj.body = {
+			'payLogId': getUrlStr('payLogId', location.href)
+		}
+		obj.device = {
+			plat: 'h5',
+			apiv: 1,
+			appv: '2.1.1',
+			appid: '',
+			mac: '',
+			w: window.screen.availWidth,
+			h: window.screen.availHeight,
+			os: '',
+			mid: '',
+			brand: '',
+			build: '',
+			channel: '',
+			net: '',
+			token: ''
+		}
+		$.ajax({
+			type: 'post',
+			url: 'https://api.caixiaomi.net/api/payment/payment/query',
+			contentType: 'application/json;charset=UTF-8',
+			data: JSON.stringify(obj),
+			beforeSend: function (request) {
+				request.setRequestHeader("token",
+					localStorage.getItem('token')
+				);
+			},
+			dataType: "json",
+			success: function (data) {
+				//console.log(data)
+				if (data.code == '0') {
+					$.hidePreloader();
+					if (data.payType == '1') {
+						$.alert('充值成功', function () {
+							location.href = toUrl
+						});
+					} else {
+						$.alert('支付成功', function () {
+							location.href = toUrl
+						});
+					}
+					clearInterval(time)
+				} else if (data.code >= 30000 && data.code < 310000) {
+					if (data.code == '304035') {
+						$.hidePreloader();
+						$.alert('如果您已经确认支付并扣款，可能存在延迟到账情况，请到账户明细中查看或联系客服查询', '支付失败', function () {
+							location.href = toUrl
+						});
+						clearInterval(time)
+					} else if (data.code == '304036') {
+						if (num >= 2) {
+							$.hidePreloader();
+							$.modal({
+								title: '支付查询',
+								text: '暂未查询到您的支付结果，如果您已经确认支付并扣款，可能存在延迟到账的情况，请到账户明细中查看或联系客服查询',
+								buttons: [{
+										text: '关闭',
+										onClick: function () {
+											location.href = toUrl
+										}
+									},
+									{
+										text: '继续查询',
+										onClick: function () {
+											$.showPreloader('支付查询中...');
+											setTimeout(function () {
+												payStaus()
+											}, 3000)
+										}
+									}
+								]
+							})
+							clearInterval(time)
+						}
+					}
+				} else {
+					$.hidePreloader();
+					$.alert(data.msg, '支付失败', function () {
+						location.href = toUrl
+					});
+					clearInterval(time)
+				}
+			}
+		})
+	}
+	var num = 0
+	$.showPreloader('支付查询中...');
+	payStaus()
+	var time = setInterval(function () {
+		num++
+		payStaus()
+	}, 3000)
+</script>
+
+</html>

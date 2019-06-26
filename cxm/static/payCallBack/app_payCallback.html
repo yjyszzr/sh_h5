@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+</head>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		height: 100%;
+	}
+
+	body {
+		height: 100%;
+		font-size: 16px;
+		background: white;
+	}
+	#mark{
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 10;
+		background: rgba(0,0,0,0.2);
+	}
+	img{
+		display: block;
+		width: 100%;
+	}
+	p{
+		text-align: center;
+		color: white;
+		font-size: 22px;
+		margin-top: -70px;
+	}
+	#anApp{
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 20px;
+		color: #505050;
+	}
+</style>
+
+<body>
+	<div id="anApp">
+		请返回APP查询
+	</div>
+	<div id="mark">
+		<img src="../img/return.jpg" alt="">
+		<p>请在选择浏览器打开</p>
+	</div>
+</body>
+<script>
+	function decte(){
+		var equipmentType = "";
+		var agent = navigator.userAgent.toLowerCase();
+		var android = agent.indexOf("android");
+		var iphone = agent.indexOf("iphone");
+		var ipad = agent.indexOf("ipad");
+		if (android != -1) {
+			equipmentType = "android";
+		}
+		if (iphone != -1 || ipad != -1) {
+			equipmentType = "ios";
+		}
+		return equipmentType;
+	}
+	if(decte()==='ios'){
+		document.getElementById('anApp').style.display='none'
+		location.href = 'caixm://caixiaomi.net'
+	}else{
+		document.getElementById('mark').style.display='none'
+	}
+</script>
+</html>

@@ -1,0 +1,66 @@
+ @import '../../../assets/css/function.scss';
+ .payment{
+   .j_sent{
+     position: absolute;
+     overflow: scroll;
+     width: 100%;
+     top: 0;
+     bottom:px2rem(88px);
+   }
+  .mode{
+    color: #505050;
+    margin-left: px2rem(30px);
+    margin-right: px2rem(30px);
+    height: px2rem(110px);
+    display: block;
+    font-size: 0.4rem;
+    line-height: px2rem(110px);
+  }
+  .msg_list{
+    li{
+      overflow: hidden;
+      a{
+        border-top: 1px solid #f1f1f1;
+        padding: 0;
+        .float_right{
+          color: #505050;
+        }
+      }
+    }
+  }
+  .paymentdetail{
+    a{
+      border-top: none!important;
+    }
+  }
+  .paymentBtn{
+    position: absolute;
+    bottom: 0;
+    height: px2rem(108px);
+    background: #ea5504;
+    border: none;
+    width: 100%;
+    font-size: px2rem(28px);
+    color: white;
+  }
+   .iconfont{
+     color: #505050;
+     float: right;
+     font-size: px2rem(26px);
+     margin-right: 0;
+   }
+   .icon-icon-29{
+    font-size: px2rem(36px);
+   }
+   .wxSelected{
+     color: green;
+   }
+   .msg_list img{
+     margin-top: px2rem(0px);
+     width: px2rem(56px);
+   }
+   
+ }
+ .mint-indicator-mask{
+  z-index: 0!important;
+}
