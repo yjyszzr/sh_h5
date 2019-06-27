@@ -22,6 +22,7 @@
 .amount{
   /*width: 100%;*/
   padding: px2rem(34px);
+  padding-bottom: px2rem(24px);
   position: relative;
   p{
     color: #505050;
@@ -38,10 +39,9 @@
     color: #dc3c32;
   }
   ul{
-    display: flex;
     margin-top:px2rem(27px);
     width: px2rem(685px);
-    justify-content: space-between;
+    overflow: hidden;
     li{
       border: 1px solid #c7c7c7;
       font-size:px2rem(26px);
@@ -50,7 +50,28 @@
       padding: px2rem(20px);
       text-align: center;
       border-radius: 0.1rem;
-      width: px2rem(150px);
+      width: 30%;
+      float: left;
+      margin-right: 5%;
+      margin-bottom: px2rem(10px);
+      position: relative;
+      b{
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: px2rem(5px);
+        align-items: center;
+        justify-content: center;
+        background: url('../../../assets/img/rsub.jpg') no-repeat;
+        background-size: 100% 100%;
+        height: px2rem(30px);
+        font-size: px2rem(22px);
+        color: #fff;
+        min-width: px2rem(36px);
+      }
+    }
+    li:nth-child(3n){
+      margin-right: 0;
     }
     li:last-child{
       margin-right: 0;
@@ -99,11 +120,11 @@
     justify-content: center;
     flex-direction: column;
     b{
-      line-height: 1.2;
+      line-height: 1.4;
       font-weight: 400;
     }
     b:last-of-type{
-      font-size: px2rem(12px);
+      font-size: px2rem(20px);
       color: #505050;
     }
   }

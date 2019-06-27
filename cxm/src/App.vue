@@ -196,6 +196,8 @@
                             return '方案详情';
                         case 'touZhuConfirm':
                             return '投注确认';
+                        case 'bounsrule':
+                            return '优惠券规则说明';
                     }
                 } else {
                     if (
@@ -434,6 +436,7 @@
          */
 
     .mint-msgbox {
+        -webkit-user-select: text!important;
         .mint-msgbox-title {
             color: #505050;
             font-size: px2rem(32px);

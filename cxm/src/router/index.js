@@ -129,6 +129,14 @@ const router = new Router({
           component: resolve => require(['@/components/user/detail/detail.vue'], resolve)
       },
       {
+            path: '/user/bounsrule',
+            name: 'bounsrule',
+            meta: {
+                title: '卡券规则'
+            },
+            component: resolve => require(['@/components/user/bounsRule/index.vue'], resolve)
+        },
+      {
           path: '/user/about',
           name: 'about',
           meta: {

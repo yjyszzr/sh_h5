@@ -50,6 +50,24 @@ export default {
             }
         },
         determine() {
+            if(this.payCode == 'app_offline'){
+                MessageBox({
+                    title: '人工充值',
+                    showCancelButton: true,
+                    confirmButtonText: '联系店主',
+                    cancelButtonText: '暂不联系',
+                    message: `
+                        <p style='text-align: left;'>店主微信号：<span style='color:#dc3c32;text-decoration:underline;'>${this.input_info.payTitle}</span></p>
+                        <p style='text-align: left;'>第一步：长按店主微信号进行复制</p>
+                        <p style='text-align: left;'>第二步：点击（联系店主）打开微信</p>
+                        <p style='text-align: left;'>第三步：添加店主微信，人工转账充值</p>
+                        <p style='text-align: left;font-size: 0.3rem;color:#dc3c32;line-height:1.2;'>注：首次充值需添加店主微信号，往后充值可直接联系店主微信直充</p>
+                    `
+                }).then(action => {
+                    
+                }, cancel => {});
+                return false;
+            }
             let regex = /^[1-9]\d*$/;
             if(!regex.test(this.recharge_val)){
                 Toast('请输入正确的金额')
@@ -122,6 +140,7 @@ export default {
             })
         },
         wxClick(c, index, s) {
+            this.recharge_val = '';
             this.input_info = s;
             this.payCode = s.payCode
             $('.wxSelected').removeClass('wxSelected')

@@ -10,6 +10,7 @@
                 <span v-if="$route.path.split('/')[2]=='collection'" @click="colMenu($event)" class="colMenu">{{deleteFlag?'取消':'编辑'}}</span>
                 <span v-if="$route.path.split('/')[2]=='cathectic'" @click="onGal()" class="danxm">胆</span>
                 <span v-if="$route.path.split('/')[1]=='user'&&!$route.path.split('/')[2]" @click="setUp()" class="setting">设置</span>
+                <span v-if="$route.path.split('/')[1]=='user'&&$route.path=='/user/detail'" @click="bounsRuleJs()" class="bouns_rule">使用规则</span>
                 <ul class="djs" @click="actionSheet()"  v-if="$route.path.split('/')[2]&&$route.path.split('/')[2]=='account'">
                     <li class="tas">{{timeTypeShow(this.timeTypeStatus)}}<i style="font-size: 0.3rem;" class="iconfont icon-icon-22"></i></li>
                 </ul>
@@ -85,7 +86,7 @@
 <script>
     import datefilter from "../../../util/datefilter";
     import { Indicator,Actionsheet } from "mint-ui";
-    import { getUrlStr, isWebview } from "../../../util/common";
+    import { getUrlStr, isWebview,getCsUrl } from "../../../util/common";
     export default {
         name: "Header",
         props: {
@@ -212,6 +213,11 @@
                 this.$router.push({
                     path: "/user/setup",
                     replace: false
+                });
+            },
+            bounsRuleJs(){
+                this.$router.push({
+                    path: "/user/bounsrule"
                 });
             },
             custormAnchor(anchorName) {

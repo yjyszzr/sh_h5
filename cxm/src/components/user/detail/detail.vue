@@ -2,7 +2,7 @@
 
 </style>
 
-<!--账户明细-->
+<!--卡券-->
 <template>
     <div class="wrap bonus">
         <mt-loadmore :bottom-method="loadBottom" :bottom-distance='-20' :auto-fill="false" :bottom-all-loaded="allLoaded" ref="loadmore" @bottom-status-change="handleTopChange" @scroll='handleScroll($event)'>

@@ -7,6 +7,12 @@
      top: 0;
      bottom:px2rem(88px);
    }
+   .warn_pay{
+     color: #dc3c32;
+     text-align: center;
+     margin: px2rem(10px) 0;
+     font-size: px2rem(26px);
+   }
   .mode{
     color: #505050;
     margin-left: px2rem(30px);
@@ -26,6 +32,22 @@
           color: #505050;
         }
       }
+    }
+  }
+  .nr{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 75%;
+    height: 1.46667rem;
+    overflow: hidden;
+    align-items: flex-start;
+    b{
+      line-height: 1.2;
+      font-weight: 400;
+    }
+    b:last-of-type{
+      font-size: px2rem(20px);
     }
   }
   .paymentdetail{
