@@ -6,7 +6,10 @@
 <template>
     <div class="wrap about" >
         <div class="logo">
-            <img src="../../../assets/img/logo.png" alt="圣和彩店"/><i>v2.1.1</i>
+            <p>
+                <span>圣和彩店</span> 
+                <span>v1.1.0</span>
+            </p>
         </div>
         <section style="background: #fff">
             <section class=" wechat">
@@ -27,10 +30,10 @@
             </section>
         </section>
 
-        <section class="guanwang">
+        <!-- <section class="guanwang">
             <p>客服热线：<span>400-012-6600</span></p>
             <p>官网：<span>http://www.caixiaomi.com</span></p>
-        </section>
+        </section> -->
     </div>
 </template>
 

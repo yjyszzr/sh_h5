@@ -31,6 +31,12 @@ export default {
             this.$store.state.mark_playObj.mark_playBox = true
             this.$store.state.mark_playObj.mark_play = '3'
         },
+        bouns_rtn(c){
+            let l = c.bonusList.find(item=>{
+                return item.userBonusId == this.bounsActive;
+            })
+            return l?l.bonusPrice:"";
+        },
         fetchData(c,s) {
             let data = {
                 bonusId: c,
@@ -54,6 +60,12 @@ export default {
                 })
         },
         payBtn() {
+            if(this.payCode=='app_offline'&&Number(this.payment.thirdPartyPaid) > 0){
+                this.$router.replace({
+                    path: '/user/recharge'
+                })
+                return false;
+            }
             if (Number(this.payment.thirdPartyPaid) > 0) {
                 Indicator.open()
                 let innerWechat = '0',payTypePd=''
@@ -250,12 +262,12 @@ export default {
         }
     },
     computed: {
-        cc() {
+        bounsActive() {
             return this.$store.state.mark_playObj.mybounsId;
         }
     },
     watch: {
-        cc(a, b) {
+        bounsActive(a, b) {
             Indicator.open()
             this.fetchData(a,this.payment.payToken)
         }

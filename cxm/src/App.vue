@@ -80,7 +80,7 @@
                         case "about":
                             return "关于我们";
                         case "detail":
-                            return "优惠券";
+                            return "我的卡券";
                         case "certification":
                             return "实名认证";
                         case "insurance":

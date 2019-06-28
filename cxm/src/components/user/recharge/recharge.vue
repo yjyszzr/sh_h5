@@ -7,7 +7,7 @@
 <template>
     <div class="wrap" style="padding-bottom: 0.2rem;">
         <!--<iframe v-bind:src="testUrl" v-bind:style="{display: testUrlDisplay}" style="z-index: 999999;width: 100%;height: 600px;"></iframe>-->
-        <span class="head">小秘提示：充值金额可购彩但不能提现，中奖金额可提现</span>
+        <span class="head">温馨提示：充值金额可购彩但不能提现，中奖金额可提现</span>
         <div style="margin-top:0.5rem;" class="section current clearfix">
             <p>当前账号：{{userInfo.mobile}} <br/>当前余额：{{userInfo.totalMoney}}元</p>
         </div>

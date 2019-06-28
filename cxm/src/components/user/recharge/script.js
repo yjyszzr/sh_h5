@@ -64,7 +64,7 @@ export default {
                         <p style='text-align: left;font-size: 0.3rem;color:#dc3c32;line-height:1.2;'>注：首次充值需添加店主微信号，往后充值可直接联系店主微信直充</p>
                     `
                 }).then(action => {
-                    
+                    location.href='weixin://'
                 }, cancel => {});
                 return false;
             }

@@ -35,11 +35,11 @@
                                 <span>有效期:</span>
                                 <span>{{item.limitTime}}</span>
                             </p>
-                            <p>
+                            <!-- <p>
                                 <span>使用说明:</span>
 
                                 <span>{{item.useRange}}</span>
-                            </p>
+                            </p> -->
                         </div>
                 </div>
                 <div class="nullstatus" v-if="yhList.length==0">

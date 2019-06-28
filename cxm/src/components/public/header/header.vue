@@ -3,7 +3,9 @@
         <!--头部-->
         <div class="headerTop" v-show="showTitle">
             <a @click="return_back()" class="go_return"></a>
-            <p class="headerText"><span v-if="!$route.path.split('/')[2]">圣和彩店·</span>{{title}}</p>
+            <p class="headerText">
+                <!-- <span v-if="!$route.path.split('/')[2]">圣和彩店·</span> -->
+            {{title}}</p>
             <div class="filter" v-show="menuDisplay==true">
                 <span v-if="$route.path.split('/')[2]=='consult'" style="opacity:0;">分享</span>
                 <span v-if="$route.path.split('/')[2]=='consult'&&getUrl()" :class="$store.state.zxDetailObj.isCollect=='1'?'icon-icon-32':'icon-icon-34'" class="iconfont" @click="collection($event)"></span>
@@ -39,7 +41,7 @@
         </ul>
         <ul class="senddetail" id='searchBar' v-if="$route.path.split('/')[2]&&$route.path.split('/')[2]=='detail'">
             <li class="cur2"><p @click='curClick2($event)'>未使用</p></li>
-            <li><p @click='curClick2($event)'>已使用</p></li>
+            <!-- <li><p @click='curClick2($event)'>已使用</p></li> -->
             <li><p @click='curClick2($event)'>已过期</p></li>
         </ul>
         <ul class="send" id='searchBar' v-if="$route.path.split('/')[2]&&$route.path.split('/')[2]=='message'">
@@ -464,6 +466,7 @@
                     justify-content: flex-end;
                     margin-left: px2rem(-30px);
                     .tas{
+                        color: #ffffff;
                         padding-right: px2rem(30px);
                         .icon-icon-22{
                             margin-left: px2rem(4px);

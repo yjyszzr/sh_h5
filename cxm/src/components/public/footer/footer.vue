@@ -13,7 +13,7 @@
                 <span>发现</span>
             </router-link>
             <router-link to='/user' :style="{'color': $route.path.split('/')[1] == 'user'?'#dc3c32':'#505050'}">
-                <i class="iconfont icon-wodedefuben"></i>
+                <i class="iconfont icon-wodedefuben1"></i>
                 <span>我的</span>
             </router-link>
     </div>

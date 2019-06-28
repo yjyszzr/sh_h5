@@ -4,7 +4,7 @@
         <div class="head">
             <span class="back-img" @click="goBack()"><img src="../../../assets/img/ret.png" alt=""></span>
             <div class="head-text" @click="openOrclose()">
-                <span>圣和彩店·<span>{{sntTitle(playType)}}</span></span>
+                <span><span>{{sntTitle(playType)}}</span></span>
                 <span class="header-down"><img id="downImg" src="../../../assets/img/freebuy_img/Collapse@3x.png"
                                                alt=""></span>
             </div>

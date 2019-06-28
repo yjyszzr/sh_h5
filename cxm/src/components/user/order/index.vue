@@ -101,8 +101,8 @@
                 <div>
                     <p>方案编号：<span>{{orderObj.programmeSn}}</span></p>
                     <p>创建时间：<span>{{orderObj.createTime}}</span></p>
-                    <p>店主接单：<span>{{orderObj.acceptTime}}</span></p>
-                    <p>店主出票：<span>{{orderObj.ticketTime}}</span></p>
+                    <!-- <p>店主接单：<span>{{orderObj.acceptTime}}</span></p>
+                    <p>店主出票：<span>{{orderObj.ticketTime}}</span></p> -->
                 </div>
             </div>
         </div>

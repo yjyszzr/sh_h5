@@ -243,7 +243,7 @@ export default {
     },
     //查询订单列表状态
     getOrderInfoList(params) {
-        return fetchPost('order/order/ngetOrderInfoList', params)
+        return fetchPost('order/order/ngetOrderInfoListV2', params)
     },
     //查询订单详情
     getOrderDetail(params) {

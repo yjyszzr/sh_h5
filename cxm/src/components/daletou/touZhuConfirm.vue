@@ -4,7 +4,7 @@
         <div class="head" v-show="isWeb()">
             <span class="back-img" @click="goBack()"><img src="../../assets/img/ret.png" alt=""></span>
             <div class="head-text">
-                <span>圣和彩店·投注确认</span>
+                <span>投注确认</span>
             </div>
             <div class="memu"></div>
         </div>

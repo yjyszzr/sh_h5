@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </section>
-            <div class="ment"><i class="iconfont icon-icon-29 xySelected" ref='xySelected' @click="xySelectedClick()"></i><p>我已阅读并同意<router-link to="/freebuy/protocol">《圣和彩店投注服务协议》</router-link></p></div>
+            <div class="ment"><i class="iconfont icon-icon-29 xySelected" ref='xySelected' @click="xySelectedClick()"></i><p>我已阅读并同意<router-link to="/freebuy/protocol">《投注服务协议》</router-link></p></div>
         </div>
         <!--底部-->
         <section class="fixed fixBottom">

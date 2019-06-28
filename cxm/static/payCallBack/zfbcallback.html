@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>支付宝安全支付</title>
+	<meta id="viewport" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1; user-scalable=no;" />
+	<meta name="format-detection" content="telephone=no" />
+</head>
+
+<body>
+	<button>返回app</button>
+</body>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type="text/javascript">
+	//获取url key
+	var getUrlStr = function (name, url) {
+		/**
+		 * 获取地址栏参数
+		 */
+		let reg = new RegExp("(^|\\?|&)" + name + "=([^&]*)(\\s|&|$)", "i");
+		if (reg.test(url)) {
+			return unescape(RegExp.$2.replace(/\+/g, " "))
+		}
+		return undefined
+	}
+
+    function getUrlecho(name){
+        return getUrlStr(name,location.href) || '';
+    }
+    function jsApiCall(tradeNO){ 
+        AlipayJSBridge.call("tradePay",{
+            "tradeNO": tradeNO
+            }, function(result){
+            if(result.resultCode == '9000'){
+                location.href="pay_success.jsp";
+            }
+        });
+    }
+
+	function paycallback() {
+		var obj = {
+            app_id: getUrlecho('app_id'),
+            auth_code: getUrlecho('auth_code'),
+            payType: getUrlecho('payType'),
+            payToken: getUrlecho('payToken'),
+            userToken: getUrlecho('userToken')
+        }
+		$.ajax({
+			type: 'get',
+			url: 'http://caixiaomi.cn:8765/api/payment/payment/payAuthoriz',
+			contentType: 'application/json;charset=UTF-8',
+			data: obj,
+			dataType: "json",
+			success: function (data) {
+				//console.log(data)
+                if(data.code=='0'){
+                    jsApiCall(data.data)
+                }else{
+                    alert(data.msg);
+                }
+			}
+		})
+	}
+    paycallback();
+</script>
+
+</html>
