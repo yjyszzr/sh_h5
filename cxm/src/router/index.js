@@ -456,6 +456,12 @@ const router = new Router({
             name: 'mygrossincome',
             component: resolve => require(['@/components/activity/protomakemoeny/invitedFriends'], resolve)
         },
+        //推广赚钱活动二维码
+        {
+            path: '/user/activity/ercode',
+            name: 'mygrossincome',
+            component: resolve => require(['@/components/activity/protomakemoeny/erCode'], resolve)
+        },
     ]
 })
 

@@ -124,10 +124,10 @@
         <!-- 底部 -->
         <footer class="proto_foot">
             <div class="pro-ft-l">
-                <p>我的二维码</p>
+                <p @click="myercode()">我的二维码</p>
             </div>
             <div class="pro-ft-r">
-                <p>分享好友</p>
+                <p @click="share()">分享好友</p>
             </div>
         </footer>
         <!-- mark弹窗 -->

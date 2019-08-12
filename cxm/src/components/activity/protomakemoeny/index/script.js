@@ -154,6 +154,25 @@ export default {
         //关闭弹窗
         close(){
             this.markShow = false;
+        },
+        //跳转我的二维码
+        myercode(){
+            if(!isWebview()){
+                this.$router.push({
+                    path: '/user/activity/ercode',
+                    query:{
+                        userid: this.activityUserInfo.user_id
+                    }
+                })
+            }else{
+                nativeApp({'methodName':'pushUrl','url':getCsUrl()+'/user/activity/ercode?cxmxc=scm&type=1&userid='+this.activityUserInfo.user_id})
+            }
+        },
+        //分享
+        share(){
+            if(isWebview()){
+                nativeApp({'methodName':'goShare','title':'您收到一个红包','description':'注册送68元彩金首单免费!','url':getCsUrl()+'/static/activity/tg/index.html?id='+this.activityUserInfo.user_id,'thumbUrl':''})
+            }
         }
     },
     mounted(){

@@ -1,0 +1,101 @@
+@import "../../../../assets/css/function.scss";
+#erCode{
+    background: #fff;
+    min-height: 100%;
+    position: relative;
+    font-family:PingFang-SC-Medium;
+    img{
+        width: 100%;
+    }
+    .ercode-box{
+        position: absolute;
+        top: px2rem(316px);
+        width: px2rem(574px);
+        left: calc((50% - 3.8rem));
+        .ed-box{
+            border-radius: px2rem(10px);
+            overflow: hidden;
+        }
+        .ed-b-t{
+            background: #fff;
+            height: px2rem(64px);
+            text-align: center;
+            line-height: px2rem(64px);
+            font-size: px2rem(32px);
+            color: #323232;
+        }
+        .ed-b-c{
+            background: #fff;
+            #qrcode{
+                width: px2rem(343px);
+                height: px2rem(343px);
+                margin: 0 auto px2rem(22px);
+            }
+            .md-txt{
+                border-bottom: 1px dashed #FD8A8D;
+                width: px2rem(457px);
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: px2rem(22px); 
+                p:first-of-type{
+                    font-size: px2rem(28px);
+                    color: #353535;
+                    margin-right: px2rem(18px);
+                }
+                p:last-of-type{
+                    display: flex;
+                    span{
+                        display: block;
+                        width: px2rem(197px);
+                        height: px2rem(65px);
+                        color:rgba(223,49,63,1);
+                        background: #FFF5F3;
+                        border: 1px solid #FD8A8D;
+                        border-right: none;
+                        border-radius: px2rem(10px) 0 0 px2rem(10px);
+                        font-size: px2rem(30px);
+                        text-align: center;
+                        line-height: px2rem(65px);
+                        box-sizing: border-box;
+                    }
+                    button{
+                        width: px2rem(95px);
+                        height: px2rem(65px);
+                        background: #FD8A8D;
+                        color: #fff;
+                        font-size: px2rem(28px);
+                        border: none;
+                        border-radius: px2rem(10px);
+                        margin-left: px2rem(-8px);
+                    }
+                }
+            }
+        }
+        .ed-b-b{
+            background: #fff;
+            display: flex;
+            align-content: center;
+            justify-content: space-between;
+            width: px2rem(457px);
+            padding: px2rem(27px) px2rem(58px);
+            p{
+                background: #FFCE3D;
+                width: px2rem(204px);
+                height: px2rem(65px);
+                border-radius: px2rem(10px);
+                text-align: center;
+                line-height: px2rem(65px);
+                color: #3E0103;
+                font-size: px2rem(30px);
+            }
+        }
+        .ed-alert{
+            text-align: center;
+            color: #353535;
+            font-size: px2rem(28px);
+            margin-top: px2rem(29px);
+        }
+    }
+}
