@@ -54,6 +54,7 @@
                         <div>
                             <i class="iconfont icon-icon-3"></i>
                             <span class="arrow_right float_right"></span>
+                            <span style="float:right;height:1.17333rem;line-height:1.19rem;color:#dc3c32;">{{Number(userInfo.bonusNumber)>0?`${userInfo.bonusNumber}张优惠券可用`:''}}</span>
                             <span class="message">我的卡券</span>
                         </div>
                     </router-link>

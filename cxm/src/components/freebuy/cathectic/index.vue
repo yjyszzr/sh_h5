@@ -87,7 +87,7 @@
             </ul>
             <div>
                 <div class="left">
-                    <p>{{betObj.betNum}}注{{betObj.times}}倍&nbsp;&nbsp;共需：<span>￥{{betObj.money}}</span></p><p>预测奖金：<span class="ycjj">￥{{betObj.minBonus}}-{{betObj.maxBonus}}</span></p>
+                    <p>{{betObj.betNum}}注{{betObj.times}}倍&nbsp;&nbsp;共需：<span>{{betObj.money}}元</span></p><p>预测奖金：<span class="ycjj">{{betObj.minBonus}}-{{betObj.maxBonus}}</span></p>
                 </div>
                 <a class="right" @click="saveGo()">确定</a>
             </div>

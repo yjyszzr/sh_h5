@@ -1,6 +1,6 @@
 <template>
 	<div class="shortcut" @click="shortcutClick()" @touchmove.prevent>
-        <img src="../../assets/img/shortcutmb.jpg" alt="" class="img1" v-if="isWx==false">
+        <img src="../../assets/img/shortcutmb.png" alt="" class="img1" v-if="isWx==false">
         <img src="../../assets/img/wxfx.jpg" class="img2" alt="" v-if="isWx==true">
     </div>
 </template>

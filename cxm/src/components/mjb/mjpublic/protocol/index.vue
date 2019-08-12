@@ -3,7 +3,7 @@
 </style>
 <template>
     <div class="wrap protocol">
-        <p>{{$store.state.channelObj.channelNmae}}提供的各项基于互联网以及通信网的相关服务 (以下称“服务”）的所有权及经营运作权，归北京数字传奇网络科技有限公司所有，请您务必审慎阅读。充分理解各条款内容，特别是免除或限制责任的条款，以及开通或使用某项
+        <p>{{$store.state.channelObj.channelNmae}}提供的各项基于互联网以及通信网的相关服务 (以下称“服务”）的所有权及经营运作权，归{{$store.state.channelObj.channelNmae}}所有，请您务必审慎阅读。充分理解各条款内容，特别是免除或限制责任的条款，以及开通或使用某项
             服务的单独协议，并选择接受或不接受。限制、免责条款可能以加粗形式提示您注意。除非您已阅读并接受本协议的所有条款，否则您无权注册或使用购彩账户。依据本协议以下条款在本网注册的用户，并同意以下服务条款，方有资格享受本网提供的相关服务，并受本协议条款的约束。用户使用本网提供的服务即视为接受本协议，使用前请认真阅读本协议。</p>
         <h5>一、相关定义</h5>
         <p>1、用户：指在{{$store.state.channelObj.channelNmae}}APP注册成功，有资格享受{{$store.state.channelObj.channelNmae}}代购合买服务的个人。</p>

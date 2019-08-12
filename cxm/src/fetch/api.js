@@ -7,7 +7,7 @@ import {
     Indicator
 } from 'mint-ui'
 import router from '../router/index'
-import {getUrlStr} from '../util/common'
+import {getUrlStr,nativeApp,isWebview} from '../util/common'
 // axios 配置
 axios.defaults.timeout = 15000;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
@@ -43,8 +43,8 @@ axios.interceptors.response.use((res) => {
                 Toast(res.data.msg)
             }
         } else if (res.data.code == 600) {
-            if(getUrlStr('from',location.href)=='app'||getUrlStr('cfrom',location.href)=='app'){
-                location.href = 'http://m.caixiaomi.net?cxmxc=scm&type=5'
+            if(isWebview()){
+                nativeApp({'methodName':'login'})
             }else{
                 localStorage.clear()
                 if(res.config.url.indexOf('match/queryMatchResultNew') != -1||res.config.url.indexOf('recharge/countUserRecharge') != -1||res.config.url.indexOf('collect/add') != -1||res.config.url.indexOf('match/nSaveBetInfo') != -1||res.config.url.indexOf('lotto/saveBetInfo') != -1){
@@ -520,6 +520,26 @@ export default {
     //提现界面提示
     queryAppDocByType(params) {
         return fetchPost('/member/appDoc/queryAppDocByType', params)
+    },
+    //推广活动首页
+    showActivityByTg(params) {
+        return fetchPost('/activity/activity/showActivityByTg', params)
+    },
+    //领取档位红包
+    recieveHBByActType(params) {
+        return fetchPost('/activity/activity/userInfo/recieveHBByActType', params)
+    },
+    //获取所有流水
+    queryAllAccount(params) {
+        return fetchPost('/activity/activity/queryAllAccount', params)
+    },
+    //提取收益
+    rewardToMoney(params) {
+        return fetchPost('/activity/activity/rewardToMoney', params)
+    },
+    //受邀人数
+    queryResultAccount(params) {
+        return fetchPost('/activity/activity/queryResultAccount', params)
     },
 }
 

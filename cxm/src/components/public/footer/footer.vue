@@ -1,5 +1,5 @@
 <template>
-    <div class="foot fixBottom" @touchmove.prevent v-if="isShowTabbar()">
+    <div class="foot fixBottom" @touchmove.prevent v-if="isShowTabbar">
             <router-link to='/' :style="{'color': $route.path.split('/')[1] == ''?'#dc3c32':'#505050'}">
                 <i class="iconfont icon-index"></i>
                 <span>大厅</span>
@@ -23,15 +23,19 @@
 export default {
 	data() {
 		return {
-            
+            isShowTabbar: false
 		}
 	},
-	methods: {
-		isShowTabbar () {
+    watch:{
+        $route(a,b){
             let routeLength = this.$route.path.split('/').length
-			return routeLength > 2||this.$route.name=='404' ? false : true
-		}
-	}
+			if(routeLength > 2||this.$route.name=='404'){
+                this.isShowTabbar = false
+            }else{
+                this.isShowTabbar = true
+            }
+        }
+    }
 }
 </script>
 

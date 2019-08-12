@@ -71,9 +71,9 @@
           </li>
         </ul>
       </section>
-      <div class="warn_pay" v-show="Number(payment.thirdPartyPaid)>0&&payCode=='app_offline'">注:您的可用余额不足，请完成账户充值后下单</div>
+      <div class="warn_pay" v-show="Number(payment.thirdPartyPaid)>0">注:您的可用余额不足，请完成账户充值后下单</div>
     </div>
-    <button class="paymentBtn" @click="payBtn()">{{payCode=='app_offline'&&Number(payment.thirdPartyPaid)>0?'去充值':'确认支付'}}</button>
+    <button class="paymentBtn" @click="payBtn()">{{Number(payment.thirdPartyPaid)>0?'去充值':'确认支付'}}</button>
   </div>
 </template>
 <script src='./script.js'>

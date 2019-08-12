@@ -68,18 +68,19 @@ export default {
             } else {
                 return '#f6ad41'
             }
-        },
-        goTxxq(s,c) {
-            if(s==4){
-                this.$router.push({
-                    path: '/user/give_details',
-                    query: {
-                        id: c
-                    },
-                    replace: false
-                })
-            }
         }
+        // ,
+        // goTxxq(s,c) {
+        //     if(s==4){
+        //         this.$router.push({
+        //             path: '/user/give_details',
+        //             query: {
+        //                 id: c
+        //             },
+        //             replace: false
+        //         })
+        //     }
+        // }
     },
     computed: {
         tabstatus() {

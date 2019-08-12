@@ -20,7 +20,7 @@ export default {
             list_num: ['20', '50', '100', '200'],
             payText: '为了确保支付成功,请保持网络畅通',
             allPaymentList: [],
-            payCode: 'app_weixin',
+            payCode: this.$route.query.paycode?this.$route.query.paycode:'',
             cznum: 10,
             czobj: {},
             activefrom: '0',
@@ -51,13 +51,13 @@ export default {
         },
         determine() {
             if(this.payCode == 'app_offline'){
-                MessageBox({
+                MessageBox.confirm('',{
                     title: '人工充值',
                     showCancelButton: true,
                     confirmButtonText: '联系店主',
                     cancelButtonText: '暂不联系',
                     message: `
-                        <p style='text-align: left;'>店主微信号：<span style='color:#dc3c32;text-decoration:underline;'>${this.input_info.payTitle}</span></p>
+                        <p style='text-align: left;'>店主微信号：<span style='color:#dc3c32;text-decoration:underline;font-size: 0.5rem;'>${this.input_info.payTitle}</span></p>
                         <p style='text-align: left;'>第一步：长按店主微信号进行复制</p>
                         <p style='text-align: left;'>第二步：点击（联系店主）打开微信</p>
                         <p style='text-align: left;'>第三步：添加店主微信，人工转账充值</p>
@@ -65,7 +65,9 @@ export default {
                     `
                 }).then(action => {
                     location.href='weixin://'
-                }, cancel => {});
+                },action =>{
+                    
+                })
                 return false;
             }
             let regex = /^[1-9]\d*$/;
@@ -258,8 +260,16 @@ export default {
             .then(res => {
                 if (res.code == 0) {
                     this.allPaymentList = res.data
-                    this.payCode = res.data[0].payCode
-                    this.input_info = res.data[0]
+                    if(this.payCode==''){
+                        this.payCode = res.data[0].payCode
+                        this.input_info = res.data[0]
+                    }else{
+                        this.allPaymentList.forEach(item=>{
+                            if(item.payCode==this.payCode){
+                                this.input_info = item
+                            }
+                        })
+                    }
                 }
             })
         api.allPaymentWithRecharge({})

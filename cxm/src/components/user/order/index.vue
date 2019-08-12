@@ -15,7 +15,7 @@
                         <div>
                             <p>{{orderObj.lotteryClassifyName}}<span :style="{'color':orderObj.orderStatus=='5'?'#dc3c32':'#505050'}">{{orderObj.processResult}}</span></p>
                             <p>
-                                <span>￥{{orderObj.ticketAmount}}</span>
+                                <span>{{orderObj.ticketAmount}}元</span>
                                 <span style="color:#dc3c32;">{{orderObj.forecastMoney}}</span>
                             </p>
 
@@ -27,9 +27,9 @@
                             <span :style="{'color':orderObj.orderStatus=='2'?'#dc3c32':'#505050'}">{{orderObj.orderStatusDesc}}</span>
                         </p>
                         <p>
+                            <span v-if="orderObj.orderStatus=='9'">派奖金额</span>
                             <span v-if="orderObj.orderStatus=='5'">中奖金额</span>
-                            <span :style="{'color':orderObj.orderStatus=='5'?'#dc3c32':'#505050'}" v-if="orderObj.orderStatus=='5'">￥{{orderObj.processStatusDesc}}</span>
-
+                            <span :style="{'color':orderObj.orderStatus=='9'||orderObj.orderStatus=='5'?'#dc3c32':'#505050'}">{{orderObj.processStatusDesc}}</span>
                         </p>
                     </div>
                 </div>

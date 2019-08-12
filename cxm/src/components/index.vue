@@ -149,6 +149,9 @@
             span {
                 color: #fff;
                 font-size: px2rem(26px);
+                a{
+                    color: #fff;
+                }
             }
         }
     }
@@ -156,20 +159,26 @@
 <!--首页-->
 <template>
     <div class="wrap">
-        <!-- <div class="downDrop" @click="goDownLoad()">
+        <div class="downDrop" >
             <div class="downLeft">
-                <img src="../assets/img/downIocn.png" alt="">
+                <!-- <img src="../assets/img/downIocn.png" alt=""> -->
                 <span>下载圣和彩店APP 购彩更轻松</span>
             </div>
+            <!-- 下载不同渠道安卓包 -->
             <div class="downRight">
-                <span>立即打开</span>
+                <span v-if="detect=='ios'">
+                  <a href="https://cjqm.app/cfl9.app">立即下载</a>
+                </span>
+                <span v-else>
+                  <a href="https://szcq-apk.oss-cn-beijing.aliyuncs.com/shenghe_c11110_1.2.0.apk">立即下载</a>
+                </span>
             </div>
-        </div> -->
+        </div>
         <!-- 桌面引导 -->
-        <!-- <div v-if='detect=="ios"' class="fixedRight" @click="shortClick()">
+        <div v-if='detect=="ios"' class="fixedRight" @click="shortClick()">
             <p>放到</p>
             <p>桌面</p>
-        </div> -->
+        </div>
         <v-slider :bannerList='bannerList'></v-slider>
         <!--首页-->
         <div class="index_center">
@@ -260,10 +269,10 @@
             }
         },
         methods: {
-            // shortClick() {
-            //     //location.href = 'http://www.baidu.com'
-            //     this.$store.commit('MARKSHORTCUT', true)
-            // },
+            shortClick() {
+                //location.href = 'http://www.baidu.com'
+                this.$store.commit('MARKSHORTCUT', true)
+            },
             goFreebuy(url, s) {
                 if (s.status == '1') {
                     Toast(s.statusReason)
@@ -371,11 +380,11 @@
                     }
                 }
             },
-            // goDownLoad() {
-            //     this.$router.push({
-            //         path: "/activity/down/cxm?ct=2&fr=cxm_h5home"
-            //     });
-            // }
+            goDownLoad() {
+                // this.$router.push({
+                //     path: "/activity/down/cxm?ct=2&fr=cxm_h5home"
+                // });
+            }
         },
         mounted() {
                 this.detect = detect()

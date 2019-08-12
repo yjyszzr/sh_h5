@@ -1,18 +1,14 @@
 import api from '../../../fetch/api'
-import { MessageBox } from 'mint-ui';
 import {
     wxPd
 } from '../../../util/common'
 import {
-    Toast
-} from 'mint-ui'
-import {
-    Indicator
+    Toast,Indicator,MessageBox
 } from 'mint-ui'
 export default {
     name: 'payment',
     beforeCreate() {
-       
+        Indicator.open();
     },
     data() {
         return {
@@ -22,9 +18,6 @@ export default {
             payText: '为了确保支付成功,请保持网络畅通',
             orderId: ''
         }
-    },
-    created() {
-       
     },
     methods: {
         yhClick() {
@@ -37,32 +30,30 @@ export default {
             })
             return l?l.bonusPrice:"";
         },
-        fetchData(c,s) {
+        async fetchData(c,s) {
             let data = {
                 bonusId: c,
                 payToken: s
             }
-            api.unifiedPayBefore(data)
-                .then(res => {
-                        //console.log(res)
-                        if (res.code == 0) {
-                            this.payment = res.data
-                            this.$store.state.mark_playObj.yhList = res.data.bonusList
-                            this.$store.state.mark_playObj.bounsId = res.data.bonusId
-                        }
-                })
-            api.allPayment({})
-                .then(res => {
-                    if (res.code == 0) {
-                        this.allPaymentList = res.data
-                        this.payCode = res.data[0].payCode
-                    }
-                })
+            let res = await api.unifiedPayBefore(data)
+            if (res.code == 0) {
+                this.payment = res.data
+                this.$store.state.mark_playObj.yhList = res.data.bonusList
+                this.$store.state.mark_playObj.bounsId = res.data.bonusId
+            }
+            let rs = await api.allPayment({})
+            if (rs.code == 0) {
+                this.allPaymentList = rs.data
+                this.payCode = rs.data[0].payCode
+            }
         },
         payBtn() {
-            if(this.payCode=='app_offline'&&Number(this.payment.thirdPartyPaid) > 0){
+            if((this.payCode=='app_offline'||this.payCode=='app_rkwap')&&Number(this.payment.thirdPartyPaid) > 0){
                 this.$router.replace({
-                    path: '/user/recharge'
+                    path: '/user/recharge',
+                    query:{
+                        paycode: this.payCode
+                    }
                 })
                 return false;
             }

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<button>返回app</button>
+	
 </body>
 <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 <script type="text/javascript">
@@ -33,7 +33,7 @@
             "tradeNO": tradeNO
             }, function(result){
             if(result.resultCode == '9000'){
-                location.href="pay_success.jsp";
+                location.href="/static/payCallBack/returnapp.html";
             }
         });
     }
@@ -43,8 +43,7 @@
             app_id: getUrlecho('app_id'),
             auth_code: getUrlecho('auth_code'),
             payType: getUrlecho('payType'),
-            payToken: getUrlecho('payToken'),
-            userToken: getUrlecho('userToken')
+            orderSn: getUrlecho('orderSn')
         }
 		$.ajax({
 			type: 'get',
