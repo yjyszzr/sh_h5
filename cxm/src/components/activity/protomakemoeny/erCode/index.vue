@@ -8,7 +8,9 @@
             </div>
             <img src="../img/22223.jpg" alt="">
             <div class="ed-b-c">
-                <div id="qrcode"></div>
+                <div class="cd">
+                    <div id="qrcode"></div>
+                </div>
                 <div class="md-txt">
                     <p>我的推广码</p>
                     <p>

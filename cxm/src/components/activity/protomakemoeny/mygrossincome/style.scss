@@ -26,6 +26,14 @@
                 }
                 p:first-of-type{
                     font-size: px2rem(30px);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        width: px2rem(28px);
+                        height: px2rem(28px);
+                        margin-left: px2rem(10px);
+                    }
                 }
                 p:last-of-type{
                     font-size: px2rem(45px);
@@ -84,6 +92,10 @@
                     width: px2rem(26px);
                     height: px2rem(26px);
                 }
+                .mint-switch-input:checked + .mint-switch-core{
+                    border-color: #c72d01;
+                    background-color: #c72d01;
+                }
                 .mint-switch-input:checked + .mint-switch-core::after{
                     transform: translateX(px2rem(16px));
                 }
@@ -113,12 +125,12 @@
         .mb-list-box{
             box-shadow:0px px2rem(4px) px2rem(12px) 0px rgba(225,225,225,0.36);
             background: #fff;
-            height: px2rem(596px);
+            height: px2rem(796px);
             overflow: hidden;
             box-sizing: border-box;
             .mb-list{
                 -webkit-overflow-scrolling: touch !important;
-                height: px2rem(500px);
+                height: px2rem(700px);
                 overflow: scroll;
                 padding: 0 px2rem(18px);
             }

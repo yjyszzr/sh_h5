@@ -1,6 +1,6 @@
-const expUrl = 'http://192.168.31.205:8081'
+// const expUrl = 'http://192.168.31.205:8081'
 //const expUrl = 'http://m.jinngu.club'  //线上
-//const expUrl = 'http://t1.caixiaomi.net:9808'  //测试
+const expUrl = 'http://t1.caixiaomi.net:9808'  //测试
 var moment = require('moment');
 //app h5页面分享
 export let isShare = (arg, text, url, thumbUrl) => {

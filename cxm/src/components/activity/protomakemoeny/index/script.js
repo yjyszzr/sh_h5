@@ -16,6 +16,7 @@ export default {
             ryBfb: 0, //满足条件荣耀档位百分比保存
             markShow: false, //弹窗展示
             jtype: '', //奖类型
+            flShow: '', //返利奖模块显隐
         }
     },
     beforeCreate() {
@@ -69,51 +70,64 @@ export default {
             .then(res => {
                 if (res.code == 0) {
                     this.activityUserInfo = res.data.activityUserInfo
-                    //伯乐档位排序
-                    res.data.acitvityBl.sort((a,b)=>{
-                        return Number(a.gear_position)-Number(b.gear_position);
+                    let fl= res.data.activity.find(item=>{
+                        return item.act_type == '4';
                     })
-
-                    this.acitvityBl = res.data.acitvityBl
-                    
-                    //荣耀档位排序
-                    res.data.acitvityRy.sort((a,b)=>{
-                        return Number(a.gear_position)-Number(b.gear_position);
-                    })
-
-                    this.acitvityRy = res.data.acitvityRy
-
-                    let dbz = Number(this.activityUserInfo.invitation_add_reward); 
-                    let ryArr = res.data.acitvityRy;
-                    //荣耀档位百分比计算
-                    if(dbz<=ryArr[0].gear_position){
-                        this.ryBfb = (1/ryArr.length*100)*dbz/ryArr[0].gear_position
-                    }else if(dbz>ryArr[0].gear_position&&dbz<=ryArr[1].gear_position){
-                        this.ryBfb = 1/ryArr.length*100+((1/ryArr.length*100)*(dbz-ryArr[0].gear_position)/(ryArr[1].gear_position-ryArr[0].gear_position))
-                    }else if(dbz>ryArr[1].gear_position&&dbz<=ryArr[2].gear_position){
-                        this.ryBfb = 2/ryArr.length*100+((1/ryArr.length*100)*(dbz-ryArr[1].gear_position)/(ryArr[2].gear_position-ryArr[1].gear_position))
-                    }else if(dbz>ryArr[2].gear_position&&dbz<=ryArr[3].gear_position){
-                        this.ryBfb = 3/ryArr.length*100+((1/ryArr.length*100)*(dbz-ryArr[2].gear_position)/(ryArr[3].gear_position-ryArr[2].gear_position))
-                    }else if(dbz>ryArr[3].gear_position&&dbz<=ryArr[4].gear_position){
-                        this.ryBfb = 4/ryArr.length*100+((1/ryArr.length*100)*(dbz-ryArr[3].gear_position)/(ryArr[4].gear_position-ryArr[3].gear_position))
-                    }else if(ryArr[5]&&dbz>ryArr[4].gear_position&&dbz<=ryArr[5].gear_position){
-                        this.ryBfb = 5/ryArr.length*100+((1/ryArr.length*100)*(dbz-ryArr[4].gear_position)/(ryArr[5].gear_position-ryArr[4].gear_position))
-                    }
-
-                    //当前档位查找
-                    this.dq_pos = res.data.acitvityBl.find((item)=>{
-                        return item.is_status == '0';
-                    }) || res.data.acitvityBl[res.data.acitvityBl.length-1]
-
-                    //下一档位查找
-                    this.gear_pos = res.data.acitvityBl.find((item)=>{
-                        return item.gear_position>=Number(res.data.activityUserInfo.invitation_number)
-                    })
-
-                    if(this.dq_pos.gear_position>=Number(res.data.activityUserInfo.invitation_number)){
-                        this.bounsStatus = 0;
+                    if(fl){
+                        this.flShow = Number(fl.number)
                     }else{
-                        this.bounsStatus = 1;
+                        this.flShow = 0 
+                    }
+                    if(res.data.acitvityBl.length>0){
+                        //伯乐档位排序
+                        res.data.acitvityBl.sort((a,b)=>{
+                            return Number(a.gear_position)-Number(b.gear_position);
+                        })
+                        this.acitvityBl = res.data.acitvityBl
+                        //当前档位查找
+                        this.dq_pos = res.data.acitvityBl.find((item)=>{
+                            return item.is_status == '0';
+                        }) || res.data.acitvityBl[res.data.acitvityBl.length-1]
+
+                        //下一档位查找
+                        this.gear_pos = res.data.acitvityBl.find((item)=>{
+                            return item.gear_position>Number(res.data.activityUserInfo.invitation_number)
+                        })
+
+                        if(this.dq_pos.gear_position>Number(res.data.activityUserInfo.invitation_number)){
+                            this.bounsStatus = 0;
+                        }else{
+                            this.bounsStatus = 1;
+                        }
+                    }
+                    if(res.data.acitvityRy.length>0){
+                        //荣耀档位排序
+                        res.data.acitvityRy.sort((a,b)=>{
+                            return Number(a.gear_position)-Number(b.gear_position);
+                        })
+
+                        this.acitvityRy = res.data.acitvityRy
+
+                        let dbz = Number(this.activityUserInfo.invitation_add_reward); 
+                        let ryArr = res.data.acitvityRy;
+                        //荣耀档位百分比计算
+                        if(dbz<=ryArr[0].gear_position){
+                            this.ryBfb = (1/ryArr.length*100)*dbz/ryArr[0].gear_position
+                        }else if(dbz>ryArr[0].gear_position&&dbz<=ryArr[1].gear_position){
+                            this.ryBfb = 1/ryArr.length*100+((1/ryArr.length*100)*(dbz-ryArr[0].gear_position)/(ryArr[1].gear_position-ryArr[0].gear_position))
+                        }else if(dbz>ryArr[1].gear_position&&dbz<=ryArr[2].gear_position){
+                            this.ryBfb = 2/ryArr.length*100+((1/ryArr.length*100)*(dbz-ryArr[1].gear_position)/(ryArr[2].gear_position-ryArr[1].gear_position))
+                        }else if(dbz>ryArr[2].gear_position&&dbz<=ryArr[3].gear_position){
+                            this.ryBfb = 3/ryArr.length*100+((1/ryArr.length*100)*(dbz-ryArr[2].gear_position)/(ryArr[3].gear_position-ryArr[2].gear_position))
+                        }else if(dbz>ryArr[3].gear_position&&dbz<=ryArr[4].gear_position){
+                            this.ryBfb = 4/ryArr.length*100+((1/ryArr.length*100)*(dbz-ryArr[3].gear_position)/(ryArr[4].gear_position-ryArr[3].gear_position))
+                        }else if(!ryArr[5]&&dbz>ryArr[4].gear_position){
+                            this.ryBfb = 100;
+                        }else if(ryArr[5]&&dbz>ryArr[4].gear_position&&dbz<=ryArr[5].gear_position){
+                            this.ryBfb = 5/ryArr.length*100+((1/ryArr.length*100)*(dbz-ryArr[4].gear_position)/(ryArr[5].gear_position-ryArr[4].gear_position))
+                        }else if(ryArr[5]&&dbz>ryArr[5].gear_position){
+                            this.ryBfb = 100;
+                        }
                     }
                 }
             })
@@ -171,7 +185,7 @@ export default {
         //分享
         share(){
             if(isWebview()){
-                nativeApp({'methodName':'goShare','title':'您收到一个红包','description':'注册送68元彩金首单免费!','url':getCsUrl()+'/static/activity/tg/index.html?id='+this.activityUserInfo.user_id,'thumbUrl':''})
+                nativeApp({'methodName':'goShare','title':'您收到一个红包','description':'注册送68元彩金首单免费!','url':getCsUrl()+'/static/activity/tg/index.html?id='+this.activityUserInfo.user_id,'thumbUrl':getCsUrl()+'/static/activity/tg/img/fx.jpg'})
             }
         }
     },

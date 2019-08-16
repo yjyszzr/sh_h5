@@ -7,8 +7,8 @@
           <p>历史总收益(元)</p>
           <p>{{mgriData.history_total_withdrawable_reward}}</p>
         </div>
-        <div class="mh-t-r">
-          <p>可提现收益(元)</p>
+        <div class="mh-t-r" @click="hd_alert()">
+          <p>可提现收益(元)<img src='../img/wenh.png' /></p>
           <p>{{mgriData.withdrawable_reward}}</p>
         </div>
       </div>
@@ -17,7 +17,7 @@
     <!-- 主体 -->
     <div class="mgin-body">
       <div class="mb-top">
-        <p>账户明细</p>
+        <p>收益明细</p>
         <mt-switch v-model="value" @change="turnOn"></mt-switch>
       </div>
       <div class="blx">
@@ -32,7 +32,7 @@
                 <p>
                   <span>
                     {{item.remark}}
-                    <b>{{item.reward_money}}元</b>
+                    <b :style="{'color':item.type=='7'?'#31b0df':'#DF313F'}">{{item.type=='7'?'-'+item.reward_money:'+'+item.reward_money}}元</b>
                   </span>
                   <span>{{dateGsh(item.add_time)}}</span>
                 </p>

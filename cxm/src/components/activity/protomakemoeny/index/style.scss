@@ -115,7 +115,7 @@
             .m2-b {
                 color: #404040;
                 font-size: px2rem(22px);
-                margin-top: px2rem(22px);
+                margin-top: px2rem(12px);
                 display: flex;
 
                 p {
@@ -129,7 +129,7 @@
 
                 p:last-of-type {
                     color: #DF3240;
-                    margin-left: px2rem(48px);
+                    margin-left: px2rem(36px);
                 }
             }
 
@@ -196,9 +196,8 @@
                 }
 
                 .hb {
-                    width: px2rem(70px);
-                    margin-bottom: px2rem(-10px);
-                    margin-left: px2rem(20px);
+                    width: px2rem(120px);
+                    margin-bottom: px2rem(-15px);
                 }
             }
         }
@@ -264,8 +263,8 @@
                             align-items: flex-end;
                             .jdt-item-t{
                                 width: 100%;
-                                height: px2rem(15px);
-                                border-right: 1px solid #fff;
+                                height: px2rem(17px);
+                                border-right: 1px solid #FF7B23;
                                 box-sizing: border-box;
                                 margin-bottom: px2rem(13px);
                             }
@@ -366,7 +365,7 @@
                     font-size: px2rem(24px);
                     color: #DF313F;
                 }
-                p:first-of-type{
+                p{
                     margin-bottom: px2rem(14px);
                 }
             }
@@ -402,7 +401,7 @@
         }
 
         .fadeMoveup-enter-active {
-            animation: fade-move 1s;
+            animation: fade-move 2s;
         }
         @keyframes fade-move {
             0% {
@@ -415,7 +414,7 @@
             }
         }
         .fadeMovedown-enter-active {
-            animation: fade-moved 1s;
+            animation: fade-moved 2s;
         }
         @keyframes fade-moved {
             0% {
@@ -472,6 +471,7 @@
         align-items: center;
         justify-content: center;
         .ct-box{
+            padding-top: px2rem(20px);
             background: white;
             width: 73%;
             border-radius: px2rem(10px);
@@ -516,6 +516,20 @@
                 color: #DF313F;
                 font-size: px2rem(28px);
             }
+        }
+    }
+    .nullAcStatus{
+        display: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        img{
+            width: px2rem(120px);
+            margin: px2rem(30px) px2rem(20px);
+        }
+        p{
+            font-size: px2rem(28px);
+            color: #404040;
         }
     }
 }

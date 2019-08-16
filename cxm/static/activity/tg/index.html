@@ -18,9 +18,9 @@
 			<img src="./img/1111.png" alt="" class="hd_img">
 			<div class="bt-img">
 				<div class="code">
-					<input class="phoneVal" type="tel" value="" placeholder="请输入手机号" />
+					<input onBlur="inputBlur()" class="phoneVal" maxlength="11" type="tel" value="" placeholder="请输入手机号" />
 					<div>
-						<input class="codeVal" type="tel" value="" placeholder="请输入验证码" />
+						<input onBlur="inputBlur()" class="codeVal" type="tel" value="" placeholder="请输入验证码" />
 						<button class="codebtn" onClick='register()'>获取验证码</button>
 					</div>
 				</div>
@@ -28,7 +28,7 @@
 				<div class="hdgz" onClick='activity_smClick()'>
 					<span>活动规则</span>
 				</div>
-				<img src="./img/1112.png" alt="">
+				<img src="./img/1112.jpg" alt="">
 			</div>
 		</div>
 	</div>

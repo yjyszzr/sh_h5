@@ -60,6 +60,16 @@ export default {
 
                 })
             }
+        },
+        //说明弹窗
+        hd_alert(){
+            MessageBox.alert(`
+            <p style='text-align:left;'>可提现收益：指通过推广活动赚取的收益金，
+            可以将收益金转入到（APP可提现账户），
+            转入后用户可用于提现或购彩；</p>
+            `,'可提现收益解释').then(action => {
+                
+            });
         }
     },
     mounted(){

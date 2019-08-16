@@ -21,12 +21,14 @@ export default {
     methods: {
         qrcode() {
             let qrcode = new QRCode('qrcode', {
+                width: 100,
+                height: 100, 
                 text: getCsUrl()+'/static/activity/tg/index.html?id='+this.userid // 二维码内容 
             })
         },
         share(){
             if(isWebview()){
-                nativeApp({'methodName':'goShare','title':'您收到一个红包','description':'注册送68元彩金首单免费!','url':getCsUrl()+'/static/activity/tg/index.html?id='+this.user_id,'thumbUrl':''})
+                nativeApp({'methodName':'goShare','title':'您收到一个红包','description':'注册送68元彩金首单免费!','url':getCsUrl()+'/static/activity/tg/index.html?id='+this.user_id,'thumbUrl':getCsUrl()+'/static/activity/tg/img/fx.jpg'})
             }
         },
         //截屏

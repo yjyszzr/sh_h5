@@ -10,20 +10,20 @@
                     <div class="m1-l" @click="goInvitedFriends()">
                         <img src="../img/touxiang@2x.png" alt="">
                         <p>邀请总人数(个)</p>
-                        <p>{{activityUserInfo.history_invitation_number>=10?activityUserInfo.history_invitation_number:activityUserInfo.history_invitation_number=='0'?'0':'0'+activityUserInfo.history_invitation_number}}</p>
+                        <p>{{activityUserInfo.history_invitation_number?activityUserInfo.history_invitation_number>=10?activityUserInfo.history_invitation_number:activityUserInfo.history_invitation_number=='0'?'0':'0'+activityUserInfo.history_invitation_number:'0'}}</p>
                     </div>
                     <div class="m1-line"></div>
                     <div class="m1-r" @click="goMygroincome()">
                         <img src="../img/qian.png" alt="">
                         <p>我的总奖励金(元)</p>
-                        <p>{{Number(activityUserInfo.history_invitation_number_reward).toFixed(2)}}</p>
+                        <p>{{activityUserInfo.history_total_withdrawable_reward||'0.0'}}</p>
                         <transition name="fadeMovedown">
                             <div class="moveBouns" v-show="bounsStatus==2||rybounsStatus">+{{totalMoneyAdd}}</div>
                         </transition>
                     </div>
                 </div>
                 <!-- 模块2 -->
-                <div class="m2">
+                <div class="m2" v-if="acitvityBl.length>0">
                     <div class="m-t" @click="ts('bl')">
                         <img src="../img/zq-l.png" alt="">
                         <span>伯乐奖</span>
@@ -47,12 +47,12 @@
                         </transition>
                     </div>
                     <div class="m2-b">
-                        <p>已邀请{{activityUserInfo.invitation_number}}人再邀请{{gear_pos.gear_position-activityUserInfo.invitation_number}}人可领取额外奖励金</p> 
+                        <p>已邀请{{activityUserInfo.invitation_number}}人再邀请{{gear_pos.gear_position-activityUserInfo.invitation_number}}人可打开红包</p> 
                         <p v-show="bounsStatus!=0">{{dq_pos.gear_position_money}}元</p>
                     </div>
                 </div>
                 <!-- 模块3 -->
-                <div class="m3">
+                <div class="m3" v-if="acitvityRy.length>0">
                     <div class="m-t" @click="ts('ry')">
                         <img src="../img/zq-l.png" alt="">
                         <span>荣耀奖</span>
@@ -88,11 +88,11 @@
                         </div>
                     </div>
                     <div class="m3-b">
-                        受邀好友累计购彩给您已带来<span>{{activityUserInfo.invitation_number_reward}}元</span>奖励金
+                        受邀好友累计购彩给您已带来<span>{{activityUserInfo.buy_add_reward}}元</span>奖励金
                     </div>
                 </div>
                 <!-- 模块4 -->
-                <div class="m4">
+                <div class="m4" v-if="flShow>0">
                     <div class="m-t" @click="ts('fl')">
                         <img src="../img/zq-l.png" alt="">
                         <span>返利奖</span>
@@ -108,16 +108,23 @@
                     
                 </div> -->
                 <!-- 模块6 -->
-                <div class="m6">
+                <div class="m6" v-show="acitvityBl.length>0||acitvityRy.length>0||flShow>0">
                     <div class="ml-t">
                         <img src="../img/qr.png" alt="">
                         <p>奖励说明</p>
                         <img src="../img/zq-l.png" alt="">
                     </div>
                     <div class="m6-c">
-                        <p>*参与奖励活动的用户请详细阅览单个活动奖励规则；</p>
-                        <p>*在推广活动内赚取的奖励金是可以转入到APP可提现账户内，可用于购彩或提现；</p>
+                        <p>*参与本次活动的用户请详细查阅单个活动奖励规则；</p>
+                        <p>*在推广活动内赚取的奖励金需要先转入到APP可提现账户内，可用于购彩或提现；</p>
+                        <p>*参与本活动的用户若发现作弊行为（如：虚假刷量，机器作弊，恶意套现等），将则视为作弊用户，平台有权取消用户参与资格，同时会冻结奖励和讨回已发奖金；</p>
+                        <p>*本活动最终解释权归圣和彩店所有</p>
                     </div>
+                </div>
+                <!-- 暂无活动展示 -->
+                <div class="nullAcStatus" v-show="acitvityBl.length<=0&&acitvityRy.length<=0&&flShow<=0">
+                    <img src="../img/zwhd.jpg" alt="">
+                    <p>活动筹备中，敬请期待</p>
                 </div>
             </section>
         </div>

@@ -4,11 +4,11 @@
         <div class="inv-head">
             <div class="inv-h-l">
                 <p>邀请总人数(个)</p>
-                <p>{{invData.history_invitation_number>=10?invData.history_invitation_number:invData.history_invitation_number=='0'?'0':'0'+invData.history_invitation_number}}</p>
+                <p>{{invData.history_invitation_number?invData.history_invitation_number>=10?invData.history_invitation_number:invData.history_invitation_number=='0'?'0':'0'+invData.history_invitation_number:'0'}}</p>
             </div>
-            <div class="inv-h-r">
-                <p>累计总收益(元)</p>
-                <p>{{invData.history_total_return_reward}}</p>
+            <div class="inv-h-r" @click="hd_alert()">
+                <p>累计总收益(元)<img src='../img/wenh.png' /></p>
+                <p>{{invData.history_total_return_reward||'0.0'}}</p>
             </div>
         </div>
         <!-- 主体 -->

@@ -22,6 +22,13 @@
             }
             p:first-of-type{
                 font-size: px2rem(30px);
+                display: flex;
+                align-items: center;
+                img{
+                    width: px2rem(28px);
+                    height: px2rem(28px);
+                    margin-left: px2rem(10px);
+                }
             }
             p:last-of-type{
                 font-size: px2rem(45px);
@@ -50,7 +57,7 @@
         }
         .inv-b-b{
             -webkit-overflow-scrolling: touch !important;
-            height: px2rem(500px);
+            height: px2rem(795px);
             overflow: scroll;
             padding: 0 px2rem(18px);
             .inv-b-item{

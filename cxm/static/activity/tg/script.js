@@ -50,8 +50,8 @@ function getUrlStr(name, url) {
 
 function activity_smClick() {
 	$.modal({
-		title: '扫码规则说明',
-		text: '<p class="left">1、用户凭购物单据，均可获得一次扫码机会。扫码后即享110元彩金，彩金仅可用于购彩，不可提现，中奖奖金可以提现。每个用户限享1次（相同手机号码、设备视为同一用户，不重复派发)。<br />2、注册成功后请点击“我的－我的卡券”查收，彩金逾期未使用自动过期，请及时使用。<br />3、本活动不可与其他同类型新用户注册活动同享。<br /> 4、本活动最终解释权归圣和彩店所有。</p>',
+		title: '规则说明',
+		text: '<p class="left">1.通过此页面注册并下载APP完成任务后可领取购彩金；<br />2、每个新注册手机号只可获得一次奖励；<br />3、通过作弊违规手段获取奖励者，我们有权取消其资格，并依法追讨损失；<br /> 4、该活动最终解释权归圣和彩店所有；</p>',
 		buttons: [{
 			text: '知道了',
 			onClick: function () {
@@ -149,6 +149,7 @@ function lqbtn() {
 		'loginSource': '4',
 		'invitCode': getUrlStr('id',location.href),
 		"pushKey": "",
+		"passWord": ''
 	}
 	obj2.device = device
 	$.ajax({
@@ -162,7 +163,7 @@ function lqbtn() {
 			if (data.code == '0') {
 				$.modal({
 					title: '提示',
-					text: '注册成功',
+					text: '领取成功',
 					buttons: [{
 						text: '下载APP',
 						onClick: function () {
@@ -203,4 +204,21 @@ function downLoadBtn() {
 	// }else if(detect==='android'){
 	// 	location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=net.caixiaomi.info'
 	// }
+}
+var u = navigator.userAgent
+var sAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1
+// 安卓
+if (sAndroid) {
+    window.addEventListener('resize', function() {
+        if (document.activeElement.tagName == "INPUT") {
+            window.setTimeout(function() {
+                document.activeElement.scrollIntoViewIfNeeded() // 异常时可以用 document.activeElement.scrollIntoView(false)
+            }, 0)
+        }
+    })
+}
+function inputBlur () {
+    setTimeout(() => {
+        window.scrollTo(0, 0)
+    }, 100)
 }
