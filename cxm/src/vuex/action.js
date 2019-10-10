@@ -4,33 +4,33 @@ import {
 } from 'mint-ui'
 const actions = {
     getSmsCode({
-                   commit
-               }, value) {
+        commit
+    }, value) {
         commit("GETSMSCODE", value);
     },
     reset({
-              commit
-          }) {
+        commit
+    }) {
         commit("RESET");
     },
     getMatchList({
-                     commit
-                 }, value) {
+        commit
+    }, value) {
         api.getMatchList(value)
             .then(res => {
                 if (res.code == 0) {
                     let obj = {}
-                    if(res.data.hotPlayList.length>0){
+                    if (res.data.hotPlayList.length > 0) {
                         obj.playList = [].concat(res.data.hotPlayList)
-                        res.data.playList.unshift(obj) 
+                        res.data.playList.unshift(obj)
                     }
                     commit("MATCHLIST", res.data);
                 }
             })
     },
-    getResultList({//赛事
-                      commit
-                  }, value) {
+    getResultList({ //赛事
+        commit
+    }, value) {
         api.queryMatchResult(value)
             .then(res => {
                 if (res.code == 0) {
@@ -39,128 +39,128 @@ const actions = {
             })
     },
     changeFindphone({
-                        commit
-                    }, value) {
+        commit
+    }, value) {
         commit("FINDPHONE", value);
     },
     changeUserInfo({
-                       commit
-                   }, value) {
+        commit
+    }, value) {
         commit("USERINFO", value);
     },
     changeRecordTab({
-                        commit
-                    }, value) {
+        commit
+    }, value) {
         commit("RECORDTAB", value);
     },
     changeTimeType({
-            commit
-        }, value) {
-    commit("USERACCOUNT", value);
+        commit
+    }, value) {
+        commit("USERACCOUNT", value);
     },
     getMarkDateVal({
-                       commit
-                   }, value) {
+        commit
+    }, value) {
         commit("MARKDATEVAL", value);
     },
     getMarkShow({
-                    commit
-                }, value) {
+        commit
+    }, value) {
         commit("MARKSHOW", value);
     },
     getMarkReset({
-                     commit
-                 }, value) {
+        commit
+    }, value) {
         commit("MARKRESET", value);
     },
     getMarkShowType({
-                        commit
-                    }, value) {
+        commit
+    }, value) {
         commit("MARKSHOWTYPE", value);
     },
     getLeagueIds({
-                     commit
-                 }, value) {
+        commit
+    }, value) {
         commit("LEAGUEIDS", value);
     },
     getmatchobj({
-                    commit
-                }, value) {
+        commit
+    }, value) {
         commit("MATCHOBJ", value);
     },
     getmatchSelectedList({
-                             commit
-                         }, value) {
+        commit
+    }, value) {
         commit("MATCHSELECTEDLIST", value);
     },
     getMarkplayBox({
-                       commit
-                   }, value) {
+        commit
+    }, value) {
         commit("MARKPLAYBOX", value);
     },
     getMarkplay({
-                    commit
-                }, value) {
+        commit
+    }, value) {
         commit("MARKPLAY", value);
     },
     getPlayList({
-                    commit
-                }, value) {
+        commit
+    }, value) {
         commit("PLAYLIST", value);
     },
     getPlayuText({
-                     commit
-                 }, value) {
+        commit
+    }, value) {
         commit("PLAYUTTEXT", value);
     },
     changeMupNum({
-                     commit
-                 }, value) {
+        commit
+    }, value) {
         commit("MUPNUM", value);
     },
     changeYhList({
-                     commit
-                 }, value) {
+        commit
+    }, value) {
         commit("YHLIST", value);
     },
     getMyBounsId({
-                     commit
-                 }, value) {
+        commit
+    }, value) {
         commit("MYBOUNSID", value);
     },
     getBfMatchId({
-                     commit
-                 }, value) {
+        commit
+    }, value) {
         commit("BFMATCHID", value);
     },
     getBfIdSaveMap({
-                       commit
-                   }, value) {
+        commit
+    }, value) {
         commit("BFIDSAVEMAP", value);
     },
     getBfIdSaveMapFlag({
-                           commit
-                       }, value) {
+        commit
+    }, value) {
         commit("BFIDSAVEMAPFLAG", value);
     },
     getMatchDetailFlag({
-                           commit
-                       }, value) {
+        commit
+    }, value) {
         commit("MATCHDETAILFLAG", value);
     },
     deleteMyFlag({
-                     commit
-                 }, value) {
+        commit
+    }, value) {
         commit("DELETEFLAG", value);
     },
     getCollectionFlag({
-                          commit
-                      }, value) {
+        commit
+    }, value) {
         commit("ZXCOLLEXCTIONFLAG", value)
     },
     getDetailObj({
-                     commit
-                 }, value) {
+        commit
+    }, value) {
         api.articleDetail(value)
             .then(res => {
                 if (res.code == 0) {
@@ -168,13 +168,19 @@ const actions = {
                 }
             })
     },
-    getArrTime({commit},value){
+    getArrTime({
+        commit
+    }, value) {
         commit("ARRTIME", value)
     },
-    changeFinTab({commit},value){
+    changeFinTab({
+        commit
+    }, value) {
         commit("FINDTAB", value)
     },
-    changeFinActive({commit},value){
+    changeFinActive({
+        commit
+    }, value) {
         commit("FINACTIVE", value)
     },
     //走势图
@@ -183,16 +189,56 @@ const actions = {
     }, value) {
         return new Promise((resolve, reject) => {
             api.getChartData(value)
+                .then(res => {
+                    if (res.code == 0) {
+                        commit("RUNCHARTDATA", res.data);
+                        resolve()
+                    } else {
+                        reject()
+                    }
+                })
+        })
+    },
+    //获取短链
+    getShortUrl({
+        commit
+    }, value) {
+        return new Promise((resolve, reject) => {
+            api.addSUrl(value)
+                .then(res => {
+                    console.log(res)
+                    if (res.code == 0) {
+                        commit("SHORTLINK", res.data.shorturl);
+                        resolve(res.data.shorturl)
+                    } else {
+                        reject()
+                    }
+                })
+        })
+    },
+    //篮彩列表数据
+    getlancaiList({
+        commit
+    }, value) {
+        api.getBasketBallMatchList(value)
             .then(res => {
                 if (res.code == 0) {
-                    commit("RUNCHARTDATA", res.data);
-                    resolve()
-                }else{
-                    reject()
+                    let obj = {}
+                    if (res.data.hotPlayList.length > 0) {
+                        obj.playList = [].concat(res.data.hotPlayList)
+                        res.data.playList.unshift(obj)
+                    }
+                    res.data.playList.forEach(item => {
+                        item.playList.forEach(a => {
+                            a.selectNum = 0 //保存选取个数
+                            a.selectList = [] //保存投注信息
+                        })
+                    });
+                    commit("MATCHLANCAILIST", res.data);
+                    commit("LANCAICHUSHIHUA", JSON.parse(JSON.stringify(res.data)))
                 }
             })
-        })
-    }
+    },
 }
 
 export default actions

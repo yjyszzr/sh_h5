@@ -21,7 +21,7 @@
             <ul class="analytical">
                 <li><p @click="fxTab($event,'0')"></p><span>赛况</span></li>
                 <li class="currer"><p @click="fxTab($event,'1')"></p><span>分析</span></li>
-                <li><p @click="fxTab($event,'2')"></p><span>赔率</span></li>
+                <li v-show="$store.state.turnOn!=0"><p @click="fxTab($event,'2')"></p><span>赔率</span></li>
                 <li><p @click="fxTab($event,'3')"></p><span>阵容</span></li>
             </ul>
             <!--赛况-->

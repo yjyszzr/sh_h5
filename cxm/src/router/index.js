@@ -5,7 +5,7 @@ import {
     MessageBox
 } from 'mint-ui'
 import {
-    wxPd
+    wxPd,isdeal
 } from '../util/common'
 import NProgress from 'nprogress'; // Progress 进度条
 import 'nprogress/nprogress.css'; // Progress 进度条 样式
@@ -300,6 +300,18 @@ const router = new Router({
             component: resolve => require(['@/components/freebuy/bankList.vue'], resolve)
         },
         {
+            path: '/users/unionpay',
+            name: 'unionPay',
+            cname: '银联支付',
+            component: resolve => require(['@/components/freebuy/unionPay.vue'], resolve)
+        },
+        {
+            path: '/users/unionpaystatus',
+            name: 'unionPayStatus',
+            cname: '银联支付状态',
+            component: resolve => require(['@/components/freebuy/unionPayStatus.vue'], resolve)
+        },
+        {
             path: '/lotteryResult',
             name: 'result',
             meta: {
@@ -462,6 +474,24 @@ const router = new Router({
             name: 'mygrossincome',
             component: resolve => require(['@/components/activity/protomakemoeny/erCode'], resolve)
         },
+        //篮彩投注
+        {
+            path: '/touzhu/lctz/list',
+            name: 'lctz',
+            component: resolve => require(['@/components/lc/lctz'], resolve)
+        },
+        //篮彩帮助
+        {
+            path: '/touzhu/lcbz',
+            name: 'lcbz',
+            component: resolve => require(['@/components/lc/lcbz'], resolve)
+        },
+        //篮彩下单
+        {
+            path: '/touzhu/savebet',
+            name: 'savebet',
+            component: resolve => require(['@/components/lc/lancaibetting'], resolve)
+        },
     ]
 })
 
@@ -470,6 +500,9 @@ NProgress.configure({
 });
 
 router.beforeEach(async (to, from, next) => {
+	//资讯交易版
+    isdeal();
+	//app老版webview内去掉#
     if (to.fullPath.indexOf('#') != -1) {
         next({
             path: to.fullPath.replace('/#', '')

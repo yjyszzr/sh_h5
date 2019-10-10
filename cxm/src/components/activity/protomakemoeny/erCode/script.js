@@ -4,13 +4,18 @@ import {
     getCsUrl,
     isWebview
 } from '@/util/common'
+import {Indicator} from 'mint-ui'
 import QRCode from 'qrcodejs2'
+import {mapState} from 'vuex'
 export default {
     name: 'index',
     data() {
         return {
             userid: getUrlStr('userid', location.href)
         }
+    },
+    beforeCreate() {
+        Indicator.open()
     },
     created() {
         nativeApp({
@@ -23,12 +28,12 @@ export default {
             let qrcode = new QRCode('qrcode', {
                 width: 100,
                 height: 100, 
-                text: getCsUrl()+'/static/activity/tg/index.html?id='+this.userid // 二维码内容 
+                text: this.shortUrl // 二维码内容 
             })
         },
         share(){
             if(isWebview()){
-                nativeApp({'methodName':'goShare','title':'您收到一个红包','description':'注册送68元彩金首单免费!','url':getCsUrl()+'/static/activity/tg/index.html?id='+this.user_id,'thumbUrl':getCsUrl()+'/static/activity/tg/img/fx.jpg'})
+                nativeApp({'methodName':'goExerciseShare','title':'您收到一个红包','description':'注册领68元购彩大礼包!','url':this.shortUrl,'thumbUrl':getCsUrl()+'/static/activity/tg/img/fx.jpg'})
             }
         },
         //截屏
@@ -48,9 +53,23 @@ export default {
                     'text': this.userid
                 })
             }
+        },//生成短链
+        async shortLink(){
+            var longurl = getCsUrl()+'/static/activity/tg/index.html?id='+this.userid
+            await this.$store.dispatch('getShortUrl',{
+                link: longurl,
+                userId: this.userid||''
+            })
         }
     },
+    computed: {
+        ...mapState({
+            shortUrl: state => state.shortlink
+        })
+    },
     mounted() {
-        this.qrcode()
+        this.shortLink().then(()=>{
+            this.qrcode()
+        })
     }
 }

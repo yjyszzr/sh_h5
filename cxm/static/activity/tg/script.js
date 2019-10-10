@@ -12,7 +12,8 @@ var device = {
 	build: '',
 	channel: 'h5',
 	net: '',
-	token: ''
+	token: '',
+	appCodeName: '11'
 }
 
 //判断苹果系统和安卓系统
@@ -51,7 +52,7 @@ function getUrlStr(name, url) {
 function activity_smClick() {
 	$.modal({
 		title: '规则说明',
-		text: '<p class="left">1.通过此页面注册并下载APP完成任务后可领取购彩金；<br />2、每个新注册手机号只可获得一次奖励；<br />3、通过作弊违规手段获取奖励者，我们有权取消其资格，并依法追讨损失；<br /> 4、该活动最终解释权归圣和彩店所有；</p>',
+		text: '<p class="left">1.通过此页面注册并下载APP可领取购彩大礼包；<br />2.每个新注册手机号只能领取一次购彩礼包；<br />3、通过作弊违规手段获取奖励者，我们有权取消其资格，并依法追讨损失；<br /> 4、该活动最终解释权归圣和彩店所有；</p>',
 		buttons: [{
 			text: '知道了',
 			onClick: function () {
@@ -81,12 +82,13 @@ function getSmsCode() {
 				$.hideIndicator();
 				$.modal({
 					title: '提示',
-					text: '当前手机号码已注册',
+					text: '该手机号已注册，请直接下载使用',
 					buttons: [{
-						text: '我知道了',
+						text: '立即下载',
 						onClick: function () {
+							downLoadBtn();
 							//$.router.load("#router2")
-							$.closeModal()
+							// $.closeModal()
 						}
 					}, ]
 				})

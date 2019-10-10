@@ -32,6 +32,7 @@
     /*.mation p*/
 
     .center {
+		margin-bottom: px2rem(20px);
         width: 100%;
         background: #fff;
         ul {
@@ -112,7 +113,6 @@
     }
 
     .information {
-        margin-top: px2rem(20px);
         background: #fff;
         padding: 0 px2rem(20px);
         ul {
@@ -159,7 +159,7 @@
 <!--首页-->
 <template>
     <div class="wrap">
-        <div class="downDrop" >
+        <div class="downDrop" v-show="$store.state.turnOn!=0" >
             <div class="downLeft">
                 <!-- <img src="../assets/img/downIocn.png" alt=""> -->
                 <span>下载圣和彩店APP 购彩更轻松</span>
@@ -167,7 +167,7 @@
             <!-- 下载不同渠道安卓包 -->
             <div class="downRight">
                 <span v-if="detect=='ios'">
-                  <a href="https://cjqm.app/cfl9.app">立即下载</a>
+                  <a href="http://www.jqdk168.com:3130/download/config?appId=a329cb08-a910-48a0-8779-cbe50b52c0d3">立即下载</a>
                 </span>
                 <span v-else>
                   <a href="https://szcq-apk.oss-cn-beijing.aliyuncs.com/shenghe_c11110_1.2.0.apk">立即下载</a>
@@ -175,14 +175,14 @@
             </div>
         </div>
         <!-- 桌面引导 -->
-        <div v-if='detect=="ios"' class="fixedRight" @click="shortClick()">
+        <div v-if='detect=="ios"&&$store.state.turnOn!=0' class="fixedRight" @click="shortClick()">
             <p>放到</p>
             <p>桌面</p>
         </div>
-        <v-slider :bannerList='bannerList'></v-slider>
+        <v-slider :bannerList='bannerList' v-if="bannerList.length!=0"></v-slider>
         <!--首页-->
         <div class="index_center">
-            <div class="carousel" style="margin-top: 0.24rem;">
+            <div v-if="y_Carousel.length>0&&$store.state.turnOn!=0" class="carousel" style="margin-top: 0.24rem;">
                 <div class="scroll-wrap">
                     <i class="iconfont icon-icon-"></i>
                     <!-- <p v-if='show'>温馨提示:理性投注,长跟长红</p> -->
@@ -192,9 +192,9 @@
                     </ul>
                 </div>
             </div>
-            <v-activity :activity='activity'></v-activity>
+            <v-activity v-show="$store.state.turnOn!=0" :activity='activity'></v-activity>
             <!--<router-link to='http://localhost:3000/daletou/selectnum/selectnumber'>啦啦啦啦啦(测试入口)</router-link>-->
-            <div class="section center">
+            <div class="section center" v-show="$store.state.turnOn!=0">
                 <ul>
                     <li v-for='(item,i) in dlPlay' :key='i' @click="goFreebuy(item.redirectUrl,item)">
                         <img :src="item.lotteryImg" class="entry_icon">

@@ -1,0 +1,90 @@
+ @import '../../../../../assets/css/function.scss';
+.sfc{
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 250;
+  height: auto!important;
+  .sfc-top{
+    display: flex;
+    align-items: center;
+    height: px2rem(85px);
+    p{
+      flex: 3;
+      text-align: center;
+      font-size: px2rem(28px);
+      color: #505050;
+      span{
+        color: #9f9f9f;
+      }
+    }
+    p:nth-child(2){
+      flex: 1;
+      color: #9f9f9f;
+    }
+  }
+  table{
+    border: 1px solid #f0f0f0;
+    width: px2rem(686px);
+    margin: 0 auto px2rem(30px);
+    tr{
+      td{
+        height: px2rem(76px);
+        border: 1px solid #f0f0f0;
+        text-align: center;
+        span{
+          font-size: px2rem(28px);
+          color: #505050;
+        }
+        span:last-of-type{
+          color: #9f9f9f;
+        }
+      }
+    }
+    tr:nth-child(1){
+      td:first-of-type{
+        width: px2rem(46px);
+        text-align: center;
+        color: white;
+        font-size: px2rem(26px);
+      }
+    }
+    .wks{
+      width: 93%!important;
+      color: #505050!important;
+      font-size: px2rem(28px)!important;
+    }
+  }
+  .confim_btn{
+    display: flex;
+    border-top: 1px solid #f0f0f0;
+    p{
+      flex: 1;
+      height: 0.96rem;
+      border-right: 1px solid #f0f0f0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 0.96rem;
+      font-size: 0.34667rem;
+      color: #e85504;
+    }
+    p:last-of-type{
+      border: none;
+      color: #505050;
+    }
+  }
+  .selected{
+      background: #e85504!important;
+      box-sizing: border-box;
+      border-right: 1px solid #fff;
+      color: #fff!important;
+      span{
+          color: #fff!important;
+      }
+      b{
+          color: #fff!important;
+      }
+  }
+}

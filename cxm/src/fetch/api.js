@@ -1,10 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 import {
-    Toast
-} from 'mint-ui'
-import {
-    Indicator
+    Toast,Indicator
 } from 'mint-ui'
 import router from '../router/index'
 import {getUrlStr,nativeApp,isWebview} from '../util/common'
@@ -12,7 +9,7 @@ import {getUrlStr,nativeApp,isWebview} from '../util/common'
 axios.defaults.timeout = 15000;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 //axios.defaults.baseURL = 'http://94.191.113.169:8765/api'; //正式
-axios.defaults.baseURL = 'http://39.106.18.39:8765/api'; //测试
+axios.defaults.baseURL = 'http://49.232.65.109:8765/api'; //测试
 //拦截 token
 axios.interceptors.request.use(
     config => {
@@ -24,17 +21,6 @@ axios.interceptors.request.use(
     err => {
         return Promise.reject(err);
     });
-
-//POST传参序列化
-// axios.interceptors.request.use((config) => {
-//     if(config.method  === 'post'){
-//         config.data = qs.stringify(config.data);
-//     }
-//     return config;
-// },(error) =>{
-//     //  _.toast("错误的传参", 'fail');
-//     return Promise.reject(error);
-// });
 //返回状态错误处理
 axios.interceptors.response.use((res) => {
     if (res.config.url.indexOf('payment/query') == -1) {
@@ -58,7 +44,6 @@ axios.interceptors.response.use((res) => {
                 }
             }
         }
-        Indicator.close()
     }
     return res;
 }, (error) => {
@@ -127,7 +112,7 @@ axios.interceptors.response.use((res) => {
 const device = {
     plat: 'h5',
     apiv: 1,
-    appv: '2.1.1',
+    appv: '6.0.0',   //6.0.0为资讯版，其余为交易版
     appid: '',
     mac: '',
     appCodeName: '11',
@@ -141,7 +126,9 @@ const device = {
     net: '',
     token: ''
 }
+let num = 0
 export function fetchPost(url, body) {
+    num++;
     if(getUrlStr('fr', location.href)){
         device.channel = getUrlStr('fr', location.href)
     }else{
@@ -154,17 +141,28 @@ export function fetchPost(url, body) {
             })
             .then(response => {
                 resolve(response.data);
-            }, err => {
-                reject(err);
             })
             .catch((error) => {
-                Indicator.close()
                 reject(error)
+            })
+            .finally(()=>{
+                num--
+                if(num <= 0){
+                    Indicator.close()
+                }else{
+                    setTimeout(() => {
+                        Indicator.close()
+                    }, 15000)
+                }
             })
     })
 }
 
 export default {
+	//切换版本
+    dealQuery(params){
+        return fetchPost('/member/switch/config/query', params)
+    },
     //统计点击次数
     clickNum(params) {
         return fetchPost('member/xqdActivity/clickNum', params)
@@ -353,6 +351,14 @@ export default {
     bankremove(params) {
         return fetchPost('payment/payment/xianfeng/bank/remove', params)
     },
+    //获取银联支付个人信息
+    forPageInfo(params) {
+        return fetchPost('payment/payment/forPageInfo', params)
+    },
+    //银联支付获取验证码
+    forRecharge(params) {
+        return fetchPost('payment/payment/forRecharge', params)
+    },
     //轮回查询
     query(params) {
         return fetchPost('payment/payment/query', params)
@@ -540,6 +546,22 @@ export default {
     //受邀人数
     queryResultAccount(params) {
         return fetchPost('/activity/activity/queryResultAccount', params)
+    },
+    //获取短链接
+    addSUrl(params) {
+        return fetchPost('/member/user/addSUrl', params)
+    },
+    //获取篮彩赛事列表
+    getBasketBallMatchList(params){
+        return fetchPost('/lottery/lottery/match/getBasketBallMatchList', params)
+    },
+    //篮彩筛选
+    filterBasketBallConditions(params){
+        return fetchPost('/lottery/lottery/match/filterBasketBallConditions', params)
+    },
+    //计算篮彩投注信息
+    getBasketBallBetInfo(params){
+        return fetchPost('/lottery/lottery/match/getBasketBallBetInfo', params)
     },
 }
 

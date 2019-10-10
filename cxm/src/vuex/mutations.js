@@ -7,6 +7,10 @@ const mutations = {
     COSULTINIT(state, data){
         state.skeletion.consultInit = data
     },
+	//版本切换状态
+    TURNON(state, data){
+        state.turnOn = data
+    },
     GETSMSCODE(state, data) {
         //获取验证码  
         api.SendSmsCode(data)
@@ -191,6 +195,33 @@ const mutations = {
     },
     CHANNELOBJ(state, data){
         state.channelObj = data
+    },
+    SHORTLINK(state, data){
+        state.shortlink = data
+    },
+    //篮彩数据保存
+    MATCHLANCAILIST(state, data) {
+        state.lancaiData.lancaiObj = data
+    },
+    //篮彩初始化数据
+    LANCAICHUSHIHUA(state, data) {
+        state.lancaiData.chushihuaObj = data
+    },
+    //篮彩投注信息保存
+    SELECTEDSAVEINFO(state, data){
+        state.lancaiData.selectedSaveInfo = data
+    },
+    //篮彩数据保存
+    LANCAIDATA(state, data) {
+        switch (data.type) {
+        case 'play':
+            state.lancaiData.playType = data.value;
+            break;
+        }
+    },
+    //篮彩玩法保存
+    LANCAIPLAYTYPE(state, data){
+        state.lancaiData.playType = data;
     }
 }
 

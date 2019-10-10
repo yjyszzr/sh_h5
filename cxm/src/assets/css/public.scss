@@ -135,3 +135,13 @@ input::-webkit-inner-spin-button {
 .ceng-leave-active {
   opacity: 0;
 }
+.zw{
+  height: px2rem(100px);
+}
+// 上拉 动画
+.translate-enter-active, .translate-leave-active {
+  transition: all 0.3s;
+}
+.translate-enter, .translate-leave-active {
+  transform: translate3d(0, 100%, 0);
+}

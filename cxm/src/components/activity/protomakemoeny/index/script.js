@@ -1,6 +1,7 @@
 import {nativeApp,isWebview,getCsUrl} from '@/util/common'
 import {Indicator} from 'mint-ui'
 import api from '@/fetch/api'
+import {mapState} from 'vuex'
 export default {
     name: 'index',
     data(){
@@ -32,6 +33,7 @@ export default {
             window.actionMessage =  (arg)=> {
                 localStorage.setItem('token',JSON.parse(arg).token)
                 this.fetchData();
+                this.shortLink()
             }
             nativeApp({'methodName':'getToken'})
         },
@@ -183,11 +185,26 @@ export default {
             }
         },
         //分享
-        share(){
+        async share(){
             if(isWebview()){
-                nativeApp({'methodName':'goShare','title':'您收到一个红包','description':'注册送68元彩金首单免费!','url':getCsUrl()+'/static/activity/tg/index.html?id='+this.activityUserInfo.user_id,'thumbUrl':getCsUrl()+'/static/activity/tg/img/fx.jpg'})
+                Indicator.open()
+                await this.shortLink()
+                await nativeApp({'methodName':'goExerciseShare','title':'您收到一个红包','description':'注册领68元购彩大礼包!','url':this.shortUrl,'thumbUrl':getCsUrl()+'/static/activity/tg/img/fx.jpg'})
             }
+        },
+        //生成短链
+        async shortLink(){
+            var longurl = getCsUrl()+'/static/activity/tg/index.html?id='+this.activityUserInfo.user_id
+            await this.$store.dispatch('getShortUrl',{
+                link: longurl,
+                userId: this.activityUserInfo.user_id||''
+            })
         }
+    },
+    computed: {
+        ...mapState({
+            shortUrl: state => state.shortlink
+        })
     },
     mounted(){
         if(!isWebview()){

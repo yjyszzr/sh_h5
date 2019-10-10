@@ -11,7 +11,7 @@
                 <span v-if="$route.path.split('/')[2]=='consult'&&getUrl()" :class="$store.state.zxDetailObj.isCollect=='1'?'icon-icon-32':'icon-icon-34'" class="iconfont" @click="collection($event)"></span>
                 <span v-if="$route.path.split('/')[2]=='collection'" @click="colMenu($event)" class="colMenu">{{deleteFlag?'取消':'编辑'}}</span>
                 <span v-if="$route.path.split('/')[2]=='cathectic'" @click="onGal()" class="danxm">胆</span>
-                <span v-if="$route.path.split('/')[1]=='user'&&!$route.path.split('/')[2]" @click="setUp()" class="setting">设置</span>
+                <span v-if="$route.path.split('/')[1]=='user'&&!$route.path.split('/')[2]" @click="setUp()" class="setting" v-show="$store.state.turnOn!=0">设置</span>
                 <span v-if="$route.path.split('/')[1]=='user'&&$route.path=='/user/detail'" @click="bounsRuleJs()" class="bouns_rule">使用规则</span>
                 <ul class="djs" @click="actionSheet()"  v-if="$route.path.split('/')[2]&&$route.path.split('/')[2]=='account'">
                     <li class="tas">{{timeTypeShow(this.timeTypeStatus)}}<i style="font-size: 0.3rem;" class="iconfont icon-icon-22"></i></li>

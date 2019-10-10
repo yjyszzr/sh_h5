@@ -1,7 +1,9 @@
-// const expUrl = 'http://192.168.31.205:8081'
-//const expUrl = 'http://m.jinngu.club'  //线上
-const expUrl = 'http://t1.caixiaomi.net:9808'  //测试
+//const expUrl = 'http://192.168.31.205:8081'
+const expUrl = 'http://m.jinngu.club'  //线上
+//const expUrl = 'http://t1.caixiaomi.net:9808'  //测试
 var moment = require('moment');
+import api from '../fetch/api'
+import store from '../vuex/store'
 //app h5页面分享
 export let isShare = (arg, text, url, thumbUrl) => {
     let obj = {}
@@ -268,4 +270,14 @@ export let saveDtInfo = (list) => {
         arr.push(objinfos)
     })
     return arr;
+}
+
+//获取资讯版交易版区分
+export let isdeal = ()=>  {
+    api.dealQuery({str: ''}).then(res=>{
+        //console.log(res);
+        if(res.code == '0'){
+            store.commit('TURNON',res.data.turnOn);
+        }
+    });
 }

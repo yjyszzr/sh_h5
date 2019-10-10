@@ -13,6 +13,7 @@ const state = {
     skeletion: {
         consultInit: true,  //初始化骨架屏
     },
+	turnOn: '0', // 默认资讯版
     freebuyId: '6',
     //验证码初始化
     smsCode: {
@@ -76,6 +77,13 @@ const state = {
     channelObj: {
         color: '#dc3c32',
         channelNmae: '圣和彩店'
+    },
+    shortlink: '', //推广短链
+    lancaiData:{   //篮彩数据 
+        playType: '6', //篮彩玩法
+        lancaiObj: {}, //篮彩数据保存
+        chushihuaObj: {}, //重新初始化篮彩数据,
+        selectedSaveInfo: {}, //选取信息保存
     }
 }
 let storageArr = []

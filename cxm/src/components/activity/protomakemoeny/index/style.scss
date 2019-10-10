@@ -12,7 +12,7 @@
     }
 
     .proto_head {
-        background: #DF3240;
+        background: #ec3f41;
         height: px2rem(167px);
         border-radius: 0 0 10% 10%;
     }
@@ -129,7 +129,7 @@
 
                 p:last-of-type {
                     color: #DF3240;
-                    margin-left: px2rem(36px);
+                    margin-left: px2rem(42px);
                 }
             }
 
@@ -360,7 +360,7 @@
             border-radius:px2rem(10px);
             margin: 0 auto px2rem(32px);
             .m6-c{
-                padding: 0 px2rem(45px) px2rem(94px);
+                padding: 0 px2rem(45px) px2rem(34px);
                 p{
                     font-size: px2rem(24px);
                     color: #DF313F;
@@ -433,7 +433,7 @@
         left: 0;
         bottom: 0;
         height: px2rem(101px);
-        background: #DF313F;
+        background: #ec3f41;
         width: 100%;
         display: flex;
         align-items: center;
@@ -495,6 +495,10 @@
                 }
                 p{
                     text-align: center;
+                }
+                i{
+                    font-style: normal;
+                    word-break:break-all;
                 }
                 table{
                     width: 100%;

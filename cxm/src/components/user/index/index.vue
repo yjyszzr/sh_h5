@@ -14,26 +14,26 @@
                 </div>
                 <div class="por-right">
                     <span>{{userInfo.mobile}}</span>
-                    <b class="certified" v-if='userInfo.isReal=="1"'></b>
-                    <p v-if='userInfo.isReal=="0"' @click='gorz()'>您还未实名认证，尽快实名认证</p>
+                    <b v-show="$store.state.turnOn!=0" class="certified" v-if='userInfo.isReal=="1"'></b>
+                    <p v-show="$store.state.turnOn!=0" v-if='userInfo.isReal=="0"' @click='gorz()'>您还未实名认证，尽快实名认证</p>
                 </div>
             </div>
-            <div class="money clearfix">
-                <div class="left">
+            <div class="money clearfix" v-show="$store.state.turnOn!=0">
+                <div class="left" v-show="userInfo.recharegeTurnOn=='1'">
                     <span><b>{{userInfo.totalMoney}}</b><i>元</i></span>
                     <p>账户余额</p>
                 </div>
-                <div class="left">
+                <div class="left" v-show="userInfo.recharegeTurnOn=='1'">
                     <span><b>{{userInfo.userMoney}}</b><i>元</i></span>
                     <p>可提现余额</p>
                 </div>
             </div>
-            <div class="nav">
-                <a @click="goRecharge()">充值</a>
-                <a @click="goWithdraw(userInfo.isReal)">提现</a>
+            <div class="nav" v-show="$store.state.turnOn!=0">
+                <a @click="goRecharge()" v-show="userInfo.recharegeTurnOn=='1'">充值</a>
+                <a @click="goWithdraw(userInfo.isReal)" v-show="userInfo.recharegeTurnOn=='1'">提现</a>
             </div>
         </div>
-        <div class="section">
+        <div class="section" v-show="$store.state.turnOn!=0">
             <ul class="msg_list">
                 <li>
                     <router-link to="/user/record">
@@ -43,7 +43,7 @@
                             <span class="message">投注记录</span>
                         </div>
                     </router-link>
-                    <router-link to='/user/account'>
+                    <router-link to='/user/account' v-show="userInfo.recharegeTurnOn=='1'">
                         <div>
                             <i class="iconfont icon-icon-2"></i>
                             <span class="arrow_right float_right"></span>
@@ -79,7 +79,7 @@
         <div class="section">
             <ul class="msg_list">
                 <li>
-                    <router-link to='/user/message'>
+                    <router-link to='/user/message' v-show="$store.state.turnOn!=0">
                         <div>
                             <i class="iconfont icon-icon-36"></i>
                             <span class="arrow_right float_right"></span>

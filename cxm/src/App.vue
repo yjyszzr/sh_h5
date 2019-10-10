@@ -133,6 +133,10 @@
                             return "提现详情";
                         case 'quickinfo':
                             return "快捷支付";
+                        case 'unionPay':
+                            return '银联充值';
+                        case 'unionpaystatus':
+                            return '银联充值';
 //          一期活动
                         case 'tuiguang':
                             return "推广中心";
@@ -198,6 +202,10 @@
                             return '投注确认';
                         case 'bounsrule':
                             return '优惠券规则说明';
+                        case 'lcbz':
+                            return '玩法帮助';
+                        case 'savebet':
+                            return '投注确认';
                     }
                 } else {
                     if (
