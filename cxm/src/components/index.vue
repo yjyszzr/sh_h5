@@ -159,10 +159,10 @@
 <!--首页-->
 <template>
     <div class="wrap">
-        <div class="downDrop" v-show="$store.state.turnOn!=0" >
+        <div class="downDrop" v-show="version!='zx'">
             <div class="downLeft">
                 <!-- <img src="../assets/img/downIocn.png" alt=""> -->
-                <span>下载圣和彩店APP 购彩更轻松</span>
+                <span>下载{{$store.state.channelObj.channelNmae}}APP 购彩更轻松</span>
             </div>
             <!-- 下载不同渠道安卓包 -->
             <div class="downRight">
@@ -175,7 +175,7 @@
             </div>
         </div>
         <!-- 桌面引导 -->
-        <div v-if='detect=="ios"&&$store.state.turnOn!=0' class="fixedRight" @click="shortClick()">
+        <div v-if='detect=="ios"&&version!="zx"' class="fixedRight" @click="shortClick()">
             <p>放到</p>
             <p>桌面</p>
         </div>
@@ -233,6 +233,7 @@
     import informal from "./public/informal/informalList";
     import Loading from './public/loading/loading.vue'
     import {detect} from '../util/common.js'
+	import { version } from '../util/versionSwitch'
 
     export default {
         name: "index",
@@ -251,7 +252,8 @@
                 trFlag: true,
                 isbool: true,
                 cxLoadFlag: false,
-                detect: ''   //判断设备信息
+                detect: '',   //判断设备信息
+				version: version
             };
         },
         beforeCreate() {

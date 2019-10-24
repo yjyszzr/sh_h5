@@ -4,11 +4,11 @@
         <div class="headerTop" v-show="showTitle">
             <a @click="return_back()" class="go_return"></a>
             <p class="headerText">
-                <!-- <span v-if="!$route.path.split('/')[2]">圣和彩店·</span> -->
+                <!-- <span v-if="!$route.path.split('/')[2]">{{$store.state.channelObj.channelNmae}}·</span> -->
             {{title}}</p>
             <div class="filter" v-show="menuDisplay==true">
                 <span v-if="$route.path.split('/')[2]=='consult'" style="opacity:0;">分享</span>
-                <span v-if="$route.path.split('/')[2]=='consult'&&getUrl()" :class="$store.state.zxDetailObj.isCollect=='1'?'icon-icon-32':'icon-icon-34'" class="iconfont" @click="collection($event)"></span>
+                <span v-if="$route.path.split('/')[2]=='consult'&&getUrl()&&$store.state.version!='zx'" :class="$store.state.zxDetailObj.isCollect=='1'?'icon-icon-32':'icon-icon-34'" class="iconfont" @click="collection($event)"></span>
                 <span v-if="$route.path.split('/')[2]=='collection'" @click="colMenu($event)" class="colMenu">{{deleteFlag?'取消':'编辑'}}</span>
                 <span v-if="$route.path.split('/')[2]=='cathectic'" @click="onGal()" class="danxm">胆</span>
                 <span v-if="$route.path.split('/')[1]=='user'&&!$route.path.split('/')[2]" @click="setUp()" class="setting" v-show="$store.state.turnOn!=0">设置</span>
@@ -87,7 +87,7 @@
 
 <script>
     import datefilter from "../../../util/datefilter";
-    import { Indicator,Actionsheet } from "mint-ui";
+    import { Indicator,Actionsheet,Toast } from "mint-ui";
     import { getUrlStr, isWebview,getCsUrl } from "../../../util/common";
     export default {
         name: "Header",
@@ -125,7 +125,7 @@
                     }
                 ],
                 sheetVisible: false,
-                lotteryResultTable:[
+                lotteryResultTable: this.$store.state.version!='zx'?[
                     {
                         name:"未结束",
                         cont:0,
@@ -141,13 +141,24 @@
                         cont:0,
                         key:'2'
                     }
+                ]:[
+                    {
+                        name:"未结束",
+                        cont:0,
+                        key:'0'
+                    },
+                    {
+                        name:"已结束",
+                        cont:0,
+                        key:'1'
+                    }
                 ],
                 resultBage:{}
             };
         },
         methods: {
             handleChange(val) {
-                console.log(val);
+                //console.log(val);
             },
             timeTypeShow(c){
                 switch (c){

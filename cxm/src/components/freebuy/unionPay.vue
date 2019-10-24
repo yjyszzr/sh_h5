@@ -8,19 +8,23 @@
             <p>支付卡号: {{cardNoHide}}</p>
             <p>您的充值金额: <span>{{$route.query.amount}}元</span></p>
         </div>
+		<div class="un-three" v-show="isSign!=1">
+			<span>手机号:</span>
+			<input v-model='phone' type="tel" maxlength="11" placeholder="请输入手机号">
+		</div>
         <div class="un-three">
             <span>验证码:</span>
             <div class="code-box">
-                <input type="tel" maxlength="6" name="" id="" placeholder="请输入验证码">
+                <input v-model='code' type="tel" maxlength="6" placeholder="请输入验证码">
                 <button v-if="!codeBtnController.end" :disabled='codeBtnController.disabled'>{{codeBtnController.text}}s</button>
-                <button v-else @click="reGetCode()">重新获取</button>
+                <button v-else @click="reGetCode()">{{codeBtnController.txtStatus?'重新获取':'获取验证码'}}</button>
             </div>
         </div>
         <div class="un-five">
             <p>注:请在倒计时内完成支付，过期此笔充值</p>
             <p>会失效，您需返回APP重新发起充值!</p>
         </div>
-        <div class="un-btn">
+        <div class="un-btn" @click="payBtn()">
             确认
         </div>
     </div>
@@ -28,18 +32,23 @@
 
 <script>
     import api from '../../fetch/api'
-    import {Indicator} from 'mint-ui'
+    import {Indicator,Toast} from 'mint-ui'
     export default {
         name: "unionPay",
         data() {
             return {
                 cardNoHide: '', //支付卡号
+                isSign: 0,
                 phone: '', //电话
+				code: '', //验证码
                 codeBtnController:{
                     disabled: false,
                     text: 120,
-                    end: false
-                }
+                    end: true,
+					txtStatus: false
+                },
+				timer: '',  //定时器
+				payCs: {} //充值参数保存
             }
         },
         beforeCreate(){
@@ -56,7 +65,7 @@
                 })
                 if (res.code == 0) {
                     this.cardNoHide = res.data.cardNoHide
-                    this.phone = res.data.phone
+                    this.isSign = res.data.isSign
                 }
             },
             //验证码
@@ -70,35 +79,78 @@
                     phone: this.phone,
                     merCustId
                 })
-                this.timeSet()
                 if (res.code == 0) {
-                    console.log(res)
-                }
+					this.payCs = res.data
+					this.codeBtnController.text = 120
+					this.codeBtnController.end = false
+					this.timeSet()
+                }else{
+					Toast(res.msg)
+				}
             },
             //初始化
-            async init(){
-                await this.getForPageInfo()
-                await this.getYzCode()
+            init(){
+                this.getForPageInfo()
             },
             //倒计时
             timeSet(){
-                let timer = setInterval(()=>{
+                this.timer = setInterval(()=>{
                     this.codeBtnController.text--
                     if(this.codeBtnController.text<=0){
-                        clearInterval(timer)
+                        clearInterval(this.timer)
                         this.codeBtnController.end = true
+						this.codeBtnController.txtStatus = true
                     }
                 },1000)
             },
-            //重新获取
+            //获取
             reGetCode(){
-                Indicator.open()
-                this.codeBtnController.text = 120
-                this.codeBtnController.end = false
-                this.timeSet()
-                this.getYzCode()
-            }
-        }
+				Indicator.open()
+				this.getYzCode()
+            },
+			//充值
+			payBtn(){
+				Indicator.open()
+				let {
+				    amount,
+				    merCustId
+				} = this.$route.query
+				let {
+					orderNo,
+					phoneToken,
+					token,
+					dateTime,
+					randomKey,
+					reqSeq			
+				} = this.payCs
+				api.recharge({
+				    totalAmount: amount,
+				    phone: this.phone,
+					orderSn: orderNo,
+					verCode: this.code,
+					payCode: 'app_smk',
+					token,
+					phoneToken,
+				    merCustId,
+					reqSeq,
+					dateTime,
+					randomKey
+				}).then(res=>{
+					if(res.code == '0'){
+						this.$router.push({
+							path: '/users/unionPayStatus',
+							query: {
+								status: res.data.status,
+								amount
+							}
+						})
+					}
+				})
+			}
+        },
+		destroyed(){
+		    clearInterval(this.timer)
+		}
     }
 </script>
 
@@ -147,6 +199,15 @@
                 color: #505050;
                 font-size: px2rem(28px);
             }
+			input{
+			    height: px2rem(50px);
+			    width: px2rem(320px);
+			    border-radius: px2rem(5px);
+			    border-color: #ccc;
+			    padding-left: px2rem(10px);
+			    font-size: px2rem(26px);
+			    color: #505050;
+			}
             .code-box{
                 width: px2rem(340px);
                 height: px2rem(50px);
@@ -154,23 +215,14 @@
                 align-items: center;
                 position: relative;
                 margin-left: px2rem(5px);
-                input{
-                    height: 100%;
-                    width: 100%;
-                    border-radius: px2rem(5px);
-                    border-color: #ccc;
-                    padding-left: px2rem(10px);
-                    font-size: px2rem(26px);
-                    color: #505050;
-                }
                 button{
-                    width: px2rem(120px);
-                    margin-left: px2rem(-121px);
+                    width: px2rem(140px);
+                    margin-left: px2rem(-141px);
                     height: 100%;
                     border: none;
                     background: #fff;
                     border-left: 1px solid #ccc;
-                    font-size: px2rem(28px);
+                    font-size: px2rem(24px);
                     color: #dc3c32;
                 }
             }

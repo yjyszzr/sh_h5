@@ -1,5 +1,5 @@
 import {nativeApp,isWebview,getCsUrl} from '@/util/common'
-import {Indicator} from 'mint-ui'
+import {Indicator,Toast} from 'mint-ui'
 import api from '@/fetch/api'
 import {mapState} from 'vuex'
 export default {
@@ -181,6 +181,7 @@ export default {
                     }
                 })
             }else{
+				//Toast(getCsUrl())
                 nativeApp({'methodName':'pushUrl','url':getCsUrl()+'/user/activity/ercode?cxmxc=scm&type=1&userid='+this.activityUserInfo.user_id})
             }
         },

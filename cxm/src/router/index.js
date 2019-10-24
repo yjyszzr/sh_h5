@@ -452,7 +452,7 @@ const router = new Router({
         },
         //推广赚钱活动首页
         {
-            path: '/user/activity/protomakemoeny',
+            path: '/user/activity/protomake',
             name: 'protomakemoeny',
             component: resolve => require(['@/components/activity/protomakemoeny/index'], resolve)
         },

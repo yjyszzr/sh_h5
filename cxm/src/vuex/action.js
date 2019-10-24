@@ -206,7 +206,7 @@ const actions = {
         return new Promise((resolve, reject) => {
             api.addSUrl(value)
                 .then(res => {
-                    console.log(res)
+                    //console.log(res)
                     if (res.code == 0) {
                         commit("SHORTLINK", res.data.shorturl);
                         resolve(res.data.shorturl)

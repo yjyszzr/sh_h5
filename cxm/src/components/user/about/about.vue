@@ -7,7 +7,7 @@
     <div class="wrap about" >
         <div class="logo">
             <p>
-                <span>圣和彩店</span> 
+                <span>{{$store.state.channelObj.channelNmae}}</span> 
                 <span>v1.1.0</span>
             </p>
         </div>
@@ -36,4 +36,11 @@
         </section> -->
     </div>
 </template>
+<script>
+export default {
+    mounted(){
+        
+    }
+}
+</script>
 

@@ -5,11 +5,13 @@ import {
 } from 'mint-ui'
 import router from '../router/index'
 import {getUrlStr,nativeApp,isWebview} from '../util/common'
+import { version,eclipse } from '../util/versionSwitch'
 // axios 配置
 axios.defaults.timeout = 15000;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
-//axios.defaults.baseURL = 'http://94.191.113.169:8765/api'; //正式
-axios.defaults.baseURL = 'http://49.232.65.109:8765/api'; //测试
+//线上 - http://94.191.113.169:8765/api
+//测试 - http://49.232.65.109:8765/api
+axios.defaults.baseURL = eclipse == 'online'?'http://94.191.113.169:8765/api':'http://49.232.65.109:8765/api';
 //拦截 token
 axios.interceptors.request.use(
     config => {
@@ -112,7 +114,7 @@ axios.interceptors.response.use((res) => {
 const device = {
     plat: 'h5',
     apiv: 1,
-    appv: '6.0.0',   //6.0.0为资讯版，其余为交易版
+    appv: version == 'zx'?'6.0.0':'2.1.2',   //6.0.0为资讯版，其余为交易版
     appid: '',
     mac: '',
     appCodeName: '11',
@@ -551,6 +553,10 @@ export default {
     addSUrl(params) {
         return fetchPost('/member/user/addSUrl', params)
     },
+    //检查token(游戏接入token)
+    // checkToken(params) {
+    //     return fetchPost('/member/user/checkToken', params)
+    // },
     //获取篮彩赛事列表
     getBasketBallMatchList(params){
         return fetchPost('/lottery/lottery/match/getBasketBallMatchList', params)

@@ -135,7 +135,7 @@
                             return "快捷支付";
                         case 'unionPay':
                             return '银联充值';
-                        case 'unionpaystatus':
+                        case 'unionPayStatus':
                             return '银联充值';
 //          一期活动
                         case 'tuiguang':

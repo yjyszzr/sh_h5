@@ -17,7 +17,7 @@
                     <li v-for="(list,i) in listd.lotteryMatchDTOList" :key='i'>
                         <small><i>{{list.changci}}</i><i>{{list.leagueAddr}}</i><i>{{list.matchTime}}</i></small>
                         <div class="pink">
-                            <span :class="list.isCollect=='0'?'icon-icon-34':'icon-icon-32'" class="icon-collection iconfont" @click="collection(list)"></span>
+                            <span v-show="$store.state.version!='zx'" :class="list.isCollect=='0'?'icon-icon-34':'icon-icon-32'" class="icon-collection iconfont" @click="collection(list)"></span>
                             <div @click='goDetail(list.matchId)'>
                                 <i><img :src="list.homeTeamLogo"></i>
                                 <div class="vs-name">

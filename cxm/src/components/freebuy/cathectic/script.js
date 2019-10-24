@@ -559,7 +559,7 @@ export default {
 		},
 		saveGo() {
 			if(this.$refs.xySelected.className == 'icon-icon-29 iconfont'){
-				Toast('尊敬的用户,购彩需同意并接受《圣和彩店投注服务协议》')
+				Toast(`尊敬的用户,购彩需同意并接受《${this.$store.state.channelObj.channelNmae}投注服务协议》`)
 				return
 			}else if(this.disable==true){
 				Toast('请至少选择2场比赛')

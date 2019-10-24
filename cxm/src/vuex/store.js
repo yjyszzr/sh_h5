@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import {
     Toast
 } from 'mint-ui'
+import { version } from '../util/versionSwitch'
 import mutations from './mutations'
 import actions from './action'
 import createPersistedState from 'vuex-persistedstate'
@@ -13,6 +14,7 @@ const state = {
     skeletion: {
         consultInit: true,  //初始化骨架屏
     },
+    version: version, //h5上架版本控制
 	turnOn: '0', // 默认资讯版
     freebuyId: '6',
     //验证码初始化
@@ -76,7 +78,7 @@ const state = {
     runchartData: {},  //走势图数据
     channelObj: {
         color: '#dc3c32',
-        channelNmae: '圣和彩店'
+        channelNmae: version=='zx'?'一览赛事':'圣和彩店'
     },
     shortlink: '', //推广短链
     lancaiData:{   //篮彩数据 

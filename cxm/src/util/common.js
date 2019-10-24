@@ -1,9 +1,24 @@
-//const expUrl = 'http://192.168.31.205:8081'
-const expUrl = 'http://m.jinngu.club'  //线上
-//const expUrl = 'http://t1.caixiaomi.net:9808'  //测试
-var moment = require('moment');
 import api from '../fetch/api'
 import store from '../vuex/store'
+import { version } from './versionSwitch'
+
+//版本
+let versions = () =>{
+	switch(version){
+		case 'zx':
+			return 'http://gi.jinngu.cn';
+		case 'jy':
+			return 'http://m.jinngu.club';
+		case 'local':
+			return 'http://192.168.31.205:8081';
+		case 'test':
+			return 'http://49.232.65.109:9808';
+		default:
+			return 'http://49.232.65.109:9808';
+	}
+}
+const expUrl = versions()
+var moment = require('moment');
 //app h5页面分享
 export let isShare = (arg, text, url, thumbUrl) => {
     let obj = {}

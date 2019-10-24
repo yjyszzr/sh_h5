@@ -1,13 +1,20 @@
 <template>
     <div class="unionPayStatus">
-        <img src="./img/success.png" alt="">
-        <div class="un-alert-txt">
+        <img src="./img/success.png" alt="" v-if="status=='01'">
+		<img src="./img/fail.png" alt="" v-if="status=='02'">
+        <div class="un-alert-txt" v-show="status=='01'">
             <p>恭喜,充值成功</p>
-            <p>10000元</p>
+            <p>{{amount}}元</p>
         </div>
+		<div class="un-alert-txt" v-show="status=='02'">
+		    <p style="color: #666">充值失败</p>
+		</div>
+		<div class="un-alert-txt" v-show="status=='03'">
+		    <p style="color: #666">处理中...</p>
+		</div>
         <div class="un-ft">
-            <p>注: 充值金偶尔会有1~2分钟延迟到账</p>
-            <div class="un-btn">
+            <p v-show="status!='02'">注: 充值金偶尔会有1~2分钟延迟到账</p>
+            <div class="un-btn" @click="close()">
                 返回
             </div>
         </div>
@@ -16,18 +23,22 @@
 
 <script>
     import api from '../../fetch/api'
+	import {nativeApp} from '../../util/common'
     export default {
         name: "unionPayStatus",
         data() {
             return {
-                
+                status: this.$route.query.status,
+				amount: this.$route.query.amount
             }
         },
         mounted(){
             
         },
         methods:{
-            
+            close(){
+				nativeApp({'methodName':'closeWeb'})
+			}
         }
     }
 </script>
