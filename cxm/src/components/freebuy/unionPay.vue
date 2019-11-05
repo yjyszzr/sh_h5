@@ -21,9 +21,8 @@
             </div>
         </div>
         <div class="un-five">
-            <p>提示：银联充值为实名支付，</p>
-            <p>您所使用的手机号必须与银行卡预留手机号一致，</p>
-            <p>若不一致，将会支付失败！</p>
+            <div><p>1.</p><p>请在倒计时内完成支付，过期此笔充值会失效，您需返回APP重新发起充值；</p></div>
+            <div><p>2.</p><p>银联充值为实名支付，您所使用的手机号必须与银行卡预留手机号一致，若不一致，将会支付失败！</p></div>
         </div>
         <div class="un-btn" @click="payBtn()">
             确认
@@ -232,9 +231,14 @@
             margin: px2rem(20px) 0 px2rem(50px);
             color: #dc3c32;
             p{
-                text-align: center;
+                text-align: left;
                 line-height: px2rem(40px);
                 font-size: px2rem(26px);
+                
+            }
+            div{
+                display: flex;
+                padding:0 px2rem(60px)
             }
         }
         .un-btn{
