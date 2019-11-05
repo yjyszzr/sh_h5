@@ -78,7 +78,7 @@ const state = {
     runchartData: {},  //走势图数据
     channelObj: {
         color: '#dc3c32',
-        channelNmae: version=='zx'?'一览赛事':'圣和彩店'
+        channelNmae: '每日赛事'
     },
     shortlink: '', //推广短链
     lancaiData:{   //篮彩数据 

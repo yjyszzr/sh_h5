@@ -1,0 +1,74 @@
+@import '../../../assets/css/function.scss';
+.appdownLoad{
+    background: white;
+    min-height: 100%;
+    height: auto;
+    .loadTop{
+        img{
+            width: 100%;
+        }
+    }
+    .loadContent{
+        .app-info{
+            .h5_04{
+                display: block;
+                width: px2rem(300px);
+                margin: px2rem(30px) auto px2rem(15px);
+            }
+            .app-name{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .h5_08{
+                    width: px2rem(38px);
+                    display: block;
+                }
+                p:first-of-type{
+                    font-size: px2rem(48px);
+                    margin: 0 px2rem(14px);
+                }
+                p:last-of-type{
+                    background: #3cadf9;
+                    padding: px2rem(3px) px2rem(10px);
+                    color: white;
+                    border-radius: px2rem(5px);
+                    font-size: px2rem(26px);
+                }
+            }
+            .loadBtn{
+                width: px2rem(400px);
+                height: px2rem(80px);
+                background: #e20107;
+                color: white;
+                font-size: px2rem(34px);
+                border: none;
+                border-radius: px2rem(60px);
+                display: block;
+                margin: px2rem(40px) auto;
+            }
+        }
+        .ios-alert{
+            p{
+                text-align: center;
+            }
+            p{
+                font-size: px2rem(32px);
+            }
+            p:first-of-type{
+                color: #e20107;
+            }
+            p:nth-child(2){
+                color: #e20107;
+            }
+            p:last-of-type{
+                width: 80%;
+                margin: px2rem(20px) auto;
+            }
+            img{
+                display: block;
+                width: 50%;
+                margin: 0 auto;
+            }
+        }
+    }
+}

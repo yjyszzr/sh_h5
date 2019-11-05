@@ -11,7 +11,9 @@ axios.defaults.timeout = 15000;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
 //线上 - http://94.191.113.169:8765/api
 //测试 - http://49.232.65.109:8765/api
-axios.defaults.baseURL = eclipse == 'online'?'http://94.191.113.169:8765/api':'http://49.232.65.109:8765/api';
+ //axios.defaults.baseURL = eclipse == 'online'?'http://94.191.113.169:8765/api':'http://49.232.65.109:8765/api';
+
+axios.defaults.baseURL = eclipse == 'online'?'https://api.caixiaomi.net/api':'http://t1.caixiaomi.net:8765/api';
 //拦截 token
 axios.interceptors.request.use(
     config => {
