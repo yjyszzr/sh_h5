@@ -66,7 +66,9 @@ export let channel = (str,s)=>{
 		channelObj.channelNmae='天天体育'
 	}else if(str.indexOf('c23')!=-1){
 		channelObj.channelNmae='天空体育'
-	}
+	}else if(str=='c13330'){
+        channelObj.channelNmae='每日赛事'
+    }
     return channelObj;
 }
 //app h5方法
