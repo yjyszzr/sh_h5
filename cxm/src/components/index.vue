@@ -159,7 +159,7 @@
 <!--首页-->
 <template>
     <div class="wrap">
-        <div class="downDrop" v-show="version!='zx'">
+        <div class="downDrop" v-show="false">
             <div class="downLeft">
                 <!-- <img src="../assets/img/downIocn.png" alt=""> -->
                 <span>下载{{$store.state.channelObj.channelNmae}}APP 购彩更轻松</span>
@@ -175,7 +175,7 @@
             </div>
         </div>
         <!-- 桌面引导 -->
-        <div v-if='detect=="ios"&&version!="zx"' class="fixedRight" @click="shortClick()">
+        <div v-if='detect=="ios"&&version==false' class="fixedRight" @click="shortClick()">
             <p>放到</p>
             <p>桌面</p>
         </div>
