@@ -68,6 +68,8 @@ export let channel = (str,s)=>{
 		channelObj.channelNmae='天空体育'
 	}else if(str=='c13330'){
         channelObj.channelNmae='每日赛事'
+    }else if(str=='c76011'){
+        channelObj.channelNmae='每日赛事'
     }
     return channelObj;
 }
