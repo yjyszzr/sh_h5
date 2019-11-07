@@ -167,10 +167,10 @@
             <!-- 下载不同渠道安卓包 -->
             <div class="downRight">
                 <span v-if="detect=='ios'">
-                  <a href="http://www.jqdk168.com:3130/download/config?appId=a329cb08-a910-48a0-8779-cbe50b52c0d3">立即下载</a>
+                  <a href="http://www.jqdk168.com:3130/download/config?appId=ff2cb06a-ec15-4a5e-a723-60a5398c8cb8">立即下载</a>
                 </span>
                 <span v-else>
-                  <a href="https://szcq-apk.oss-cn-beijing.aliyuncs.com/shenghe_c11110_1.2.0.apk">立即下载</a>
+                  <a href="https://szcq-apk.oss-cn-beijing.aliyuncs.com/%E6%AF%8F%E6%97%A5%E8%B5%9B%E4%BA%8B.apk">立即下载</a>
                 </span>
             </div>
         </div>
