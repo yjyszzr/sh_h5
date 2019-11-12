@@ -20,10 +20,10 @@ export default{
                 return false;
             }
             if(this.flag==2){
-                location.href = 'http://www.jqdk168.com:3130/download/config?appId=ff2cb06a-ec15-4a5e-a723-60a5398c8cb8';
+                location.href = 'http://www.jqdk168.com:3130/download/config?appId=3a67d60d-77d5-42cd-9b41-8900c7b4c644';
             }else{
                 //location.href = 'itms-services://?action=download-manifest&url=https://szcq-apk.oss-cn-beijing.aliyuncs.com/manifest.plist';
-                location.href = 'http://www.jqdk168.com:3130/download/config?appId=ff2cb06a-ec15-4a5e-a723-60a5398c8cb8'
+                location.href = 'http://www.jqdk168.com:3130/download/config?appId=3a67d60d-77d5-42cd-9b41-8900c7b4c644'
                 
                 this.flag = 1;
                 setTimeout(()=>{
