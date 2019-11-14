@@ -82,10 +82,16 @@ img {
 	padding-left: 0.5rem;
 	margin-bottom: 0.5rem; 
 	color: #666;
+	box-sizing: border-box;
 }
-
+.code-box{
+	display: flex;
+    justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
 .codeVal {
-	width: 55%;
+	width: 50%;
 	height: 1.7rem;
 	background: rgba(255, 255, 255, 0.9);
 	font-size: 0.6rem;
@@ -97,7 +103,7 @@ img {
 }
 
 .codebtn {
-	width: 43%;
+	width: 40%;
 	background: #FE7E37;
 	color: #fff;
 	font-size: 0.6rem;

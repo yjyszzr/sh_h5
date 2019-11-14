@@ -24,16 +24,19 @@
             <div><p>1.</p><p>请在倒计时内完成支付，过期此笔充值会失效，您需返回APP重新发起充值；</p></div>
             <div><p>2.</p><p>银联充值为实名支付，您所使用的手机号必须与银行卡预留手机号一致，若不一致，将会支付失败！</p></div>
         </div>
-        <div class="un-btn" @click="payBtn()">
+        <!-- <div class="un-btn" @click="payBtn()">
             确认
-        </div>
+        </div> -->
+        <appBtn btnClass="un-btn"  @click="payBtn">确认</appBtn>
     </div>
 </template>
 
 <script>
     import api from '../../fetch/api'
     import {Indicator,Toast} from 'mint-ui'
+    import appBtn from '../public/appBtn/appbtn'
     export default {
+        components:{appBtn},
         name: "unionPay",
         data() {
             return {
@@ -110,7 +113,8 @@
             },
 			//充值
 			payBtn(){
-				Indicator.open()
+                console.log(2333333)
+                Indicator.open()
 				let {
 				    amount,
 				    merCustId
