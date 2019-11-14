@@ -24,17 +24,20 @@
             <p>注:请在倒计时内完成支付，过期此笔充值</p>
             <p>会失效，您需返回APP重新发起充值!</p>
         </div>
-        <div class="un-btn" @click="payBtn()">
+        <!-- <div class="un-btn" @click="payBtn()">
             确认
-        </div>
+        </div> -->
+        <appBtn class="un-btn" @click="payBtn">确认</appBtn>
     </div>
 </template>
 
 <script>
     import api from '../../fetch/api'
     import {Indicator,Toast} from 'mint-ui'
+    import appBtn from '../public/appBtn/appbtn'
     export default {
         name: "unionPay",
+        components:{appBtn},
         data() {
             return {
                 cardNoHide: '', //支付卡号
