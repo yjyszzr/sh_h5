@@ -167,7 +167,7 @@
             <!-- 下载不同渠道安卓包 -->
             <div class="downRight">
                 <span v-if="detect=='ios'">
-                  <a href="http://www.jqdk168.com:3130/download/config?appId=3a67d60d-77d5-42cd-9b41-8900c7b4c644">立即下载</a>
+                  <a :href="isoDowUrl">立即下载</a>
                 </span>
                 <span v-else>
                   <a href="https://szcq-apk.oss-cn-beijing.aliyuncs.com/%E6%AF%8F%E6%97%A5%E8%B5%9B%E4%BA%8B.apk">立即下载</a>
@@ -239,6 +239,7 @@
         name: "index",
         data() {
             return {
+                isoDowUrl:'',//ios下载地址
                 bannerList: [], //banner
                 activity: {}, //活动
                 y_Carousel: [], //中奖信息
@@ -389,13 +390,18 @@
             }
         },
         mounted() {
-                this.detect = detect()
-                // location.href = 'caixm://caixiaomi.net'
-                localStorage.removeItem("tab");
-                document
-                    .querySelector("#content")
-                    .addEventListener("scroll", this.handleScroll);
-                this.init();
+            this.detect = detect()
+            // location.href = 'caixm://caixiaomi.net'
+            localStorage.removeItem("tab");
+            document
+                .querySelector("#content")
+                .addEventListener("scroll", this.handleScroll);
+            this.init();
+            api.querySysConfig({businessId:'75'}).then(res=>{
+                if(res.code==='0'){
+                    this.isoDowUrl=res.data.valueTxt
+                }
+            })
         },
         activated() {
             document.getElementById("content").scrollTop = this.$root.consultScrolltop;

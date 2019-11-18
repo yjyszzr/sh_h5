@@ -571,6 +571,10 @@ export default {
     getBasketBallBetInfo(params){
         return fetchPost('/lottery/lottery/match/getBasketBallBetInfo', params)
     },
+    //app下载链接
+    querySysConfig(params){
+        return fetchPost('/member/user/sys/querySysConfig', params)
+    },
 }
 
 

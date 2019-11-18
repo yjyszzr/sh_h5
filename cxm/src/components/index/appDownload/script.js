@@ -1,14 +1,22 @@
 import {detect,wxPd} from '../../../util/common'
+import api from "../../../fetch/api";
+
 export default{
     name: 'appdownLoad',
     data(){
         return {
+            isoDowUrl:'',//ios下载地址
             detect: '',  //平台
             flag: 0  //控制按钮切换
         }
     },
     mounted(){
         this.detect = detect();
+        api.querySysConfig({businessId:'75'}).then(res=>{
+            if(res.code==='0'){
+                this.isoDowUrl=res.data.valueTxt
+            }
+        })
     },
     methods:{
         androidload(){
@@ -20,10 +28,12 @@ export default{
                 return false;
             }
             if(this.flag==2){
-                location.href = 'http://www.jqdk168.com:3130/download/config?appId=3a67d60d-77d5-42cd-9b41-8900c7b4c644';
+                location.href =this.isoDowUrl
+                //location.href = 'https://iosacheng.com/download/5dce787233bff.html';
             }else{
+                location.href =this.isoDowUrl
                 //location.href = 'itms-services://?action=download-manifest&url=https://szcq-apk.oss-cn-beijing.aliyuncs.com/manifest.plist';
-                location.href = 'http://www.jqdk168.com:3130/download/config?appId=3a67d60d-77d5-42cd-9b41-8900c7b4c644'
+                //location.href = 'https://iosacheng.com/download/5dce787233bff.html'
                 
                 this.flag = 1;
                 setTimeout(()=>{
