@@ -28,7 +28,7 @@ const router = new Router({
                 keepAlive: true,
                 title: '购彩大厅'
             },
-            component: resolve => require(['@/components/Index'], resolve)
+            component: resolve => require(['@/components/index'], resolve)
         },
         {
             path: '/user/pwd',

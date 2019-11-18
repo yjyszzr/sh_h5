@@ -9,6 +9,6 @@ export const version = 'jy'
 
 //线上 测试环境控制
 //线上 - online
- export const eclipse = 'online'
+ export const eclipse = process.env.NODE_ENV==='production_release'?'online':'test'
 //测试 - test
 //export const eclipse = 'test'

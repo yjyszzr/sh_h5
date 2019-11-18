@@ -1,7 +1,15 @@
 'use strict'
 require('./check-versions')()
 
-process.env.NODE_ENV = 'production'
+
+  // 获取命令行参数
+var args = process.argv.splice(2)
+var env = args[0]
+// production_release --生产包  production--功能测试包
+var envs = ['production', 'production_release']
+env = env && envs.indexOf(env) > -1 ? env : envs[1]
+console.log('当前构建版本类型：' + env)
+process.env.NODE_ENV = env
 
 const ora = require('ora')
 const rm = require('rimraf')

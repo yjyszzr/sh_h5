@@ -27,7 +27,7 @@
 </template>
 
 <script>
-    import HeaderTop from "./components/public/header/Header";
+    import HeaderTop from "./components/public/header/header";
     import footer from "./components/public/footer/footer";
     import mark from "./components/public/mark/mark";
     import pmark from "./components/public/mark/match_playut/mark_playut";
