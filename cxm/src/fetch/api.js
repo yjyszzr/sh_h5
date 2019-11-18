@@ -569,7 +569,7 @@ export default {
     getBasketBallBetInfo(params){
         return fetchPost('/lottery/lottery/match/getBasketBallBetInfo', params)
     },
-    //计算篮彩投注信息
+    //app下载地址
     querySysConfig(params){
         return fetchPost('/member/user/sys/querySysConfig', params)
     },
