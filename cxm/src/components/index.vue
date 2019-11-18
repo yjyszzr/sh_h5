@@ -167,7 +167,7 @@
             <!-- 下载不同渠道安卓包 -->
             <div class="downRight">
                 <span v-if="detect=='ios'">
-                  <a href="http://www.jqdk168.com:3130/download/config?appId=a329cb08-a910-48a0-8779-cbe50b52c0d3">立即下载</a>
+                  <a :href="isoDowUrl">立即下载</a>
                 </span>
                 <span v-else>
                   <a href="https://szcq-apk.oss-cn-beijing.aliyuncs.com/shenghe_c11110_1.2.0.apk">立即下载</a>
@@ -239,6 +239,7 @@
         name: "index",
         data() {
             return {
+                isoDowUrl:'',//ios下载地址
                 bannerList: [], //banner
                 activity: {}, //活动
                 y_Carousel: [], //中奖信息
@@ -396,6 +397,11 @@
                     .querySelector("#content")
                     .addEventListener("scroll", this.handleScroll);
                 this.init();
+                api.querySysConfig({businessId:'75'}).then(res=>{
+                    if(res.code==='0'){
+                        this.isoDowUrl=res.data.valueTxt
+                    }
+                })
         },
         activated() {
             document.getElementById("content").scrollTop = this.$root.consultScrolltop;
