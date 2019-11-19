@@ -11,8 +11,15 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const env = require('../config/prod.env')
-
+// const env = require('../config/prod.env')  注释这一行
+//添加下面几行
+if(process.env.NODE_ENV === 'testing') {
+  var env = require('../config/test.env')
+  console.log("test")
+}else{
+  var env = require('../config/prod.env')
+  console.log("prod")
+}
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
