@@ -6,7 +6,7 @@ import {
 import router from '../router/index'
 import {getUrlStr,nativeApp,isWebview} from '../util/common'
 import { version } from '../util/versionSwitch'
-import {baseUrl} from '@/config/env'
+import {baseUrl} from '../../config/env'
 // axios 配置
 axios.defaults.timeout = 15000;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
