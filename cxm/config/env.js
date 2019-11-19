@@ -10,11 +10,11 @@ const routerMode = 'history';
 let DEBUG = false;
 const cancleHTTP = [];
 if (process.env.NODE_ENV == 'development') {
-    baseUrl = "http://94.191.113.169:8765/api";
+    baseUrl = "https://api.caixiaomi.net/api";
 }else if(process.env.NODE_ENV == 'testing'){
-    baseUrl = "http://49.232.65.109:8765/api";
+    baseUrl = "http://t1.caixiaomi.net:8765/api";
 }else if(process.env.NODE_ENV == 'production'){
-    baseUrl = "http://94.191.113.169:8765/api";
+    baseUrl = "https://api.caixiaomi.net/api";
 }
 export{
     baseUrl,
