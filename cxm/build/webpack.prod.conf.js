@@ -13,6 +13,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 // const env = require('../config/prod.env')  注释这一行
 //添加下面几行
+console.log(process.env.NODE_ENV)
 if(process.env.NODE_ENV === 'testing') {
   var env = require('../config/test.env')
   console.log("test")
