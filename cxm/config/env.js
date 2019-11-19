@@ -16,6 +16,7 @@ if (process.env.NODE_ENV == 'development') {
 }else if(process.env.NODE_ENV == 'production'){
     baseUrl = "https://api.caixiaomi.net/api";
 }
+console.log(baseUrl)
 export{
     baseUrl,
     routerMode,
