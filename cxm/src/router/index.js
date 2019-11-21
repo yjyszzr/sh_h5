@@ -40,7 +40,7 @@ const router = new Router({
             component: resolve => require(['@/components/login/passwordLogin/password.vue'], resolve)
         },
         {
-            path: '/activity/down/app',
+            path: '/activity/down/appmrss',
             name: 'down',
             meta: {
                 title: 'APP下载'
