@@ -27,7 +27,7 @@
 				</div>
                 <button class="loadBtn" @click="androidload()" v-else>立即安装</button>
             </div>
-            <div class="cj">
+            <div v-if="detect==='ios'" class="cj">
 				<h3>常见问题</h3>
 				<h4>1、什么是VIP长效版？</h4>
 				<p>VIP长效版可在iPhone、ipod下载安装，与普通版相比，可以有效减少软件频繁签名授信次数，服务由第三方提供。<p>

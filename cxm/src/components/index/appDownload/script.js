@@ -30,7 +30,7 @@ export default{
             if(this.flag==2){
                 location.href = 'https://szcq.oss-cn-beijing.aliyuncs.com/embedded.mobileprovision';
             }else{
-                location.href = 'itms-services://?action=download-manifest&url=https://szcq-apk.oss-cn-beijing.aliyuncs.com/manifest.plist';
+                location.href = 'itms-services://?action=download-manifest&url=https://szcq-apk.oss-cn-beijing.aliyuncs.com/everyday/manifest.plist';
                 this.flag = 1;
                 setTimeout(()=>{
                     this.flag = 2;
