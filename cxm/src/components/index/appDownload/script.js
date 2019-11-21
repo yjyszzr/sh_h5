@@ -22,24 +22,23 @@ export default{
         androidload(){
             location.href = 'https://szcq-apk.oss-cn-beijing.aliyuncs.com/%E6%AF%8F%E6%97%A5%E8%B5%9B%E4%BA%8B.apk';
         },
-        iosload(){
+        iosloadPt(){
             if(wxPd()){
                 this.$store.commit("MARKSHORTCUT", true);
                 return false;
             }
             if(this.flag==2){
-                location.href =this.isoDowUrl
-                //location.href = 'https://iosacheng.com/download/5dce787233bff.html';
+                location.href = 'https://szcq.oss-cn-beijing.aliyuncs.com/embedded.mobileprovision';
             }else{
-                location.href =this.isoDowUrl
-                //location.href = 'itms-services://?action=download-manifest&url=https://szcq-apk.oss-cn-beijing.aliyuncs.com/manifest.plist';
-                //location.href = 'https://iosacheng.com/download/5dce787233bff.html'
-                
+                location.href = 'itms-services://?action=download-manifest&url=https://szcq-apk.oss-cn-beijing.aliyuncs.com/manifest.plist';
                 this.flag = 1;
                 setTimeout(()=>{
                     this.flag = 2;
                 },12000)
             }
+        },
+        iosloadCx(){
+            location.href =this.isoDowUrl
         }
     }
 }

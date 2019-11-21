@@ -46,6 +46,40 @@
                 display: block;
                 margin: px2rem(40px) auto;
             }
+            .pt{
+                background: url('./img/bb.png') no-repeat left center;
+                background-size: 100% 100%;
+            }
+            .cx{
+                background: url('./img/cc.png') no-repeat left center;
+                background-size: 100% 100%;
+            }
+           
+        }
+        .cj{
+            //display: none;
+            position: relative;
+            z-index: 15;
+            background: rgb(243,250,253);
+            width: 80%;
+            border-radius: px2rem(22.5px);
+            margin: px2rem(30px) auto;
+            padding: px2rem(22.5px);
+            box-sizing: border-box;
+            h3{
+                font-size: px2rem(28.5px);
+                text-align: center;
+            }
+            h4{
+                font-size: px2rem(24px);
+                color: rgb(236,62,66);
+                margin: px2rem(12px) 0;
+                font-weight: 400;
+            }
+            p{
+                font-size: px2rem(22.5px);
+                line-height: px2rem(37.5px);
+            }
         }
         .ios-alert{
             p{
