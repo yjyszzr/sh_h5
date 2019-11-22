@@ -1,0 +1,119 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 20px;
+	background: #fecf92;
+}
+.page-current{
+	background: #fecf92;
+}
+
+input:-webkit-autofill,select:-webkit-autofill {  
+    -webkit-box-shadow: 0 0 0px 1000px white  inset !important;  
+} 
+ 
+ 
+input{
+    outline-color: invert ;
+	outline-style: none ;
+	outline-width: 0px ;
+	border: none ;
+	border-style: none ;
+	text-shadow: none ;
+	-webkit-appearance: none ;
+	-webkit-user-select: text ;
+	outline-color: transparent ;
+	box-shadow: none;
+}
+
+img {
+	pointer-events: none;
+}
+
+.page {
+	font-family: "微软雅黑";
+}
+
+.hd_img,.bt-img img{
+	display: block;
+	width: 100%;
+}
+
+.bt-img{
+	position: relative;
+}
+
+.code {
+	position: absolute;
+	z-index: 10;
+	width: 9.8rem;
+	left: calc((50% - 4.9rem));
+	top: 2.3rem;
+}
+
+.mk{
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	height: 5rem;
+	top: 9.8rem;
+}
+.hdgz{
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	top: 16rem;
+	text-align: center;
+	font-size: 0.8rem;
+}
+.hdgz span{
+	text-decoration: underline;
+}
+
+.phoneVal{
+	width: 100%;
+	height: 1.7rem;
+	border-radius: 0.15rem;
+	font-size: 0.6rem;
+	border:1px solid rgba(231, 209, 177, 1);
+	padding-left: 0.5rem;
+	margin-bottom: 0.5rem; 
+	color: #666;
+	box-sizing: border-box;
+}
+.code-box{
+	display: flex;
+    justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
+.codeVal {
+	width: 50%;
+	height: 1.7rem;
+	background: rgba(255, 255, 255, 0.9);
+	font-size: 0.6rem;
+	border: 1px solid rgba(231, 209, 177, 1);
+	border-right: none;
+	color: #666;
+	padding-left: 0.5rem;
+}
+
+.codebtn {
+	width: 43%;
+	background: #FE7E37;
+	color: #fff;
+	font-size: 0.6rem;
+	border: none;
+	height: 1.7rem;
+	border-radius:4px;
+}
+.codebtn:disabled{
+	background: #ccc;
+}
+.left{
+	text-align: left;
+	font-size: 0.7rem;
+}

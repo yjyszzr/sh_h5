@@ -5,5 +5,5 @@ $(window).resize(function () {
 		})
 	}
 });
-var baseUrl = 'http://94.191.113.169:8765/api/'  //正式
-//var baseUrl = 'http://49.232.65.109:8765/api/'  //测试
+//var baseUrl = 'http://94.191.113.169:8765/api/'  //正式
+var baseUrl = 'http://49.232.65.109:8765/api/'  //测试
